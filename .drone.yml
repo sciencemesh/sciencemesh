@@ -8,8 +8,8 @@ platform:
   arch: amd64
 
 trigger:
-  branch:
-  - master
+        #branch:
+        #- master
   event:
     exclude:
     - pull_request
