@@ -1,0 +1,28 @@
+---
+kind: pipeline
+type: docker
+name: test
+
+platform:
+  os: linux
+  arch: amd64
+
+trigger:
+  branch:
+  - master
+  event:
+    exclude:
+    - pull_request
+    - tag
+    - promote
+    - rollback
+
+steps:
+
+- name: k8s 
+  image: alpine/helm
+  environment:
+  detach: false
+  commands:
+    - find /drone/src
+    - helm list
