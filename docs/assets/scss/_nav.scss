@@ -24,7 +24,7 @@ navbar-brand {
   border-bottom: 1px solid #dee2e6;
 }
 
-a {
+.navbar a {
   color: black;
 }
 
@@ -32,6 +32,6 @@ a:hover{
 	color: #ED6A5A;
 }
 
-.active {
+a .active {
   color: red;
 }

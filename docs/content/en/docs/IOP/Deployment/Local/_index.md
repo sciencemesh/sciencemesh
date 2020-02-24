@@ -7,6 +7,8 @@ description: >
 ---
 
 ## Reva
+The most up to date documentation of how to install Reva is [here](https://reva.link/docs/getting-started/install-reva/).
+
 
 
 ## Phoenix
