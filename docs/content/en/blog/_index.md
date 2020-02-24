@@ -1,5 +1,5 @@
 ---
-title: "Reva Blog"
+title: "Blog"
 linkTitle: "Blog"
 menu:
   main:
