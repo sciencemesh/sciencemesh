@@ -1,6 +1,6 @@
 
 ---
-title: "News about Reva"
+title: "News about ScienceMesh"
 linkTitle: "News"
 weight: 20
 ---

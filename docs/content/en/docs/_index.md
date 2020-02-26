@@ -8,7 +8,7 @@ menu:
     weight: 20
 ---
 
-This is the documentation for the Reva project. 
+This is the documentation for the ScienceMesh project. 
 
 We recommend you to start reading the [Overview]({{< ref "docs/Overview" >}}).
 
