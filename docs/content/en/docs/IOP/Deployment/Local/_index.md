@@ -22,6 +22,7 @@ yarn dist
 ```
 
 ## Configure Reva
+If you want to configure Reva to run locally with Phoenix you can follow this tutorial: https://reva.link/docs/tutorials/phoenix-tutorial/ 
 
 
 
