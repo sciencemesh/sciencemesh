@@ -1,0 +1,10 @@
+FROM golang:1.13 AS revad-base
+WORKDIR /go/src/github/cs3org
+RUN git clone https://github.com/cs3org/reva
+RUN cd reva/ && make build-revad-docker
+
+FROM debian:buster
+WORKDIR /go/src/github/cs3org
+COPY --from=revad-base /go/src/github/cs3org .
+EXPOSE 20080
+ENTRYPOINT cd reva/examples/oc-phoenix && ../../cmd/revad/revad -dev-dir .
