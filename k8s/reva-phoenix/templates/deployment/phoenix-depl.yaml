@@ -12,9 +12,30 @@ spec:
       labels:
         app: phoenix
     spec:
+      initContainers:
+        - name: config-gen
+          image: busybox
+          command: ['sh', '-c', 'cp /phoenix/config.json /etc/phoenix/']
+          volumeMounts:
+            - name: init-config
+              mountPath: /phoenix/config.json
+              subPath: config.json
+            - name: phoenix-config
+              mountPath: /etc/phoenix
       containers:
         - name: phoenix-container
-          image: phoenix
-          imagePullPolicy: Never
+          image: owncloud/phoenix
+          imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8300
+            - containerPort: 8080
+          volumeMounts:
+            - name: phoenix-config
+              mountPath: /srv/www/config.json
+              subPath: config.json
+      volumes:
+        - name: phoenix-config
+          emptyDir: {}
+        - name: init-config
+          configMap:
+            name: phoenix-init-config
+            defaultMode: 0744

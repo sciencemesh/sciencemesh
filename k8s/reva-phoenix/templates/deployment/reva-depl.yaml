@@ -14,7 +14,12 @@ spec:
     spec:
       containers:
         - name: revad-container
-          image: revad
-          imagePullPolicy: Never
+          image: cs3org/revad
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 20080
+          command:
+            - /go/bin/revad
+            - -dev-dir
+            - .
+          workingDir: /go/src/github/cs3org/reva/examples/oc-phoenix

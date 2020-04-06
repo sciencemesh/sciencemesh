@@ -4,7 +4,7 @@ metadata:
   name: phoenix-svc
 spec:
   ports:
-    - port: 8300
+    - port: 8080
   selector:
     app: phoenix
   type: NodePort
