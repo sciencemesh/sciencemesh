@@ -1,38 +1,60 @@
-###This tutorial shows how to deploy Reva and Phoenix on a local Kubernetes cluster as a helm chart.
+# REVA and Phoenix deployment on Minikube
 
-####1. Install *kubectl* and *minikube*
-````
-https://kubernetes.io/docs/tasks/tools/install-kubectl/
-https://kubernetes.io/docs/tasks/tools/install-minikube/
-````
-####2. Launch *minikube*
-````
+This tutorial demonstrates how to deploy both REVA and Phoenix on a local Minikube cluster with a single helm chart.
+
+## Prerequisites
+
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+- [minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
+- [helm](https://helm.sh/docs/intro/install/)
+
+Clone the repo:
+
+```bash
+git clone https://github.com/sciencemesh/sciencemesh.git
+```
+
+### Launch minikube and configure the helm-tiller add-on
+
+```bash
 minikube start
-````
-####3. Enable *helm*
-````
 minikube addons enable helm-tiller
-````
-####4. Switch to your minikube's docker*
-````
-eval $(minikube docker-env) 
-````
-In case of using Windows:
-````
-minikube docker-env
-````
-####5. Build images
-````
-cd sciencemesh/k8s
-docker build -t revad -f Dockerfile.revad .
-docker build -t phoenix -f Dockerfile.phoenix .
-````
-####6. Run *helm* chart
-````
+```
+
+> **Note:** If it is the first time you're running minikube, take a look to the [different VM drivers](https://kubernetes.io/docs/setup/learning-environment/minikube/#specifying-the-vm-driver) available for the `--driver' flag to pick the best one for your system.
+
+### Deploy REVA and Phoenix using the helm chart
+
+```bash
 helm install reva-phoenix ./reva-phoenix
-````
-####7. Forward ports
-````
-kubectl port-forward svc/revad-svc 20080:20080 & kubectl port-forward svc/phoenix-svc 8300:8300 &
-````
-####7. Access *phoenix* login page in browser at localhost:8300
+```
+
+And verify the deployments are ready by running:
+
+```bash
+kubectl get deployments -o wide
+NAME                 READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS          IMAGES             SELECTOR
+phoenix-deployment   1/1     1            1           3m    phoenix-container   owncloud/phoenix   app=phoenix
+revad-deployment     1/1     1            1           3m    revad-container     cs3org/revad       app=revad
+```
+
+### Forward ports
+
+In order to access the Phoenix web UI from your browser, you'll need to create some port-forwards to the services runninng in the cluster:
+
+```bash
+kubectl port-forward svc/revad-svc 20080:20080 & \
+kubectl port-forward svc/phoenix-svc 8080:8080 &
+```
+
+Now just browse to [`http://localhost:8080`](http://localhost:8080) to verify everything is up and running. Try to log in by using username `einstein` and password `relativity`.
+
+### Cleanup
+
+Once done testing, you can quickly tear down the deployment by running:
+
+```bash
+helm delete reva-phoenix
+# If you want to remove the local cluster as well:
+minikube delete
+```
