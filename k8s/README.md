@@ -44,10 +44,10 @@ In order to access the Phoenix web UI from your browser, you'll need to create s
 
 ```bash
 kubectl port-forward svc/revad-svc 20080:20080 & \
-kubectl port-forward svc/phoenix-svc 8080:8080 &
+kubectl port-forward svc/phoenix-svc 8300:8300 &
 ```
 
-Now just browse to [`http://localhost:8080`](http://localhost:8080) to verify everything is up and running. Try to log in by using username `einstein` and password `relativity`.
+Now just browse to [`http://localhost:8300`](http://localhost:8300) to verify everything is up and running. Try to log in by using username `einstein` and password `relativity`.
 
 ### Cleanup
 
