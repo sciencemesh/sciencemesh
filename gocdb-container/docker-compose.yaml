@@ -1,0 +1,39 @@
+# docker-compose.yml -- Set up all necessary containers to run a GOCDB instance
+#
+# Author:   Daniel Mueller/University of Muenster (daniel.mueller@uni-muenster.de)
+# Date:     2020-05-04
+# Version:  1.0
+#
+# Note:     This file is considered experimental and should be used with care.
+#           It is neither meant to be efficient nor secure.
+
+version: "3.4"
+
+# GOCDB is delivered via two containers: A database and a webserver running the GOCDB instance
+services:
+    # Database server (MariaDB)
+    gocdb-database:
+        build: database
+        container_name: "gocdb-database"
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: oihwnthnwent7u2
+        volumes:
+            - db:/var/lib/mysql
+        ports:
+            - 3306:3306
+
+    # Webserver (Apache + PHP 5) running the GOCDB instance
+    gocdb-webserver:
+        build: webserver
+        container_name: "gocdb-webserver"
+        restart: always
+        depends_on:
+            - gocdb-database
+        environment:
+            GOCDB_DATABASE_SERVER: gocdb-database
+        ports:
+            - 80:80
+
+volumes:
+    db:
