@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -o=./k8s
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: gocdb-webserver
+  name: gocdb-webserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: gocdb-webserver
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -o=./k8s
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: gocdb-webserver
+    spec:
+      containers:
+      - env:
+        - name: GOCDB_DATABASE_SERVER
+          value: gocdb-database
+        image: gocdb-webserver
+        imagePullPolicy: Never
+        name: gocdb-webserver
+        ports:
+        - containerPort: 80
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}

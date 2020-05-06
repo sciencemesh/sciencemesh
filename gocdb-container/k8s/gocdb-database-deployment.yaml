@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -o=./k8s
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: gocdb-database
+  name: gocdb-database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: gocdb-database
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -o=./k8s
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: gocdb-database
+    spec:
+      containers:
+      - env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: oihwnthnwent7u2
+        image: gocdb-database
+        imagePullPolicy: Never
+        name: gocdb-database
+        ports:
+        - containerPort: 3306
+        resources: {}
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: db
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes:
+      - name: db
+        persistentVolumeClaim:
+          claimName: db
+status: {}
