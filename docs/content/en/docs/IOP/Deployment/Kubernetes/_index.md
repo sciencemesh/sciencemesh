@@ -70,8 +70,8 @@ Once all this is done, we can carry on with the deployment by running:
 
 ```console
 $ helm install iop sciencemesh/iop \
-  --set-file revad.configFiles.users\.json=users-cern.json \
-  --set-file revad.configFiles.providers\.json=providers.demo.json \
+  --set-file revad.configFiles.users\\.json=users-cern.json \
+  --set-file revad.configFiles.providers\\.json=providers.demo.json \
   -f custom-ingress.yaml
 ```
 
