@@ -20,8 +20,8 @@ helm repo add sciencemesh https://sciencemesh.github.io/charts/
 wget -q https://raw.githubusercontent.com/cs3org/reva/master/examples/standalone/standalone.toml
 
 # Example edits for the CERN deployment:
-$ sed -i '/^\[grpc.services.gateway\]/a datagateway = "https://sciencemesh.cernbox.cern.ch/iop/datagateway"' standalone.toml
-$ sed -i '/^\[grpc.services.storageprovider\]/a data_server_url = "https://sciencemesh.cernbox.cern.ch/iop/data"' standalone.toml
+sed -i '/^\[grpc.services.gateway\]/a datagateway = "https://sciencemesh.cernbox.cern.ch/iop/datagateway"' standalone.toml
+sed -i '/^\[grpc.services.storageprovider\]/a data_server_url = "https://sciencemesh.cernbox.cern.ch/iop/data"' standalone.toml
 ```
 
 | key                                                                                                                             | value                                                          |
@@ -41,7 +41,7 @@ wget -q https://raw.githubusercontent.com/cs3org/reva/master/examples/ocm-partne
 
 ## Configuring an IOP deployment
 
-To configure the two ingress resources that expose the IOP endpoints (GRPC and HTTP), we'll just need to pass a few values into a `custom-ingress.yaml` file:
+To configure the two ingress resources that expose the IOP endpoints (GRPC and HTTP), we'll just need to pass a few values into a `custom-ingress.yaml` file. For instance, a configuration for a cluster running the [nginx-ingress controller](https://kubernetes.github.io/ingress-nginx/) would be similar to:
 
 ```bash
 cat << EOF > custom-ingress.yaml
@@ -83,10 +83,10 @@ kubectl create secret tls <keypair> --key=tls.key --cert=tls.crt
 Once all this is done, we can carry on with the deployment by running:
 
 ```bash
-helm install iop sciencemesh/iop \
-  --set-file revad.configFiles.revad\\.toml=standalone.toml \
-  --set-file revad.configFiles.users\\.json=users-cern.json \
-  --set-file revad.configFiles.ocm-providers\\.json=providers.demo.json \
+helm upgrade -i iop sciencemesh/iop \
+  --set-file gateway.configFiles.revad\\.toml=standalone.toml \
+  --set-file gateway.configFiles.users\\.json=users-cern.json \
+  --set-file gateway.configFiles.ocm-providers\\.json=providers.demo.json \
   -f custom-ingress.yaml
 ```
 
@@ -100,7 +100,7 @@ reva configure
 host: <hostname>:443
 config saved in /.reva.config
 
-# Log-in using any of the users provided in revad.configFiles.users.json
+# Log-in using any of the users provided in gateway.configFiles.users.json
 reva login -list
 Available login methods:
 - basic
@@ -114,3 +114,52 @@ OK
 curl https://<hostname>/iop/metrics
 ```
 
+## Enabling and configuring persistency
+
+In case you need to keep the data stored on the `storage` service `root`, across version upgrades and restarts of an IOP deployment, you will need to enable data persistency through a [Kubernetes Persistent Volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes) (PV). This is done by using a Persistent Volume Claim (PVC). By default, persistency is disabled for convenience as it involves setting up a `StorageClass`, having an available [driver](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#types-of-persistent-volumes) for your storage infrastructure, etc.
+
+The [`cs3org/revad` chart](https://github.com/cs3org/charts/tree/master/revad) provides two methods to attach a volume to an IOP deployment:
+
+### Persistent Volume Claim auto-provision
+
+When `persistentVolume.enabled=true` alone is passed, helm generates and installs PVC manifest by relying on some cluster and chart preset defaults. This option is especially useful to quickly deploy the IOP for the first time, without spending too much effort in the storage configurations.
+
+For a full reference on the different `persistentVolume` configurations available, refer to the [chart parameters list](https://github.com/cs3org/charts/tree/master/revad#configuration).
+
+### Reusing a pre-existing Persistent Volume Claim
+
+This option is key when rolling an upgrade in the cluster while keeping all the data from a previous version. Here's a really simple PVC manifest and the workflow to create and consume it from the charts.
+
+```bash
+cat << EOF > pvc.yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: iop-data
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1G
+  storageClassName: standard
+EOF
+
+kubectl apply -f pvc.yaml
+
+# Note the 'Unbound' status for the PVC as there's still no deployment exercising the claim
+kubectl get pvc
+NAME                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+iop-data             Unbound  pvc-fddca20b-69a4-43ec-ad12-6d4e2bd4a433   1Gi        RWO            standard       1d20h
+
+helm upgrade -i iop sciencemeshcharts/iop \
+  --set gateway.persistentVolume.enabled=true \
+  --set gateway.persistentVolume.existingClaim=iop-data
+
+# Get the PV provisioned by the claim
+kubectl get pv
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                        STORAGECLASS   REASON   AGE
+pvc-fddca20b-69a4-43ec-ad12-6d4e2bd4a433   1Gi        RWO            Delete           Bound    default/iop-data             standard                1d20h
+```
+
+If the PVC was auto-provisioned by a previous release, you'll need to pass its name (i.e. `<release-name>-gateway`) as `persistentVolume.existingClaim`, as part of the `helm upgrade` command.
