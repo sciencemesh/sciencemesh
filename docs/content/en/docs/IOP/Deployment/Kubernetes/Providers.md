@@ -67,7 +67,7 @@ home_provider = "/home"
 "123e4567-e89b-12d3-a456-426655440000" = "iop-storageprovider-reva:18000"
 ```
 
-The two additional storage providers are shipped as part of the default IOP Chart, and based on [REVA](https://reva.link/) as the gateway does. Their configuration will be almost identical, with an exceptional difference: the use of either `local` or `localhome` as the `storageprovider` (and `dataprovider`) driver. Appart from that:
+The two additional storage providers are shipped as part of the default IOP Chart and based on [REVA](https://reva.link/) as the gateway does. Their configuration will be almost identical, with an exceptional difference: the use of either `local` or `localhome` as the `storageprovider` (and `dataprovider`) driver. Apart from that:
 
 - They both need to be enabled in helm with the `storageProviders.<provider-name>.enabled` boolean flag, to be installed as part of the release.
 - The two will need to **enable persistency and mount the shared volume**, either the one provisioned by the `gateway` chart or a pre-existing one on the cluster. We can assume its name is `iop-gateway` in both cases.
