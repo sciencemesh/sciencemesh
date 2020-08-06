@@ -123,6 +123,55 @@ helm upgrade -i iop sciencemesh/iop \
   -f wopiserver.yaml
 ```
 
+## Configure REVA for the WOPI Server
+
+For the `reva open-file-in-app-provider` client subcommand to work, two additional services need to be configured in the gRPC gateway:
+
+- [`appprovider`](https://reva.link/docs/config/grpc/services/appprovider/).
+- [`appregistry`](https://reva.link/docs/config/grpc/services/appregistry/).
+
+Here is an example on some parameters that need to be configured in the reva daemon. They include the WOPI server location as well as some static rules to match different MIME types to be opened with it:
+
+```toml
+[grpc.services.gateway]
+appprovidersvc = "iop-gateway:19000"
+appregistry = "iop-gateway:19000"
+
+[grpc.services.appprovider]
+driver = "demo"
+wopiurl = "https://<hostname>/"
+
+[grpc.services.appregistry]
+driver = "static"
+
+[grpc.services.appregistry.static.rules]
+"text/plain" = "iop-gateway:19000"
+"text/markdown" = "iop-gateway:19000"
+"application/vnd.oasis.opendocument.text" = "iop-gateway:19000"
+"application/vnd.oasis.opendocument.spreadsheet" = "iop-gateway:19000"
+"application/vnd.oasis.opendocument.presentation" = "iop-gateway:19000"
+```
+
+Lastly, a shared secret must also be provided in REVA with one of the available options:
+
+| Environment variable         | Config file                           | Value                                                          |
+|------------------------------|---------------------------------------|----------------------------------------------------------------|
+| `REVA_APPPROVIDER_IOPSECRET` | `grpc.services.appprovider.iopsecret` | Shared secret used to connect REVA with the WOPI Server.       |
+
+This setting can be shared amongst the two deployments by either:
+
+- Defining one and passing it as value for the `--set wopiserver.config.iopsecret` and `--set gateway.env.REVA_APPPROVIDER_IOPSECRET` flags.
+- Or provisioned by the WOPI Server chart as a Secret and consumed by REVA by passing:
+
+```yaml
+extraEnv:
+   - name: REVA_APPPROVIDER_IOPSECRET
+     valueFrom:
+       secretKeyRef:
+         name: iop-wopiserver-secrets
+         key: iopsecret
+```
+
 ## Testing the deployment
 
 To test wopiserver's `open` workflow with Reva, refer to the detailed [how-to on wopiserver's README](https://github.com/cs3org/wopiserver#test-the-open-workflow-with-reva).
