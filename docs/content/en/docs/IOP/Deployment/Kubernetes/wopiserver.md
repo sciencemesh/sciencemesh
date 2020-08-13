@@ -46,6 +46,8 @@ NAME                 	CHART VERSION	APP VERSION	DESCRIPTION
 stable/collabora-code	1.0.6        	4.0.3.1    	A Helm chart for Collabora Office - CODE-Edition
 ```
 
+> **Note:** since the chart's default `appVersion` is a bit outdated (`4.0.3.1` at the time of writting), we will overwrite the `image.tag` value to point to [a version released after `4.2`](https://hub.docker.com/r/collabora/code/tags).
+
 Next, we need to create a minimal YAML file holding the custom deployment values:
 
 - `collabora.domain` which points to the `wopiserver` url. Since we're running it all on the same cluster, we can use the service [DNS record](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#services) for this.
@@ -59,6 +61,8 @@ Putting it all together, we will end up with something similar to:
 
 ```bash
 cat << EOF > collabora.yaml
+image:
+  tag: latest
 collabora:
   domain: iop-wopiserver
   server_name: <hostname\.domain\.tld>
