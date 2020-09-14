@@ -69,7 +69,7 @@ home_provider = "/home"
 
 The two additional storage providers are shipped as part of the default IOP Chart and based on [REVA](https://reva.link/) as the gateway does. Their configuration will be almost identical, with an exceptional difference: the use of either `local` or `localhome` as the `storageprovider` (and `dataprovider`) driver. Apart from that:
 
-- They both need to be enabled in helm with the `storageProviders.<provider-name>.enabled` boolean flag, to be installed as part of the release.
+- They both need to be enabled in helm with the `storageprovider-<type>.enabled` boolean flag, to be installed as part of the release.
 - The two will need to **enable persistency and mount the shared volume**, either the one provisioned by the `gateway` chart or a pre-existing one on the cluster. We can assume its name is `iop-gateway` in both cases.
 - They need to expose both gRPC and HTTP services, for which we will use different port ranges for clarity.
 
@@ -77,11 +77,8 @@ The two additional storage providers are shipped as part of the default IOP Char
 
 ```bash
 cat << EOF > home-sp.yaml
-storageProviders:
-  home:
-    enabled: true
-
 storageprovider-home:
+  enabled: true
   service:
     grpc:
       port: 17000
@@ -113,11 +110,8 @@ EOF
 
 ```bash
 cat << EOF > reva-sp.yaml
-storageProviders:
-  reva:
-    enabled: true
-
 storageprovider-reva:
+  enabled: true
   service:
     grpc:
       port: 18000
