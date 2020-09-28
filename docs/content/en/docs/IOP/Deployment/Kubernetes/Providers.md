@@ -6,17 +6,21 @@ description: >
   Enable creation of WebDAV references by using different storage providers.
 ---
 
+This guide describes the procedure for running two instances of revad as two types of storage providers connected to the gateway:
+- `storageprovider-home` will handle the resources on the user's home directory.
+- `storageprovider-reva` which will be used to resolve references to shared files and folders from `MyShares`.
+
 ## Prerequisites
 
-- This guide describes the procedure for running multiple instances of revad. For shared storage and consistency amongst them, we need to share a Persistent Volume (PV) between the three deployments.
+- For shared storage and consistency amongst all the pods involved, we need to mount a shared Persistent Volume (PV) between these two providers and the gateway.
 
-> **Note:** In case you choose to auto-provision it with the Persistent Volume Claim (PVC) generation built in the REVA chart:
+> **Note:** In case you choose to auto-provision the PV with the Persistent Volume Claim (PVC) generation built in the revad chart, you need to make sure:
 >  - Just the gateway will generate the PVC manifest.
->  - The two storage providers can reuse it via `storageprovider-<type>.persistentVolume.existingClaim`.
+>  - The two storage providers can reuse it via their `storageprovider-<type>.persistentVolume.existingClaim`.
 >
 > Refer to [enabling persistency](https://developer.sciencemesh.io/docs/iop/deployment/kubernetes/#enabling-and-configuring-persistency) on the docs for details about the options available for the storage configuration.
 >
-> Note that, in future IOP upgrades, the `persistentVolume.existingClaim` option may be used for the gateway as well, to prevent provisioning a new PVC.
+> Note that, in future IOP upgrades, the `persistentVolume.existingClaim` option may be used for the gateway as well, to prevent provisioning a new PVC and discarding existing data.
 
 - If upgrading from an older version of the IOP, we'll also need to supply the most recent version of the [`ocm-partners`](https://github.com/cs3org/reva/tree/master/examples/ocm-partners) JSON file. To override the previous version, simply using the `--set-file` flag with `helm upgrade` will do.
 
