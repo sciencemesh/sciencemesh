@@ -1,7 +1,7 @@
 ---
 title: "Kubernetes Deployment"
-linkTitle: "kubernetes"
-weight: 15
+linkTitle: "Kubernetes"
+weight: 16
 description: >
   Deploy and configure the IOP on your cluster.
 ---
@@ -163,3 +163,7 @@ pvc-fddca20b-69a4-43ec-ad12-6d4e2bd4a433   1Gi        RWO            Delete     
 ```
 
 If the PVC was auto-provisioned by a previous release, you'll need to pass its name (i.e. `<release-name>-gateway`) as `persistentVolume.existingClaim`, as part of the `helm upgrade` command.
+
+## Next Steps
+
+Once you have your deployment up and running, consider one of these tutorials:
