@@ -6,17 +6,21 @@ description: >
   Enable creation of WebDAV references by using different storage providers.
 ---
 
+This guide describes the procedure for running two instances of revad as two types of storage providers connected to the gateway:
+- `storageprovider-home` will handle the resources on the user's home directory.
+- `storageprovider-reva` which will be used to resolve references to shared files and folders from `MyShares`.
+
 ## Prerequisites
 
-- This guide describes the procedure for running multiple instances of revad. For shared storage and consistency amongst them, we need to share a Persistent Volume (PV) between the three deployments.
+- For shared storage and consistency amongst all the pods involved, we need to mount a shared Persistent Volume (PV) between these two providers and the gateway.
 
-> **Note:** In case you choose to auto-provision it with the Persistent Volume Claim (PVC) generation built in the REVA chart:
+> **Note:** In case you choose to auto-provision the PV with the Persistent Volume Claim (PVC) generation built in the revad chart, you need to make sure:
 >  - Just the gateway will generate the PVC manifest.
->  - The two storage providers can reuse it via `storageprovider-<type>.persistentVolume.existingClaim`.
+>  - The two storage providers can reuse it via their `storageprovider-<type>.persistentVolume.existingClaim`.
 >
 > Refer to [enabling persistency](https://developer.sciencemesh.io/docs/iop/deployment/kubernetes/#enabling-and-configuring-persistency) on the docs for details about the options available for the storage configuration.
 >
-> Note that, in future IOP upgrades, the `persistentVolume.existingClaim` option may be used for the gateway as well, to prevent provisioning a new PVC.
+> Note that, in future IOP upgrades, the `persistentVolume.existingClaim` option may be used for the gateway as well, to prevent provisioning a new PVC and discarding existing data.
 
 - If upgrading from an older version of the IOP, we'll also need to supply the most recent version of the [`ocm-partners`](https://github.com/cs3org/reva/tree/master/examples/ocm-partners) JSON file. To override the previous version, simply using the `--set-file` flag with `helm upgrade` will do.
 
@@ -69,7 +73,7 @@ home_provider = "/home"
 
 The two additional storage providers are shipped as part of the default IOP Chart and based on [REVA](https://reva.link/) as the gateway does. Their configuration will be almost identical, with an exceptional difference: the use of either `local` or `localhome` as the `storageprovider` (and `dataprovider`) driver. Apart from that:
 
-- They both need to be enabled in helm with the `storageProviders.<provider-name>.enabled` boolean flag, to be installed as part of the release.
+- They both need to be enabled in helm with the `storageprovider-<type>.enabled` boolean flag, to be installed as part of the release.
 - The two will need to **enable persistency and mount the shared volume**, either the one provisioned by the `gateway` chart or a pre-existing one on the cluster. We can assume its name is `iop-gateway` in both cases.
 - They need to expose both gRPC and HTTP services, for which we will use different port ranges for clarity.
 
@@ -77,11 +81,8 @@ The two additional storage providers are shipped as part of the default IOP Char
 
 ```bash
 cat << EOF > home-sp.yaml
-storageProviders:
-  home:
-    enabled: true
-
 storageprovider-home:
+  enabled: true
   service:
     grpc:
       port: 17000
@@ -113,11 +114,8 @@ EOF
 
 ```bash
 cat << EOF > reva-sp.yaml
-storageProviders:
-  reva:
-    enabled: true
-
 storageprovider-reva:
+  enabled: true
   service:
     grpc:
       port: 18000
