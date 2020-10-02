@@ -57,8 +57,10 @@ Putting it all together, we will end up with something similar to:
 cat << EOF > collabora.yaml
 collabora-code:
   enabled: true
+  image:
+    tag: latest
   collabora:
-    domain: iop-wopiserver
+    domain: iop-wopiserver\|hostname\\.domain\\.tld
     server_name: <hostname\.domain\.tld>
   ingress:
     enabled: true
