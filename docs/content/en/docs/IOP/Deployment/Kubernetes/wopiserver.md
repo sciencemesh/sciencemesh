@@ -167,7 +167,7 @@ Last, we just need to install/upgrade the IOP stack by passing this custom confi
 
 ```bash
 helm upgrade -i iop sciencemesh/iop \
-  --set wopiserver.enable=true \
+  --set wopiserver.enabled=true \
   -f wopiserver.yaml \
   --reuse-values
 ```
