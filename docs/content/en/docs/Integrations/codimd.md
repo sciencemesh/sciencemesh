@@ -38,6 +38,8 @@ wopiserver:
       path: /wopib
 ```
 
+> **Note:** depending on the ingress controller path-matching policies, you might experience routing issues between requests addressed to the WOPI Server and the Bridge (as their `path`-s can collide). Review your controller's [path priority](https://kubernetes.github.io/ingress-nginx/user-guide/ingress-path-matching/#path-priority) policies and use an alternative path in case that could be an issue.
+
 Refer to the [chart's documentation](https://artifacthub.io/packages/helm/cs3org/wopiserver#wopi-bridge-configuration) for a complete reference of all the configuration options available. Once ready, the release can be patched with the following command:
 
 ```bash
@@ -49,19 +51,21 @@ helm upgrade -i iop sciencemesh/iop --reuse-values -f wopibridge.yaml
 To deploy the application, the `sciencemesh/meshapps` umbrella chart already provides a handful of defaults for a lightweight and "_stateless_" CodiMD installation:
 
 - Based on a patched `codimd` container image (`gitlab-registry.cern.ch/authoring/notes/codimd:cernbox-integration`) with some extra features to enable this workflow.
-- Enables anonymous access, viewing and editing.
-- Disables some defaults from the vanila CodiMD installation:
+- Enables anonymous access, viewing, and editing.
+- Disables some defaults from the vanilla CodiMD installation:
   - The registration and authentication mechanisms.
-  - The image store volume and PostreSQL disk persistence, as we will rely on the IOP Storage Providers to read and write all the content, including attached pictures.
+  - The image store and PostgreSQL disk persistence, as it will rely on the IOP Storage Providers to read and write all the content, including the attached pictures. The CodiMD pods will maintain ephemeral, in-memory persistence for the time being for its internal use.
 
 The only key aspects left for the user to configure are:
 
 - The location for the `CMD_SAVE_WEBHOOK` env. variable: pointing to the `/save` endpoint of the WOPI Bridge, that will be called when a document is closed.
 
-> **Note:** this webhook needs to be served over HTTPS in order to work with CodiMD, hence the need to use its external FQDN.
+> **Note:** this webhook needs to be served over HTTPS to work with CodiMD, hence the need to use its external FQDN.
 
 - A combination of `CMD_URL_PATH` and an ingress rewrite annotation to strip the base URL (`/codimd`) from external requests.
-- A `postgresql.postgresqlPassword` to protect the database that will be used as temporary cache for the notes.
+- A `postgresql.postgresqlPassword` to protect the database that will be used as a temporary cache for the notes.
+
+> **Note:** alternatively, MariaDB can be used instead of PostgreSQL when deploying CodiMD. Refer to [the chart's parameters](https://artifacthub.io/packages/helm/codimd/codimd#deploy-an-internal-database-parameters) for all the options available.
 
 Here's an example `codimd.yaml` combining all these:
 
@@ -97,7 +101,7 @@ helm upgrade -i meshapps sciencemesh/meshapps --reuse-values -f codimd.yaml
 
 ### Registering the MIME-types and custom file extensions on your Storage Provider
 
-There is three extra steps left for the IOP to integrate with this application. These will require modifying the Revad configuration to identify the files that will be opened by CodiMD:
+There are three extra steps left for the IOP to integrate with this application. These will require modifying the Revad configuration to identify the files that will be opened by CodiMD:
 
 1. Append a new set of rules in the `appregistry` service running on the gateway to identify these files:
 
@@ -115,7 +119,7 @@ wopibridgeurl = "https://<hostname.domain.tld>/wopib"
 ```
 
 
-3. Add a mapping between the custom `.zmd` file extension, used to package markdown files together with uploaded images, and the `application/compressed-markdown` MIME-type used to identify this files. This needs to be done on all the running `storageprovider` services: whether using a [standalone](../../iop/deployment/kubernetes) deployment or one based in [multiple, decoupled storage providers](../../iop/deployment/kubernetes/providers).
+3. Add a mapping between the custom `.zmd` file extension, used to package markdown files together with uploaded images, and the `application/compressed-markdown` MIME-type used to identify these files. This needs to be done on all the running `storageprovider` services: whether using a [standalone](../../iop/deployment/kubernetes) deployment or one based on [multiple, decoupled storage providers](../../iop/deployment/kubernetes/providers).
 
 
 ```toml
