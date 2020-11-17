@@ -150,7 +150,7 @@ After these two are defined, we have all the ingredients to bring the release up
 Simply run:
 
 ```bash
-helm upgrade -i iop sciencemeshcharts/iop \
+helm upgrade -i iop sciencemesh/iop \
   --set gateway.persistentVolume.enabled=true \
   --set-file gateway.configFiles.revad\\.toml=revad.toml \
   --set-file gateway.configFiles.users\\.json=users-cern.json \
