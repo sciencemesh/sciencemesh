@@ -23,20 +23,17 @@ NAME                    	CHART VERSION	APP VERSION	DESCRIPTION
 sciencemesh/iop         	0.0.3        	0.0.1      	ScienceMesh IOP is the reference Federated Scie...
 ```
 
+- If you expose your cluster behind a reverse proxy, make sure it's configured to **accept websocket connections** as they're required to run Collabora Code. Detailed instructions for different proxies can be found on the project documentation for [**nginx**](https://www.collaboraoffice.com/code/nginx-reverse-proxy) and [**Apache**](https://www.collaboraoffice.com/code/apache-reverse-proxy).
+
 ## (Optional) Deploying a Collabora Code instance on your cluster
 
 To demonstrate how an office-online application provider can integrate with the IOP through the WOPI protocol, we need an actual provider we can connect to. If you don't have such application at hand, don't worry. You can use a self-contained [Collabora Code](https://www.collaboraoffice.com/code/) installation on Kubernetes instead.
 
 This is provided by the `sciencemesh/meshapps` chart - which relies on the official Helm chart for [`stable/collabora-code`](https://hub.helm.sh/charts/stable/collabora-code) and can be used to deploy everything on our cluster in a very simple way.
 
-First, we need to update our helm sources:
+First, we need to update our helm sources and look for the latest version of the `sciencemesh/meshapps` Helm chart:
 
 ```bash
-helm repo update
-Hang tight while we grab the latest from your chart repositories...
-...Successfully got an update from the "sciencemesh" chart repository
-Update Complete. ⎈ Happy Helming!⎈
-
 helm search repo sciencemesh/meshapps
 NAME                 	CHART VERSION	APP VERSION	DESCRIPTION
 sciencemesh/meshapps  0.0.1        	0.0.1    	  Umbrella-repository of apps supported by the IOP and its adapters
