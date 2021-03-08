@@ -66,6 +66,7 @@ ingress:
         kubernetes.io/ingress.class: nginx
         nginx.ingress.kubernetes.io/ssl-redirect: "true"
         nginx.ingress.kubernetes.io/rewrite-target: /$2
+        nginx.ingress.kubernetes.io/proxy-body-size: 200m
       tls:
         - secretName: <keypair>
           hosts:
