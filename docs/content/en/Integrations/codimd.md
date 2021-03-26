@@ -76,6 +76,8 @@ codimd:
     connection:
       domain: <hostname.domain.tld>
       protocolUseSSL: true
+    noteCreation:
+      freeUrlEnabled: true
     extraEnvironmentVariables:
       CMD_SAVE_WEBHOOK: https://<hostname.domain.tld>/wopib/save
       CMD_URL_PATH: codimd
