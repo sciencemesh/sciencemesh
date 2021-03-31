@@ -17,26 +17,28 @@ cd apps/
 
 Get the Nextcloud ScienceMesh integration app.
 
-You can download the latest version from the application [release page on GitHub](https://github.com/sciencemesh/nc-sciencemesh/releases).
+You can download the latest version from the application [release page on GitHub](https://github.com/sciencemesh/nc-sciencemesh/releases). Note that you need at least version 1.1.0 of the application.
 
 ```
-wget https://github.com/sciencemesh/nc-sciencemesh/archive/v1.0.0.tar.gz
-tar -xzf v1.0.0.tar.gz
+wget https://github.com/sciencemesh/nc-sciencemesh/archive/v1.1.0.tar.gz
+tar -xzf v1.1.0.tar.gz
 mv nc-sciencemesh sciencemesh
 chown -R www-data:www-data sciencemesh
 ```
 
-In Nextcloud open the ~/settings/apps/disabled page with *Not enabled apps* by administrator and click Enable for the ScienceMesh application.
+In Nextcloud open the `~/settings/apps/disabled` page with *Not enabled apps* by an administrator and click `Enable` for the ScienceMesh application.
 
 {{< imgproc nc-settings.png Fit "1024x1024" >}}
 Nextcloud App settings menu
 {{< /imgproc >}}
 
-Once the app is enabled, you can go to Settings>Additional Settings and fill the information presented:
+Once the app is enabled, you can go to `Settings>Additional Settings` and fill the information presented:
 
 {{< imgproc nc-configuration.png Fit "1024x1024" >}}
 ScienceMesh application configuration
 {{< /imgproc >}}
+
+To register with the ScienceMesh, you will also need an _API key_. First, create a free ScienceMesh account using [this link](https://sciencemesh-test.uni-muenster.de/api/siteacc/register). Once your registration has been approved, you will receive your unique API key via email which you can then enter in the application settings.
 
 After fillling the details of your instance, you can check the internal metric endpoint by accessing the following url:
 
@@ -63,8 +65,7 @@ address = "0.0.0.0:5550"
 metrics_data_driver_type = "xcloud"
 metrics_record_interval = 5000
 xcloud_instance="http://localhost"
-xcloud_interval=5
-xcloud_catalog='https://sciencemesh-test.uni-muenster.de/api/mentix/sites?action=register'
+xcloud_pull_interval=60
 
 [http.services.prometheus]
 ```
@@ -98,7 +99,7 @@ https://<your_instance>/index.php/apps/sciencemesh/metrics
 Prometheus endpoint working
 {{< /imgproc >}}
 
-When your site is authorized in the ScienceMesh, it will appear in the [ScienceMesh](https://sciencemesh-test.uni-muenster.de/grafana/d/HD3NmHMMk/general-statistics?orgId=1&refresh=30s)
+When your site is authorized in the ScienceMesh, it will appear on the [ScienceMesh map](https://sciencemesh-test.uni-muenster.de/grafana/d/HD3NmHMMk/general-statistics?orgId=1&refresh=30s):
 {{< imgproc nc-map.png Fit "1024x1024" >}}
 ScienceMesh map
 {{< /imgproc >}}
