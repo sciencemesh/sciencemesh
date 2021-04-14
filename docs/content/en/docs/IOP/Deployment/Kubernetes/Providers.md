@@ -65,11 +65,37 @@ commit_share_to_storage_ref = true
 [grpc.services.storageregistry.drivers.static]
 home_provider = "/home"
 
-[grpc.services.storageregistry.drivers.static.rules]
-"/home" = "iop-storageprovider-home:17000"
-"/reva" = "iop-storageprovider-reva:18000"
-"123e4567-e89b-12d3-a456-426655440000" = "iop-storageprovider-reva:18000"
+[grpc.services.storageregistry.drivers.static.rules."/home"]
+address = "iop-storageprovider-home:17000"
+[grpc.services.storageregistry.drivers.static.rules."/reva"]
+address = "iop-storageprovider-reva:18000"
+[grpc.services.storageregistry.drivers.static.rules."123e4567-e89b-12d3-a456-426655440000"]
+address = "iop-storageprovider-reva:18000"
 ```
+
+<details>
+  <summary><b>See the rest of the gateway-enabled services</b></summary>
+  <code class="language-toml" data-lang="toml">
+
+      [grpc.services.authprovider]
+      [grpc.services.authregistry]
+      [grpc.services.userprovider]
+      [grpc.services.usershareprovider]
+      [grpc.services.groupprovider]
+      [grpc.services.publicshareprovider]
+      [grpc.services.ocmcore]
+      [grpc.services.ocmshareprovider]
+      [grpc.services.ocminvitemanager]
+      [grpc.services.ocmproviderauthorizer]
+
+      [http.services.datagateway]
+      [http.services.prometheus]
+      [http.services.ocmd]
+      [http.services.ocdav]
+      [http.services.ocs]
+  </code>
+</details>
+</br>
 
 The two additional storage providers are shipped as part of the default IOP Chart and based on [REVA](https://reva.link/) as the gateway does. Their configuration will be almost identical, with an exceptional difference: the use of either `local` or `localhome` as the `storageprovider` (and `dataprovider`) driver. Apart from that:
 
