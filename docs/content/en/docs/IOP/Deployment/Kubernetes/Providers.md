@@ -65,12 +65,10 @@ commit_share_to_storage_ref = true
 [grpc.services.storageregistry.drivers.static]
 home_provider = "/home"
 
-[grpc.services.storageregistry.drivers.static.rules."/home"]
-address = "iop-storageprovider-home:17000"
-[grpc.services.storageregistry.drivers.static.rules."/reva"]
-address = "iop-storageprovider-reva:18000"
-[grpc.services.storageregistry.drivers.static.rules."123e4567-e89b-12d3-a456-426655440000"]
-address = "iop-storageprovider-reva:18000"
+[grpc.services.storageregistry.drivers.static.rules]
+"/home" = {"address" = "iop-storageprovider-home:17000"}
+"/reva" = {"address" = "iop-storageprovider-reva:18000"}
+"123e4567-e89b-12d3-a456-426655440000" = {"address" = "iop-storageprovider-reva:18000"}
 ```
 
 <details>
