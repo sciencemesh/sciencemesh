@@ -8,7 +8,9 @@ description: >
 
 ## Prerequisites
 
-- You must have the `sciencemesh` helm repo in your client sources:
+- You must add the `sciencemesh` helm repo to your client sources:
+
+<div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/sciencemesh/iop" data-theme="light" data-header="false" data-responsive="true"><blockquote><p lang="en" dir="ltr"><b>iop</b>: ScienceMesh IOP is the reference Federated Scientific Mesh platform</p>&mdash; Open in <a href="https://artifacthub.io/packages/helm/sciencemesh/iop">Artifact Hub</a></blockquote></div><script async src="https://artifacthub.io/artifacthub-widget.js"></script>
 
 ```bash
 helm repo add sciencemesh https://sciencemesh.github.io/charts/
@@ -65,6 +67,7 @@ ingress:
       annotations:
         kubernetes.io/ingress.class: nginx
         nginx.ingress.kubernetes.io/ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/use-regex: "true"
         nginx.ingress.kubernetes.io/rewrite-target: /$2
         nginx.ingress.kubernetes.io/proxy-body-size: 200m
       tls:
