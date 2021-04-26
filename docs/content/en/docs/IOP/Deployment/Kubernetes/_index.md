@@ -47,33 +47,34 @@ To configure the two ingress resources that expose the IOP endpoints (GRPC and H
 
 ```bash
 cat << EOF > custom-ingress.yaml
-ingress:
-  enabled: true
-  services:
-    grpc:
-      hostname: <hostname>
-      path: /
-      annotations:
-        kubernetes.io/ingress.class: nginx
-        nginx.ingress.kubernetes.io/ssl-redirect: "true"
-        nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
-      tls:
-        - secretName: <keypair>
-          hosts:
-            - <hostname>
-    http:
-      hostname: <hostname>
-      path: /iop(/|$)(.*)
-      annotations:
-        kubernetes.io/ingress.class: nginx
-        nginx.ingress.kubernetes.io/ssl-redirect: "true"
-        nginx.ingress.kubernetes.io/use-regex: "true"
-        nginx.ingress.kubernetes.io/rewrite-target: /$2
-        nginx.ingress.kubernetes.io/proxy-body-size: 200m
-      tls:
-        - secretName: <keypair>
-          hosts:
-            - <hostname>
+gateway:
+  ingress:
+    enabled: true
+    services:
+      grpc:
+        hostname: <hostname>
+        path: /
+        annotations:
+          kubernetes.io/ingress.class: nginx
+          nginx.ingress.kubernetes.io/ssl-redirect: "true"
+          nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+        tls:
+          - secretName: <keypair>
+            hosts:
+              - <hostname>
+      http:
+        hostname: <hostname>
+        path: /iop(/|$)(.*)
+        annotations:
+          kubernetes.io/ingress.class: nginx
+          nginx.ingress.kubernetes.io/ssl-redirect: "true"
+          nginx.ingress.kubernetes.io/use-regex: "true"
+          nginx.ingress.kubernetes.io/rewrite-target: /$2
+          nginx.ingress.kubernetes.io/proxy-body-size: 200m
+        tls:
+          - secretName: <keypair>
+            hosts:
+              - <hostname>
 EOF
 ```
 
