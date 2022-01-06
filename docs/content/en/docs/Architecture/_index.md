@@ -14,7 +14,7 @@ The Science Mesh consists of its participating Sites running EFSS services and a
 
 The figure below displays the conceptual architecture: The Central Component of the Science Mesh includes the monitoring and accounting infrastructure as well as the Central Database and Helpdesk. The monitoring infrastructure runs probes which return results to the monitoring infrastructure as to if the services running at the Sites are operational. Similarly, the accounting infrastructure collects usage metrics from Sites. The Central Database provides the EMs running within Sites with Science Mesh topology information.
 
-![picture of architecture]("/static/architecture.png")
+![picture of architecture](/architecture.jpg)
 
 Topology information about the Science Mesh is contained in the Central Database. This includes Site names, endpoints, services running at the Sites and further meta-information. Executive Modules consume this information and use it to perform service and user discovery for the users (similar to WAYF service in identity federations). Those discovery processes are the cornerstone of the Science Mesh, they serve to establish trust relationship between Users that are used for data sharing and application access. Executive Modules also enforce sharing policies implemented at the Sites, i.e. which type of data sharing is permitted and what the requirements to access applications are.
 
