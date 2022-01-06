@@ -6,8 +6,6 @@ description: >
   A short description of the architecture of the Science Mesh   
 ---
 
-Architecture
-
 ## Architecture
 
 The Science Mesh consists of its participating Sites running EFSS services and a so-called Central Component. From a logical point of view, the Central Component is responsible for providing the few global services of the Science Mesh. However, it is by no means necessary that all those services run on a single node of the Science Mesh - they may be distributed across several Science Mesh partners. The interface between a Mesh node and the Mesh’s core operational infrastructure is what we call an Executive Module (EM).
