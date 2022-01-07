@@ -15,7 +15,7 @@ to access applications runnig in the infrastructure without prior detailed
 knowledge of technical details like which systems their colleagues use and
 what are their user identities in them.
 
-The sites independently operate Enterprise File Synchronisation and Sharing (EFSS) systems. In order for the systems to share data, they use the [Open Cloud Mesh protocol](https://wiki.geant.org/display/OCM/Open+Cloud+Mesh). The protocol handles accessing and exchanging data, but it solves neither discovery of user identites nor establishing trust between EFSS systems. Those are two main layer added by the Science Mesh:
+The sites independently operate Enterprise File Synchronisation and Sharing (EFSS) systems. In order for the systems to share data, they use the [Open Cloud Mesh protocol](https://wiki.geant.org/display/OCM/Open+Cloud+Mesh) and [CS3 API](https://cs3org.github.io/cs3apis/). They handle accessing and exchanging data, but they solve neither discovery of user identites nor establishing trust between EFSS systems. Those are two main layer added by the Science Mesh:
 - the Science Mesh is an infrastructure with metadata describing its
   partners (so that adding a site does not require configuring all other
   sites in the infrastructure separately)
