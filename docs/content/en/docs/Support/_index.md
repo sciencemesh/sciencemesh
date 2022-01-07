@@ -6,8 +6,6 @@ description: >
   A short description of Science Mesh support
 ---
 
-## Support
-
 A description of how support in the Science Mesh is organised is described 
 in detail in [Science Mesh Support Procedure](https://doi.org/10.5281/zenodo.5040027). 
 It describes how support for both users as well as service providers is going to be organised within the 
