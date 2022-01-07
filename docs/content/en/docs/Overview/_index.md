@@ -10,3 +10,11 @@ description: >
 
 ScienceMesh is the product ...
 
+To describe:
+- we have EFSS'
+- we have API
+- we have mechanisms to build trust among users
+
+What users gain by their site joining
+
+

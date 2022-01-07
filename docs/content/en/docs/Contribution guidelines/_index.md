@@ -1,7 +1,7 @@
 ---
 title: "Contribution Guidelines"
 linkTitle: "Contribution Guidelines"
-weight: 99
+weight: 900
 description: >
   How to contribute to the docs
 ---

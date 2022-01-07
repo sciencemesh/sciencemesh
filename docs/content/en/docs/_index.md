@@ -8,7 +8,8 @@ menu:
     weight: 20
 ---
 
-This is the documentation for the ScienceMesh project. 
+This is the documentation for the ScienceMesh project, describing technical
+aspects of joining the infrastructure.
 
 We recommend you to start reading the [Overview]({{< ref "docs/Overview" >}}).
 
