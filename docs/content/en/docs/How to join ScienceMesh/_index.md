@@ -3,14 +3,62 @@ title: "How to join ScienceMesh"
 linkTitle: "How to join ScienceMesh"
 weight: 100
 description: >
-    Initial steps to join the ScienceMesh
+    The steps to join the ScienceMesh
 ---
 
 To join the ScienceMesh, there are several formal and technical steps. If you encounter any problems during this process or have some general questions, feel free to contact the ScienceMesh administration here (FIXME).
+<!--
+FIXME: I have asked Kuba and Pedro for an email addres helpdesk@sciencemesh.io
+--> 
 
-### Steps to join the ScienceMesh (FIXME)
+### Steps to join the ScienceMesh
+<!--
+From the Site Admission Procedure
+
+Technical requirements
+1. Each service must offer a way to be testable and verifiable from the outside by the
+Operational Team to support automated testing.
+1. The service MUST offer the required endpoints to perform these tests.
+2. An account MUST be created in order to facilitate these tests.
+3. These endpoints MUST be protected by some kind of authorisation mechanism.
+4. It is only necessary to open these endpoints to the Operational Team; the Operational
+Team will inform the site administrators in advance what IPs these tests will come from.
+2. The service MUST support the Up-Test: This test will probe the service to see if it is up and
+running, i.e. whether it can respond to a simple query on its endpoint.
+3. An endpoint to collect accounting metrics MUST be provided.
+1. This endpoint MUST be protected by some kind of authorisation mechanism.
+2. It is only necessary to open this endpoint to the Operational Team; the Operational Team
+will inform the site administrators in advance from what IPs the accounting metrics will
+be collected.
+
+Site admission procedure
+The following steps need to be undertaken to join the Science Mesh:
+1. A representative of the applicant Site signs the Science Mesh Policy Declaration and
+presents it to the Operational Team together with the necessary contact information.
+2. The applicant Site MUST make sure that it conforms with the requirements in section
+“Requirements for Sites joining the Science Mesh”.
+3. The Operational Team verifies that the applicant conforms with the requirements in section
+“Requirements for Sites joining the Science Mesh”. If the applicant does not conform with
+the requirements, the Operational Team MUST describe reasons and SHOULD give a
+recommendation how to remedy.
+4. The Operational Team informs the Science Mesh Steering Group about a new Site.
+45. The Operational Team performs registration of the applicant Site to the Science Mesh. This
+includes registration in the Central Database and making sure that accounting metrics are
+collected and the Site monitoring tests are running.
+--> 
+
+<!--
+
+For the CS3 workshop, the governance boards and the OT will not be in place. 
+Therefore let us just focus on the technical part and leave the paperwork for
+later on.
+
+-->
 Here is a brief overview of the steps necessary to join the ScienceMesh project:
 
+1. Read the technical which can be found here (FIXME).
+1. Get into contact with the ScienceMesh administration by using this [online form](https://my.forms.app/form/61dd8b48d42da26ef8720979).
+<!--
 1. Read the technical and legal documentation which can be found here (FIXME).
 1. Get into contact with the ScienceMesh administration by using this online form (FIXME).
 1. After reviewing your request, an administrator will get back to you, detailing the next steps; these include:
@@ -23,6 +71,7 @@ Here is a brief overview of the steps necessary to join the ScienceMesh project:
 1. In order to maintain your site's information, you will need to create an administrative account for our central database and request proper accesss rights.
     - More information will be provided by an administrator after your site has joined the mesh.
 
+-->
 
 ### Checklists (FIXME)
 Below you'll find some quick checklists to help you get your site ready for joining the ScienceMesh.
