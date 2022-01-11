@@ -7,7 +7,7 @@ description: >
 ---
 
 ## Health monitoring with the Blackbox Exporter
-To monitor the health of each site in the ScienceMesh, a [custom fork](https://github.com/sciencemesh/blackbox_exporter) of the [Blackbox Exporter](https://github.com/prometheus/blackbox_exporter) for Prometheus is currently used.
+To monitor the health of each site in the ScienceMesh, a [custom fork](https://github.com/sciencemesh/blackbox_exporter) of the [Blackbox Exporter](https://github.com/prometheus/blackbox_exporter) for Prometheus is used.
 
 Put simply, the BBE runs a so-called _prober_ to perform a certain check on a provided target when called via URL:
 ```
