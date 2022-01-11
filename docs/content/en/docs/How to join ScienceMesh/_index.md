@@ -51,13 +51,23 @@ collected and the Site monitoring tests are running.
 
 For the CS3 workshop, the governance boards and the OT will not be in place. 
 Therefore let us just focus on the technical part and leave the paperwork for
-later on.
+later on. We want sites to join the mesh and not be deterred bij a mountain of bureaucracy.
 
 -->
 Here is a brief overview of the steps necessary to join the ScienceMesh project:
 
-1. Read the technical which can be found here (FIXME).
+1. Read the technical documentation on how to setup
+  * the Inter Operability Platform (IOP)
+  * the monitoring 
+  * the metrics collection 
+   for your site. This can be found here (FIXME1).
 1. Get into contact with the ScienceMesh administration by using this [online form](https://my.forms.app/form/61dd8b48d42da26ef8720979).
+1. After that, a ScienceMesh representative will get back to you, detailing the next steps to get your site up and running. 
+1. Your site is then added to our central database, effectively integrating it into the ScienceMesh.
+    - This includes appearing on all mesh dashboards and being actively monitored for proper health.
+1. In order to maintain your site's information in the central database, you will need to create an administrative account for our central database and request proper accesss rights.
+    - More information will be provided by a ScienceMesh representative after your site has joined the mesh.
+
 <!--
 1. Read the technical and legal documentation which can be found here (FIXME).
 1. Get into contact with the ScienceMesh administration by using this online form (FIXME).
@@ -72,6 +82,10 @@ Here is a brief overview of the steps necessary to join the ScienceMesh project:
     - More information will be provided by an administrator after your site has joined the mesh.
 
 -->
+
+<!--
+
+This stuff should go to FIXME1 I think.
 
 ### Checklists (FIXME)
 Below you'll find some quick checklists to help you get your site ready for joining the ScienceMesh.
@@ -94,3 +108,4 @@ Below you'll find some quick checklists to help you get your site ready for join
 - Configure the IOP and connect it to your EFSS as explained here (FIXME)
 - Run some self-tests as explained here (FIXME)
 - FIXME...
+-->
