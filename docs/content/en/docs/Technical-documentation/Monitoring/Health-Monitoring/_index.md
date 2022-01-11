@@ -1,7 +1,7 @@
 ---
 title: "Health Monitoring"
 linkTitle: "Health Monitoring"
-weight: 11
+weight: 12
 description: >
   Information about automated health monitoring in the ScienceMesh project.
 ---
