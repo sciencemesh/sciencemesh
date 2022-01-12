@@ -9,7 +9,7 @@ description: >
 This section contains details about automated health monitoring in the ScienceMesh project.
 
 ### Overview
-The ScienceMesh in its entirety can only work if all of its participating sites with their respective services function properly. To ensure this in an automated way, all services are constantly being monitored and checked for their health status through various services running as part of the [Central Component](../central-component).
+The ScienceMesh in its entirety can only work if all of its participating sites with their respective services function properly. To ensure this in an automated way, all services are constantly being monitored and checked for their health status through various services running as part of the [Central Component](../../central-component).
 
 The two main components used for health monitoring are **Prometheus** and the **Blackbox Exporter**. They are both automatically configured and controlled by _Mentix_, the main service of the Central Component. Below diagram shows how these services are connected:
 {{< imgproc "mentix_flow.png" Fit "800x600" >}}
