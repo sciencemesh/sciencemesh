@@ -3,26 +3,14 @@ title: "Monitoring and Accounting"
 linkTitle: "Monitoring and Accounting"
 weight: 400
 description: >
-  Information and setup about ScienceMesh monitoring and accounting.
+  Information and setup about Science Mesh monitoring and accounting.
 ---
 
-FIXME
 
-This section contains details about monitoring in the ScienceMesh project.
+## Health monitoring
+To ensure an overall high quality of Science Mesh operation, automated [health monitoring](./health-monitoring) is performed.
 
-### Health monitoring
-To ensure an overall high quality of service, automated **[health monitoring](./health-monitoring)** is performed.
+## Accounting
+[Accounting](./accounting) collect basic highly aggregated statistics of
+the site.
 
-### Other stuff (FIXME)
-
-Suggested structure:
-
-1. Very basic info about Mesh Architecture, especially relating to the Central Component and EM. Detail info about Central Component Setup and its modules (Mentix, Prometheus, Blackbox exporter, Alertmanager). The Central database and guidelines should be described in the following section.
-
-2. Central Database and its configuration for admins.
-
-3. Health monitoring, what and how is monitored under Mesh infrastructure.
-
-(4). Metrics will be part of sciencemesh-web (graphical interpretation of total number of users, amount of data,...). Anyway here can be described the metrics mechanism for EFSS.
-
-Daniel: Should the CC and CD really be under Monitoring? It should, IMHO, be a level higher.
