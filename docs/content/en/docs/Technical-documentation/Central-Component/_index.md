@@ -6,7 +6,7 @@ description: >
   The Central Component of the ScienceMesh project.
 ---
 
-This section contains details about the so-called _Central Component_ used for managing the central metadata and performing external monitoring in the ScienceMesh project.
+This section describes the _Central Component_ used for managing the central metadata and performing external monitoring in the ScienceMesh project. Services of the Central Component are operated by the Science Mesh, and sites run systems that interact with parts of the Central Component, e.g. read mesh metadata out of it and/or write status and metrics of the site.
 
 ### Overview
 The _Central Component_ (_CC_ for short) consists of various interconnected services that are responsible for managing the mesh metadata, as well as taking care of health monitoring and alerting. Below image shows a diagram of these services, which will be described in brief in the following sections:
@@ -17,7 +17,7 @@ The _Central Component_ (_CC_ for short) consists of various interconnected serv
 To connect the various components of the CC, a service called Mentix (short for _Mesh Entity Exchanger_) is used. Mentix is responsible for gathering site and service metadata from the **GOCDB** (see below) and exporting it to other services, both external and internal ones. Mentix can thus be seen as the bridge between the mesh topology information provider and all services that require this information.
 
 #### GOCDB
-The **GOCDB** forms the central database of the mesh and is used to store all metadata about the various sites participating in the ScienceMesh. It is used by several other services, especially within the Central Component, to gather information about the different entities (sites, services, etc.) in the mesh. The GOCDB is described in more detailed in a dedicated section which can be found here (FIXME).
+The **GOCDB** forms the central database of the mesh and is used to store all metadata about the various sites participating in the ScienceMesh. It is used by several other services, especially within the Central Component, to gather information about the different entities (sites, services, etc.) in the mesh. In a [detailed GOCDB manual](/docs/technical-documentation/central-database/), we describe how to obtain GOCDB access and configure metadata for the site. The site is responsible for keeping its GOCDB registration up to date.
 
 #### Prometheus
 To gather all metrics and health information about the mesh and its individual sites, a **[Prometheus](https://prometheus.sciencemesh.uni-muenster.de)** instance is used. As can be seen in the above diagram, it is automatically configured by Mentix: Whenever the mesh topology has been modified, all targets which are to be monitored are updated as well.
