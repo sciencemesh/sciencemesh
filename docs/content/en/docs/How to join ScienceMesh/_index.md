@@ -11,7 +11,6 @@ To join the ScienceMesh, there are several formal and technical steps. If you en
 FIXME: I have asked Kuba and Pedro for an email addres helpdesk@sciencemesh.io
 --> 
 
-### Steps to join the ScienceMesh
 <!--
 From the Site Admission Procedure
 
@@ -51,24 +50,24 @@ collected and the Site monitoring tests are running.
 
 For the CS3 workshop, the governance boards and the OT will not be in place. 
 Therefore let us just focus on the technical part and leave the paperwork for
-later on. We want sites to join the mesh and not be deterred bij a mountain of bureaucracy.
+later on. We want sites to join the ScienceMesh and not be deterred bij a mountain of bureaucracy.
 
 -->
 Here is a brief overview of the steps necessary to join the ScienceMesh project:
 
-1. Read the technical documentation on how to setup
-    - the Inter Operability Platform (IOP)
-    - the monitoring 
-    - the metrics collection    
+1. First you need to setup:
+    - the [Inter Operability Platform]({{< ref "docs/Technical-documentation/IOP" >}}) (IOP)
+    - the [health monitoring]({{< ref "docs/Technical-documentation/monitoring/Health-Monitoring" >}})
+    - the [accounting metrics]({{< ref "docs/Technical-documentation/monitoring/Accounting-Metrics" >}}) collection    
 
-   for your site. This can be found here (FIXME1).
+   for your site. You may find information on how to setup these components by following the links above.
 
-1. Get into contact with the ScienceMesh administration by using this [form]({{< ref "docs/How to join ScienceMesh/OnlineForm" >}})
+1. Get into contact with a ScienceMesh representative by using this [form]({{< ref "docs/How to join ScienceMesh/OnlineForm" >}})
 1. After that, a ScienceMesh representative will get back to you, detailing the next steps to get your site up and running. 
 1. Your site is then added to our central database, effectively integrating it into the ScienceMesh.
-    - This includes appearing on all mesh dashboards and being actively monitored for proper health.
+    - This includes appearing on all ScienceMesh dashboards and being actively monitored for proper health.
 1. In order to maintain your site's information in the central database, you will need to create an administrative account for our central database and request proper accesss rights.
-    - More information will be provided by a ScienceMesh representative after your site has joined the mesh.
+    - More information will be provided by a ScienceMesh representative after your site has joined the ScienceMesh.
 
 
 <!--
@@ -80,9 +79,9 @@ Here is a brief overview of the steps necessary to join the ScienceMesh project:
     - FIXME...
 1. Once all prerequisites have been met, you need to agree to and sign our OLAs/SLAs (FIXME).
 1. Your site is added to our central database, effectively integrating it into the ScienceMesh.
-    - This includes appearing on all mesh dashboards and being actively monitored for proper health.
+    - This includes appearing on all ScienceMesh dashboards and being actively monitored for proper health.
 1. In order to maintain your site's information, you will need to create an administrative account for our central database and request proper accesss rights.
-    - More information will be provided by an administrator after your site has joined the mesh.
+    - More information will be provided by an administrator after your site has joined the ScienceMesh.
 
 -->
 
@@ -105,8 +104,8 @@ Below you'll find some quick checklists to help you get your site ready for join
 - EFSS and IOP must be accessible from the outside (see here (FIXME))
 - FIXME...
 
-#### Before joining the mesh
-- Read this (FIXME) introductory document that details the technical requirements to join the mesh
+#### Before joining the ScienceMesh
+- Read this (FIXME) introductory document that details the technical requirements to join the ScienceMesh
 - Install the IOP (Reva) as explained here (FIXME)
 - Configure the IOP and connect it to your EFSS as explained here (FIXME)
 - Run some self-tests as explained here (FIXME)
