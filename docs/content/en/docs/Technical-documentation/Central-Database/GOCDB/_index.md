@@ -6,7 +6,7 @@ description: >
   Information about the information stored in the GOCDB.
 ---
 
-This document contains details about the pecularities of managing sites and services of the ScienceMesh.
+This document contains details about the pecularities of managing sites and services of the Science Mesh.
 
 ### Sites
 - **Site ID:** Sites are assigned internal, unique and stable IDs which are independent of the internal GOCDB IDs. The property `SITE_ID` is used to hold these and must be set for every site.
