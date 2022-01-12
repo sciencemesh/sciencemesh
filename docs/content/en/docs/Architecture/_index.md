@@ -10,7 +10,7 @@ The Science Mesh consists of its participating Sites running EFSS services and o
 
 The figure below displays the conceptual architecture: the Central Component of the Science Mesh includes monitoring and accounting infrastructure as well as the Central Database keeping Mesh Metadata. Central helpdesk is included for completeness. The monitoring infrastructure runs probes which return results to the monitoring infrastructure as to if the services running at the Sites are operational. Similarly, the accounting infrastructure collects usage metrics from Sites. The Central Database provides the EMs running within Sites with Science Mesh topology information.
 
-{{< imgproc architecture.jpg Fit "1024x1024" >}}
+{{< imgproc architecture.jpg Resize "x648" >}}
 Architecture of the ScienceMesh
 {{< /imgproc >}}
 

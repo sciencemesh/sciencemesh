@@ -8,12 +8,6 @@ description: >
 
 This section contains details about monitoring in the ScienceMesh project.
 
-### Central Component
-The **[Central Component](./central-component)** is used for managing the central metadata and performing external monitoring.
-
-### Central Database
-The mesh metadata is stored in a **[Central Database](./central-database)**.
-
 ### Health monitoring
 To ensure an overall high quality of service, automated **[health monitoring](./health-monitoring)** is performed.
 
