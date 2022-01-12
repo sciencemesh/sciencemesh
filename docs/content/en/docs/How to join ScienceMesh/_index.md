@@ -1,12 +1,43 @@
 ---
-title: "How to join ScienceMesh"
-linkTitle: "How to join ScienceMesh"
+title: "How to join Science Mesh"
+linkTitle: "How to join Science Mesh"
 weight: 100
 description: >
-    The steps to join the ScienceMesh
+    The steps to join the Science Mesh
 ---
 
-To join the ScienceMesh, there are several formal and technical steps. If you encounter any problems during this process or have some general questions, feel free to contact the ScienceMesh administration here (FIXME).
+To join the Science Mesh, there are several formal and technical steps. If you encounter any problems during this process or have some general questions, feel free to [contact the Science Mesh administration](../support/).
+
+1. In order to join the Science Mesh, you as the operator of a site are expected to
+run one of supported EFSS (sync and share systems). FIXME link
+
+1. Get into contact with a Science Mesh representative by using this [form]({{< ref "docs/How to join ScienceMesh/OnlineForm" >}})
+
+1. After that, a Science Mesh representative will get back to you, detailing the next steps to get your site up and running. 
+
+1. While the system may support all necessary protocols by itself (or you can
+run any protocol-compatible implementation to your taste), it is quite
+probable you will install the [Reva IOP (interoperability platform)](../Technical-documentation/IOP) acting
+as an Executive Module of your EFSS instance in the Science Mesh.
+
+1. Your site needs to be [registered in the Central
+Database](../Technical-documentation/Central-Database/) where you provide
+metadata about your site and applications running there.
+
+1. [Monitoring and accounting](../Technical-documentation/Monitoring/) is not a replacement of your standard
+tools for operating your infrastructure but an addition; all information
+collected by Science Mesh monitoring and accounting is strictly related to
+Science Mesh operations, collecting just very high-level and aggregated
+information.
+
+1. [Formal steps](../Science-mesh-governance-and-operations/) include
+declaring compliance with policies, appointing a representative into the
+governance structure of the infrastructure etc. As of January 2022, the
+infrastructure is to be formally established, so this part of the
+procedure will be covered later. It is neverheless recommended to get
+familiar with the proposed structure, as this is the best time to comment
+on it.
+
 <!--
 FIXME: I have asked Kuba and Pedro for an email addres helpdesk@sciencemesh.io
 --> 
@@ -50,10 +81,12 @@ collected and the Site monitoring tests are running.
 
 For the CS3 workshop, the governance boards and the OT will not be in place. 
 Therefore let us just focus on the technical part and leave the paperwork for
-later on. We want sites to join the ScienceMesh and not be deterred bij a mountain of bureaucracy.
+later on. We want sites to join the Science Mesh and not be deterred bij a mountain of bureaucracy.
 
 -->
-Here is a brief overview of the steps necessary to join the ScienceMesh project:
+
+<!--
+Here is a brief overview of the steps necessary to join the Science Mesh project:
 
 1. First you need to setup:
     - the [Inter Operability Platform]({{< ref "docs/Technical-documentation/IOP" >}}) (IOP)
@@ -62,26 +95,26 @@ Here is a brief overview of the steps necessary to join the ScienceMesh project:
 
    for your site. You may find information on how to setup these components by following the links above.
 
-1. Get into contact with a ScienceMesh representative by using this [form]({{< ref "docs/How to join ScienceMesh/OnlineForm" >}})
-1. After that, a ScienceMesh representative will get back to you, detailing the next steps to get your site up and running. 
-1. Your site is then added to our central database, effectively integrating it into the ScienceMesh.
-    - This includes appearing on all ScienceMesh dashboards and being actively monitored for proper health.
+1. Get into contact with a Science Mesh representative by using this [form]({{< ref "docs/How to join ScienceMesh/OnlineForm" >}})
+1. After that, a Science Mesh representative will get back to you, detailing the next steps to get your site up and running. 
+1. Your site is then added to our central database, effectively integrating it into the Science Mesh.
+    - This includes appearing on all Science Mesh dashboards and being actively monitored for proper health.
 1. In order to maintain your site's information in the central database, you will need to create an administrative account for our central database and request proper accesss rights.
-    - More information will be provided by a ScienceMesh representative after your site has joined the ScienceMesh.
-
+    - More information will be provided by a Science Mesh representative after your site has joined the Science Mesh.
+-->
 
 <!--
 1. Read the technical and legal documentation which can be found here (FIXME).
-1. Get into contact with the ScienceMesh administration by using this online form (FIXME).
+1. Get into contact with the Science Mesh administration by using this online form (FIXME).
 1. After reviewing your request, an administrator will get back to you, detailing the next steps; these include:
     - Getting remaining details about your site, especially technical ones like your IOP address for health monitoring
     - Performing initial compatibility and quality tests
     - FIXME...
 1. Once all prerequisites have been met, you need to agree to and sign our OLAs/SLAs (FIXME).
-1. Your site is added to our central database, effectively integrating it into the ScienceMesh.
-    - This includes appearing on all ScienceMesh dashboards and being actively monitored for proper health.
+1. Your site is added to our central database, effectively integrating it into the Science Mesh.
+    - This includes appearing on all Science Mesh dashboards and being actively monitored for proper health.
 1. In order to maintain your site's information, you will need to create an administrative account for our central database and request proper accesss rights.
-    - More information will be provided by an administrator after your site has joined the ScienceMesh.
+    - More information will be provided by an administrator after your site has joined the Science Mesh.
 
 -->
 
@@ -90,7 +123,7 @@ Here is a brief overview of the steps necessary to join the ScienceMesh project:
 This stuff should go to FIXME1 I think.
 
 ### Checklists (FIXME)
-Below you'll find some quick checklists to help you get your site ready for joining the ScienceMesh.
+Below you'll find some quick checklists to help you get your site ready for joining the Science Mesh.
 
 #### General requirements (FIXME)
 - Have this...
@@ -104,8 +137,8 @@ Below you'll find some quick checklists to help you get your site ready for join
 - EFSS and IOP must be accessible from the outside (see here (FIXME))
 - FIXME...
 
-#### Before joining the ScienceMesh
-- Read this (FIXME) introductory document that details the technical requirements to join the ScienceMesh
+#### Before joining the Science Mesh
+- Read this (FIXME) introductory document that details the technical requirements to join the Science Mesh
 - Install the IOP (Reva) as explained here (FIXME)
 - Configure the IOP and connect it to your EFSS as explained here (FIXME)
 - Run some self-tests as explained here (FIXME)

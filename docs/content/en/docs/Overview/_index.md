@@ -3,12 +3,12 @@ title: "Overview"
 linkTitle: "Overview"
 weight: 10
 description: >
-  ScienceMesh in a Nutshell
+  Science Mesh in a Nutshell
 ---
 
-# What is ScienceMesh
+## What is Science Mesh
 
-ScienceMesh is an infrastructure of independent data storage sites
+Science Mesh is an infrastructure of independent data storage sites
 providing sync-and-share services. It is a loose federation
 allowing users of the sites to share and transfer data among the sites and
 to access applications running in the infrastructure without prior detailed
@@ -26,11 +26,11 @@ Those two main layers are therefore added by the Science Mesh:
   messaging to establish trust with their colleagues to share data with
   them, i.e. by sending user-friendly invitations.
 
-The ScienceMesh is an instance of such a federation.
+The Science Mesh is an instance of such a federation.
 
-# Who is Eligible to Join the ScienceMesh
+## Who is Eligible to Join the Science Mesh
 
-The ScienceMesh is agnostic what type of data and user community is served
+The Science Mesh is agnostic what type of data and user community is served
 by a particular site, be it large or small, academic or otherwise. On the
 other hand, certain minimal requirements both in policies as well as
 quality of service are set for the sites to operate within the

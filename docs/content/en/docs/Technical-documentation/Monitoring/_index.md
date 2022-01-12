@@ -1,10 +1,12 @@
 ---
-title: "Monitoring"
-linkTitle: "Monitoring"
-weight: 15
+title: "Monitoring and Accounting"
+linkTitle: "Monitoring and Accounting"
+weight: 400
 description: >
-  Information and setup about ScienceMesh monitoring.
+  Information and setup about ScienceMesh monitoring and accounting.
 ---
+
+FIXME
 
 This section contains details about monitoring in the ScienceMesh project.
 

@@ -4,19 +4,20 @@ linkTitle: "Governance and Operations"
 weight: 300
 description: >
   This section explains governance structure and principles of operation of
-  the ScienceMesh as an infrastructure.
+  the Science Mesh as an infrastructure.
 ---
 
-# Disclaimer (January 2022)
+## Disclaimer (January 2022)
 
 Kindly note that the documents presented here have not been formally
 confirmed by representatives of the Sites yet, those are just drafts
 discussed extensively within the community expected to form the
-infrastructure.
+infrastructure. The infrastructure is in pilot operation, neverheless
+formally it has not been established yet.
 
 In addition, you may note that the establishing documents work with the
 idea that membership will be available completely free of charge. As
-approach to financing for infrastructures like the ScienceMesh in EOSC is
+approach to financing for infrastructures like the Science Mesh in EOSC is
 under discussions and developments, it must be stated that it may not be
 the case and it may be necessary to form a consortium as a legal entity and
 also requiring a membership fee. Central part of the infrastructure is
@@ -27,7 +28,7 @@ source is found, membership fees could go even lower.
 The infrastructure is about to be formally established in the middle of
 2022.
 
-# Governance Structure of the Science Mesh
+## Governance Structure of the Science Mesh
 
 Governance structure of the Science Mesh is based on following bodies:
 - Science Mesh Executive Board ratifying important decisions,
@@ -39,7 +40,7 @@ Governance structure of the Science Mesh is based on following bodies:
   sites. The Operations Team is also the point of contact to apply for
   Science Mesh membership.
 
-# Establishing Documents
+## Establishing Documents
 
 Sites apply for membership by signing a Site Declaration. The Declaration
 is purposefully kept as brief as possible and limited just to basic

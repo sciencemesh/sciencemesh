@@ -1,7 +1,7 @@
 ---
 title: "Inter-Operability Platform"
 linkTitle: "IOP"
-weight: 400
+weight: 300
 description: >
   What is the IOP?
 ---

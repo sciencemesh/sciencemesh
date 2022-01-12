@@ -6,6 +6,8 @@ description: >
   The Central Component of the ScienceMesh project.
 ---
 
+FIXME link to arch and vice versa
+
 This section describes the _Central Component_ used for managing the central metadata and performing external monitoring in the ScienceMesh project. Services of the Central Component are operated by the Science Mesh, and sites run systems that interact with parts of the Central Component, e.g. read mesh metadata out of it and/or write status and metrics of the site.
 
 ### Overview
