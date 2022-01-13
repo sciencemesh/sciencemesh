@@ -3,7 +3,7 @@ title: "Procedures"
 linkTitle: "Procedures"
 weight: 600
 description: >
-  This section describes operational procedures for the Science Mesh
+  Information on the operational procedures for the Science Mesh
 ---
 
 At the moment, the Science Mesh has the following operational procedures:
