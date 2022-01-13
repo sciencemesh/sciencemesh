@@ -55,3 +55,8 @@ Currently, only a small number of checks is performed during health monitoring. 
 All critical tests must be passed for a site to be considered `Healthy`. Failing uncritical tests will only cause a site to go into `Warning` state.
 
 **Note:** These tests are only temporary. More tests will be added in the future.
+
+## Configuration
+All above tests are performed on endpoints provided through the [CS3 APIs](https://github.com/cs3org/cs3apis). This means that you will need to make your CS3 APIs interface (usually the [Reva IOP](../../iop)) externally accessible.
+
+For the time being, a user with username `test` and password `testpass` must be present for the tests to function properly. This is only temporary and will change in the future.
