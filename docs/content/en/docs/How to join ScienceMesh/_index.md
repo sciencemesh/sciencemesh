@@ -17,22 +17,22 @@ run one of supported EFSS (sync and share systems). FIXME link
 
 1. While the system may support all necessary protocols (CS3 APIs, OCM) by itself (or you can
 run any protocol-compatible implementation to your taste), it is quite
-probable that you will need to install the [Reva IOP (interoperability platform)](../Technical-documentation/IOP) acting
+probable that you will need to install the [Reva IOP (interoperability platform)]({{< ref "docs/Technical-documentation/IOP" >}}) acting
 as an Executive Module of your EFSS instance in the Science Mesh.
 
 1. Your site needs to be [registered in the Central
-Database](../Technical-documentation/Central-Database/) where
+Database]({{< ref "docs/Technical-documentation/Central-Database" >}}) where
 metadata about your site and applications running there are stored.
 A Science Mesh representative will create initial entries for your site,
 but from there on, it will be your responsibility to keep these entries up to date.
 
-1. [Monitoring and accounting](../Technical-documentation/Monitoring/) is not a replacement of your standard
+1. [Monitoring and accounting]({{< ref "docs/Technical-documentation/Monitoring" >}}) is not a replacement of your standard
 tools for operating your infrastructure but an addition; all information
 collected by Science Mesh monitoring and accounting is strictly related to
 Science Mesh operations, collecting just very high-level and aggregated
 information.
 
-1. [Formal steps](../Science-mesh-governance-and-operations/) include
+1. [Formal steps]({{< ref "docs/Science-mesh-governance-and-operations" >}}) include
 declaring compliance with policies, appointing a representative into the
 governance structure of the infrastructure etc. As of January 2022, the
 infrastructure is to be formally established, so this part of the
