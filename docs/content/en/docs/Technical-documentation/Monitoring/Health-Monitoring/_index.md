@@ -9,7 +9,7 @@ description: >
 This section contains details about automated health monitoring in the Science Mesh project.
 
 Note that monitoring is not a replacement of your standard monitoring
-of the EFSS installation, it is just an additional part to collect
+of your EFSS installation, it is just an additional part to collect
 information relevant for the Science Mesh.
 
 ## Overview
@@ -28,12 +28,12 @@ Furthermore, having all checks in a central place makes adding and modifying che
 The health monitoring doesn't impose any assumptions on the EFSS system a site uses. The underlying system is, however, indirectly tested through the CS3 APIs and the IOP: If there are issues with your EFSS, these will very likely result in failing checks.
 
 ## Prometheus
-Prometheus is used to gather various metrics from each site. This includes the total number of users, the number of user groups and the amount of storage used. These metrics are exposed through the IOP (FIXME), which means that its `metrics` HTTP endpoint needs to be accessible from the outside.
+Prometheus is used to gather various metrics from each site. This includes the total number of users, the number of user groups and the amount of storage used. These metrics are exposed through the Reva IOP (or any protocol-compatible service), which means that its `metrics` HTTP endpoint needs to be accessible from the outside.
 
 Furthermore, Prometheus will also periodically pull metrics from the _Blackbox Exporter_ (_BBE_ for short), which runs in parallel to Prometheus. This in return causes the BBE to run active health checks on every site and its respective services, as explained below.
 
 ## Blackbox Exporter
-To monitor the health of each site in the Science Mesh, a [custom fork](https://github.com/sciencemesh/blackbox_exporter) of the [Blackbox Exporter](https://github.com/prometheus/blackbox_exporter) for Prometheus is used. Put simply, the BBE runs a so-called _prober_ to perform a certain check on a provided target when called via a special URL. More technical details about this version of [the BBE are available in a separate documentation](./bbe).
+To monitor the health of each site in the Science Mesh, a [custom fork](https://github.com/sciencemesh/blackbox_exporter) of the [Blackbox Exporter](https://github.com/prometheus/blackbox_exporter) for Prometheus is used. Put simply, the BBE runs a so-called _prober_ to perform a certain check on a provided target when called via a special URL. More technical details about this version of the BBE are available in a [separate document](./bbe).
 
 The general workflow of this active health checking roughly looks like this:
 1. In Prometheus, a target rule exists for every check that should be performed
@@ -55,4 +55,3 @@ Currently, only a small number of checks is performed during health monitoring. 
 All critical tests must be passed for a site to be considered `Healthy`. Failing uncritical tests will only cause a site to go into `Warning` state.
 
 **Note:** These tests are only temporary. More tests will be added in the future.
-

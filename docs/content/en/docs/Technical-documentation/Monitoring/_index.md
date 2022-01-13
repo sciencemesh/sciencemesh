@@ -11,6 +11,5 @@ description: >
 To ensure an overall high quality of Science Mesh operation, automated [health monitoring](./health-monitoring) is performed.
 
 ## Accounting
-[Accounting](./accounting) collect basic highly aggregated statistics of
-the site.
-
+[Accounting](./accounting) collects basic highly aggregated statistics of
+a site.

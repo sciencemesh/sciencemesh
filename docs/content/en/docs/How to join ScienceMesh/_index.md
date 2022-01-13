@@ -13,16 +13,18 @@ run one of supported EFSS (sync and share systems). FIXME link
 
 1. Get into contact with a Science Mesh representative by using this [form]({{< ref "docs/How to join ScienceMesh/OnlineForm" >}})
 
-1. After that, a Science Mesh representative will get back to you, detailing the next steps to get your site up and running. 
+1. After that, a Science Mesh representative will get back to you, detailing the next steps to get your site into the mesh.
 
-1. While the system may support all necessary protocols by itself (or you can
+1. While the system may support all necessary protocols (CS3 APIs, OCM) by itself (or you can
 run any protocol-compatible implementation to your taste), it is quite
-probable you will install the [Reva IOP (interoperability platform)](../Technical-documentation/IOP) acting
+probable that you will need to install the [Reva IOP (interoperability platform)](../Technical-documentation/IOP) acting
 as an Executive Module of your EFSS instance in the Science Mesh.
 
 1. Your site needs to be [registered in the Central
-Database](../Technical-documentation/Central-Database/) where you provide
-metadata about your site and applications running there.
+Database](../Technical-documentation/Central-Database/) where
+metadata about your site and applications running there are stored.
+A Science Mesh representative will create initial entries for your site,
+but from there on, it will be your responsibility to keep these entries up to date.
 
 1. [Monitoring and accounting](../Technical-documentation/Monitoring/) is not a replacement of your standard
 tools for operating your infrastructure but an addition; all information
@@ -40,7 +42,7 @@ on it.
 
 <!--
 FIXME: I have asked Kuba and Pedro for an email addres helpdesk@sciencemesh.io
---> 
+-->
 
 <!--
 From the Site Admission Procedure
@@ -75,11 +77,11 @@ recommendation how to remedy.
 45. The Operational Team performs registration of the applicant Site to the Science Mesh. This
 includes registration in the Central Database and making sure that accounting metrics are
 collected and the Site monitoring tests are running.
---> 
+-->
 
 <!--
 
-For the CS3 workshop, the governance boards and the OT will not be in place. 
+For the CS3 workshop, the governance boards and the OT will not be in place.
 Therefore let us just focus on the technical part and leave the paperwork for
 later on. We want sites to join the Science Mesh and not be deterred bij a mountain of bureaucracy.
 
@@ -96,7 +98,7 @@ Here is a brief overview of the steps necessary to join the Science Mesh project
    for your site. You may find information on how to setup these components by following the links above.
 
 1. Get into contact with a Science Mesh representative by using this [form]({{< ref "docs/How to join ScienceMesh/OnlineForm" >}})
-1. After that, a Science Mesh representative will get back to you, detailing the next steps to get your site up and running. 
+1. After that, a Science Mesh representative will get back to you, detailing the next steps to get your site up and running.
 1. Your site is then added to our central database, effectively integrating it into the Science Mesh.
     - This includes appearing on all Science Mesh dashboards and being actively monitored for proper health.
 1. In order to maintain your site's information in the central database, you will need to create an administrative account for our central database and request proper accesss rights.
