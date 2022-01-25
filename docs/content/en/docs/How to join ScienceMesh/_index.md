@@ -6,7 +6,7 @@ description: >
     The steps to join the Science Mesh
 ---
 
-To join the Science Mesh, there are several formal and technical steps. If you encounter any problems during this process or have some general questions, feel free to [contact the Science Mesh administration](../support/).
+To join the Science Mesh, there are several formal and technical steps. If you encounter any problems during this process or have some general questions, feel free to [contact the Science Mesh administration](../support/). If you are joining with a Nextcloud site, you will need to set up a Reva server next to your Nextcloud server. Please see the [sciencemesh-nextcloud documentation](https://sciencemesh-nextcloud.readthedocs.io/en/latest/) on how to set this up.
 
 1. In order to join the Science Mesh, you as the operator of a site are expected to
 run one of supported EFSS (sync and share systems). FIXME link
