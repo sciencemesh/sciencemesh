@@ -19,7 +19,7 @@ To manage this data, an instance of the **[GOCDB](https://github.com/GOCDB/gocdb
 **Note:** Account registration is only available _after_ your site has been added to the mesh
 by the Science Mesh administrator.
 
-In order to access the GOCDB, you first need to [register a Science Mesh account](https://iop.sciencemesh.uni-muenster.de/iop/siteacc/account?path=register). You will be presented a simple form where you can create your account:
+In order to access the GOCDB, you first need to [register a Science Mesh Site Administrator Account](https://iop.sciencemesh.uni-muenster.de/iop/siteacc/account?path=register). You will be presented a simple form where you can create your account:
 {{< imgproc "register-account.png" Fit "600x450" >}}
 {{< /imgproc >}}
 

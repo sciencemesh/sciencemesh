@@ -9,7 +9,7 @@ description: >
 This document contains details about the pecularities of managing sites and services of the Science Mesh.
 
 ### Sites
-- **Site ID:** Sites are assigned internal, unique and stable IDs which are independent of the internal GOCDB IDs. The property `SITE_ID` is used to hold these and must be set for every site.
+- **Site ID:** By default, the site ID is the same as the short site name. Since this ID needs to be stable, the value can be overriden via the `SITE_ID` property if the short site name is changed.
 - **Organization name:** By default, the full name of the site will be used as the organization name; this can be overriden by adding an `ORGANIZATION` property to the site.
 
 ### The REVAD Service
@@ -28,6 +28,13 @@ The `REVAD` service exposes various additional endpoints that also must be confi
 | **WEBDAV** | Webdav endpoint | `remote.php/webdav` | WEBDAV | No |
 
 Only the URLs of the endpoints may differ from above common values; all endpoints need to be added, and their names, interfaces and monitoring need to exactly match what is listed above.
+
+##### Optional endpoints
+There are also a few optional endpoints that you might need to add depending on your deployment. If in doubt, simply do not add them.
+
+| Name | Description | URL (common value)| Interface | Monitored? |
+| ---  | --- | --- | --- | --- |
+| **MESHDIR** | Mesh directory endpoint | `meshdir` | MESHDIR | Yes |
 
 #### Additional properties
 - **API version:** The current API version of the service needs to be specified via the `API_VERSION` property. Note that this property might be removed in future iterations.
