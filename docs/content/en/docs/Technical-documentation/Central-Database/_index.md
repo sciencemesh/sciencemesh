@@ -23,7 +23,7 @@ In order to access the GOCDB, you first need to [register a Science Mesh Site Ad
 {{< imgproc "register-account.png" Fit "600x450" >}}
 {{< /imgproc >}}
 
-The various fields should be self-explanatory. The most important one is the `Science Mesh Site` field; choose your site here.
+The various fields should be self-explanatory. The most important one is the `Science Mesh Operator` field; choose your institution/company here.
 
 After creating your account, you can log in [to the account panel](https://iop.sciencemesh.uni-muenster.de/iop/siteacc/account/?path=login). In this panel, which you can see below, click on the `Request GOCDB access` button. A form will appear where you can send the request, including comments on why you need access, to the Science Mesh administration.
 {{< imgproc "account-panel.png" Fit "600x450" >}}
@@ -31,25 +31,25 @@ After creating your account, you can log in [to the account panel](https://iop.s
 
 A Science Mesh administrator will review your request and eventually grant you access to the central GOCDB instance. Use your main account credentials to log in.
 
-## Requesting administrative rights for your site
+## Requesting administrative rights for your sites
 The entry page of the GOCDB will look something like this:
 {{< imgproc "gocdb.png" Fit "600x450" >}}
 {{< /imgproc >}}
 
-By default, you will only be able to view the mesh metadata but won't be able to modify anything. To gain write permissions for your site, follow these steps:
-1. Under `Browse`, click on `Sites`
-1. Click on the entry for your site
+By default, you will only be able to view the mesh metadata but won't be able to modify anything. To gain write permissions for your data, follow these steps:
+1. Under `Browse`, click on `NGIs`; _please note that an operator is called NGI in GOCDB_
+1. Click on the entry for your operator
 1. Scroll down until you find the `Users` box
 1. Click on `Request role`:
     {{< imgproc "request.png" Fit "600x450" >}}
     {{< /imgproc >}}
-1. From the roles drop-down menu, select `Site administrator`:
+1. From the roles drop-down menu, select `NGI Operations Manager`:
     {{< imgproc "role.png" Fit "600x450" >}}
     {{< /imgproc >}}
-1. After submitting, a Science Mesh administrator will review your request and grant you write access to your site
+1. After submitting, a Science Mesh administrator will review your request and grant you write access to your data
 
 ## Keeping your data up-to-date
-It is your obligation as a site administrator to keep the information stored in the central database up to date. This mainly concerns the general site information that can be found under `Browse > Site`, as well as your site services that can be found under `Browse > services`.
+It is your obligation as a site administrator to keep the information stored in the central database up to date. This mainly concerns the general sites' information that can be found under `Browse > Site`, as well as your sites' services that can be found under `Browse > Services`.
 
 When updating your data, it is absolutely necessary to keep the overall structure of your metadata as-is. This means that you MAY NOT add or remove site or service properties; you may modify them to match your actual data, of course. The same holds true for additional service endpoints.
 
