@@ -37,11 +37,35 @@ There are some caveats in the process one should be aware of, though.
 
 - necessary changes in helm charts
 
+  A recent version of Revad is needed (official sciencemesh [Charts](https://github.com/sciencemesh/charts/blob/master/iop/Chart.yaml#L41) provides a rather old one). To use the latest version of Reva available, set this value when deploying chart with Helm:
+
+  ```shell
+  helm install sciencemesh/iop ... --set gateway.image.tag=latest ...
+  ```
+
 - Nextcloud vs. ownCloud 10 specifics
 
-- tricky bits in toml files?
+- tricky bits in configs?
+
+  1. an ending `/` is required here:
+
+  ```toml
+    #revad.toml
+    [http.services.ocmd]
+    mesh_directory_url = "https://.../iop/meshdir/"
+  ```
+
+  ```sql
+  MariaDB []> select * from oc_appconfig where appid = 'sciencemesh';
+  ...
+  | sciencemesh | meshDirectoryUrl | https://.../iop/meshdir/ |
+  ```
+
+  2. mesh provider domains & user's idps
+     If you don't use a scheme in those and use the Mentix driver for provider authorizer, you may face problems with requests authorization. This will be fixed with <https://github.com/cs3org/reva/pull/3121>. A temporary fix is to switch to static `json` driver for OCM provider authorizer.
 
 - check ingress rules?
+  you must ensure that all `/ocm/` paths reaches the IOP service on your provider domain
 
 - any meaningful procedure for testing?
 
@@ -50,3 +74,7 @@ Changes of the docs necessary elsewhere (possibly):
 - is this page <https://developer.sciencemesh.io/docs/technical-documentation/integrations/nextcloud/> completely obsolete?
 
 - Reva deployment and Helm charts?
+
+```
+
+```
