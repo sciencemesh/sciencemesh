@@ -6,8 +6,8 @@ Before hacking you need to install [Hugo extended version](https://github.com/go
 run `npm install postcss-cli` only if you plan to hack on the theme style.
 
 ```
-git clone https://github.com/sciencemesh/sciencemesh
-cd sciencemesh
+git clone https://github.com/sciencemesh/sciencemesh-docs-fdtf
+cd sciencemesh-docs-fdtf
 git submodule update --init --recursive # to install the theme and deps
 cd docs
 hugo server
