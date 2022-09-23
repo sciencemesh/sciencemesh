@@ -29,4 +29,7 @@ There is a dependency on ***nodejs 10*** when building Phoenix. Make sure that t
 
 Install Reva following the official documentation: [Install Reva](https://reva.link/docs/getting-started/install-reva/).
 
+## Configuration
+
+After deployment, continue by [configuring Reva]({{<ref "docs/Technical-documentation/IOP/Configuration" >}}).
 
