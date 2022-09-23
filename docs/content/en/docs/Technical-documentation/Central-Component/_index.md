@@ -12,9 +12,11 @@ The Central Component is an implementation of the Central Component
 described in [architecture introduction](/docs/architecture).
 
 ## Overview
-The _Central Component_ (_CC_ for short) consists of various interconnected services that are responsible for managing the mesh metadata, as well as taking care of health monitoring and alerting. Below image shows a diagram of these services, which will be described in brief in the following sections:
+The _Central Component_ (_CC_) consists of various interconnected services that are responsible for managing the mesh metadata, as well as taking care of health monitoring and alerting. Below image shows a diagram of these services, which will be described in brief in the following sections:
 {{< imgproc "mentix_flow.png" Fit "800x600" >}}
 {{< /imgproc >}}
+
+Your IOP instance will be configured to pull Science Mesh metadata from the CC and to push health, status, and usage information into it. Both sides need to be configured to set up their endpoints.
 
 ### Mentix
 To connect the various components of the CC, a service called Mentix (short for _Mesh Entity Exchanger_) is used. Mentix is responsible for gathering site and service metadata from the **GOCDB** (see below) and exporting it to other services, both external and internal ones. Mentix can thus be seen as the bridge between the mesh topology information provider and all services that require this information.
