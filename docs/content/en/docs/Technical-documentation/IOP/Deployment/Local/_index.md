@@ -8,6 +8,9 @@ description: >
 
 ## Prerequisites
 
+**FIXME: is yarn necessary just for Phoenix, or for Reva as well? If the
+former, it can be removed from here**
+
 Make sure that you have **make**, **git**, **wget**, **tar**, **gcc** and **sudo** is installed. Further, you have to install **go** for Reva and Phoenix and **yarn** for Phoenix.
 
 ### Installing Go
