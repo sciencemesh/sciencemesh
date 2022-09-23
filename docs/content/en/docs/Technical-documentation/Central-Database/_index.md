@@ -13,6 +13,8 @@ All metadata of the Science Mesh is stored in a central database, which is part 
 
 To manage this data, an instance of the **[GOCDB](https://github.com/GOCDB/gocdb)** is used. The GOCDB is a grid configuration database developed by [EGI](https://www.egi.eu). Below you will find a brief overview of how to gain access to the Science Mesh GOCDB instance, as well as where the information regarding your site can be found. The GOCDB also comes with [detailed documentation](https://wiki.egi.eu/wiki/GOCDB).
 
+To register a Science Mesh site, you first need to get access to the database. As registration requires human approval, you are advised to do this step first. In the later stage of the deployment, Site endpoints will configured (both in the Site's IOP as well as in the Central Database).
+
 ## Gaining access
 [The central database is available through a web interface](https://gocdb.sciencemesh.uni-muenster.de).
 
