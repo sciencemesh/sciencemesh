@@ -19,10 +19,11 @@ need Reva if your sync'n'share system supports Science Mesh protocols out
 of the box. In practice, you need Reva. We sometimes use terms Reva and IOP
 interchangeably.
 
-You need to
- * [deploy Reva]({{<ref "docs/Technical-documentation/IOP/Deployment" >}}) (it depends on you preferred way of deployment)
- * [configure Reva]({{<ref "docs/Technical-documentation/IOP/Configuration" >}})
-   * to talk to the rest of the Science Mesh, such as the Central Database
-   * to talk to your Site's sync'n'share system
- * [set up accounting]({{<ref "docs/Technical-documentation/IOP/Accounting-metrics">}})
+## How to deploy Reva?
+Deploying Reva is important step to setup ScienceMesh environment.
+1. [Deploy Reva]({{<ref "docs/Technical-documentation/IOP/Deployment" >}}) (it depends on you preferred way of deployment)
+1. [Configure Reva]({{<ref "docs/Technical-documentation/IOP/Configuration" >}})
+   * to define what services are necessary for ScienceMesh environment
+   * to talk to your Site's file sync'n'share service
+1. [Set up accounting]({{<ref "docs/Technical-documentation/IOP/Accounting-metrics">}})
 
