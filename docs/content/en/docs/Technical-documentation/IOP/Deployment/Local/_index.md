@@ -8,6 +8,9 @@ description: >
 
 ## Prerequisites
 
+**FIXME: is yarn necessary just for Phoenix, or for Reva as well? If the
+former, it can be removed from here**
+
 Make sure that you have **make**, **git**, **wget**, **tar**, **gcc** and **sudo** is installed. Further, you have to install **go** for Reva and Phoenix and **yarn** for Phoenix.
 
 ### Installing Go
@@ -29,20 +32,7 @@ There is a dependency on ***nodejs 10*** when building Phoenix. Make sure that t
 
 Install Reva following the official documentation: [Install Reva](https://reva.link/docs/getting-started/install-reva/).
 
-## ownCloud Phoenix
-ownCloud Phoenix is not a required component for the IOP however is a nice add-on as it allows to interact with the IOP from a nice UI.
-To install Phoenix from the sources do:
+## Configuration
 
-```
-git clone https://github.com/owncloud/phoenix
-cd phoenix
-git checkout v0.4.0
-yarn install-all
-yarn dist
-```
-
-## Configure Reva
-If you want to configure Reva to run locally with Phoenix you can follow this tutorial: https://reva.link/docs/tutorials/phoenix-tutorial/ 
-
-
+After deployment, continue by [configuring Reva]({{<ref "docs/Technical-documentation/IOP/Configuration" >}}).
 

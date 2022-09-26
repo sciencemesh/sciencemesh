@@ -1,7 +1,7 @@
 ---
 title: 'Configuration'
 linkTitle: 'Configuration'
-weight: 15
+weight: 80
 description: >
   How to configure Reva IOP to provide Science Mesh services
 ---

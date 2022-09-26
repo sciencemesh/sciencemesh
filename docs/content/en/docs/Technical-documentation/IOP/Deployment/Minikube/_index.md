@@ -6,9 +6,13 @@ description: >
   How to deploy the ScienceMesh IOP using Minikube?
 ---
 
+**FIXME: Phoenix should be removed out of here, DA's not sure how to do it as those seem tightly coupled in this document**
+
 This tutorial demonstrates how to deploy both REVA and Phoenix on a local Minikube cluster with a single helm chart.
 
 ## Prerequisites
+
+**FIXME: is the list of prerequisities complete in local and kubernetes manuals?**
 
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - [minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
@@ -74,4 +78,9 @@ helm delete phoenix
 # If you want to remove the local cluster as well:
 minikube delete
 ```
+
+## Configuration
+
+After deployment, continue by [configuring Reva]({{<ref "docs/Technical-documentation/IOP/Configuration" >}}).
+
 
