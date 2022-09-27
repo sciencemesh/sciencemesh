@@ -1,7 +1,7 @@
 ---
-title: "Central Component"
+title: "Central Component - TO BE MOVED TO THE ARCHITECTURE"
 linkTitle: "Central Component"
-weight: 10
+weight: 100
 description: >
   The Central Component of the Science Mesh project.
 ---

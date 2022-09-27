@@ -1,7 +1,7 @@
 ---
 title: "Inter-Operability Platform/Reva"
 linkTitle: "IOP"
-weight: 300
+weight: 10
 description: >
   Inter-Operability Platform/Reva
 ---

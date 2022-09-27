@@ -1,5 +1,5 @@
 ---
-title: 'Support for Nextcloud and ownCloud 10'
+title: 'Support for Nextcloud and ownCloud 10 - TO BE MERGET WITH IOP SETUP'
 linkTitle: 'Support for Nextcloud and ownCloud 10'
 weight: 430
 description: >
