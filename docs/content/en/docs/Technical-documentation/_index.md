@@ -7,7 +7,7 @@ description: >
   join the Science Mesh
 ---
 
-To join ScienceMesh you need to set up EFSS instance, as stated in the **[How to join ScienceMesh]({{< ref "How to join ScienceMesh2" >}})**.
+To join ScienceMesh you need to set up EFSS instance, as stated in the **[How to join ScienceMesh]({{< ref "How to join ScienceMesh" >}})**.
 
 Then you need to set up **[Reva IOP (interoperability platform)]({{< ref "docs/Technical-documentation/IOP" >}})** and [configure it]({{< ref "docs/Technical-documentation/IOP/configuration" >}}). 
 
