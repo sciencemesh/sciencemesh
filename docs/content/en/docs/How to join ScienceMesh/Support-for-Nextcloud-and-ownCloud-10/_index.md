@@ -1,5 +1,5 @@
 ---
-title: 'Support for Nextcloud and ownCloud 10 - TO BE MERGED WITH IOP SETUP'
+title: 'Support for Nextcloud and ownCloud 10'
 linkTitle: 'Support for Nextcloud and ownCloud 10'
 weight: 430
 description: >
@@ -9,16 +9,7 @@ description: >
 
 ---
 
-> **_NOTE:_** The following steps documents installation for common k8s deployment environments,
-> there may be additional steps required for different deployments.
-
-## Install Nextcloud server
-
-popsat
-
-## Install OwnCloud server
-
-popsat
+> **_NOTE:_** The following steps describe tricky setup point for k8s deployment environments, there may be additional steps required for different deployments.
 
 Both Nextcloud and ownCloud 10 are covered by a procedure described in
 <https://sciencemesh-nextcloud.readthedocs.io/en/latest/installation.html>.

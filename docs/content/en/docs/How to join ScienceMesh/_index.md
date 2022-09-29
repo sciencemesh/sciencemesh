@@ -23,6 +23,8 @@ To join the Science Mesh, there are several formal and technical steps. For the 
 
 1. [Monitoring and accounting]({{< ref "docs/Technical-documentation/Monitoring" >}}) is not a replacement of your standard tools for operating your infrastructure but an addition; all information collected by ScienceMesh monitoring and accounting is strictly related to ScienceMesh operations, collecting just very high-level and aggregated information.
 
+1. The last step is to enable the [Optional IOP/Reva Integrations]({{< ref "docs/Technical-documentation/IOP/IOP-Optional-Configs" >}}) such as CodiMD or collaborative tools.
+
 
 ## Formal steps
 
