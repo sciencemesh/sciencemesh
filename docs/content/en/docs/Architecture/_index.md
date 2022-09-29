@@ -9,11 +9,13 @@ description: >
 When joining the Science Mesh as a site, it is useful to understand the
 architecture of the system on conceptual level.
 
+There is a [Central Component](central-component-architecture) that handles
+metadata of the Science Mesh together with monitoring and accounting. In
+addition to the conceptual architecture, we also describe how the [Central
+Component is implemented](central-component-implementation).
+
 **FIXME**
 
-Later you will see how the
-components [are actually
-implemented](../technical-documentation/central-component).
+To be added:
+- description of the Mesh Directory Service
 
-The Science Mesh consists of its participating sites running Enterprise File Sync and Share (EFSS) services and of a so-called [Central Component]({{< ref "docs/Technical-documentation/Central-Component" >}}). From a logical point of view, the Central Component is responsible for providing the few global services of the Science Mesh. It does not imply that the Central Component is a single physical entity, it well may be distributed across several Science Mesh partners. 
-The interface between a Science Mesh node and the Science Mesh’s core operational infrastructure is what is called an Executive Module (EM).
