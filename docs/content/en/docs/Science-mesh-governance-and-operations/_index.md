@@ -59,3 +59,9 @@ Documents:
 - [Science Mesh Site Declaration](https://zenodo.org/record/5040087)
 - [Science Mesh Policy Framework Constitution](https://zenodo.org/record/5040152)
 
+
+## Procedures
+
+The Science Mesh defines [Procedures to various situations in Site's life
+cycle](procedures/).
+
