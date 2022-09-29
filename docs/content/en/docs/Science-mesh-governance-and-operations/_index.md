@@ -1,7 +1,7 @@
 ---
 title: "Science Mesh Governance and Operations"
 linkTitle: "Governance and Operations"
-weight: 300
+weight: 700
 description: >
   This section explains governance structure and principles of operation of
   the Science Mesh as an infrastructure.

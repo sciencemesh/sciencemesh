@@ -1,7 +1,7 @@
 ---
 title: "Procedures"
 linkTitle: "Procedures"
-weight: 600
+weight: 800
 description: >
   Information on the operational procedures for the Science Mesh
 ---

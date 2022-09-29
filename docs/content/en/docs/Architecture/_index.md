@@ -1,7 +1,7 @@
 ---
 title: "Architecture"
 linkTitle: "Architecture"
-weight: 15
+weight: 200
 description: >
   A short description of the architecture of the Science Mesh   
 ---
