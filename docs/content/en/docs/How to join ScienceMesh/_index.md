@@ -8,6 +8,10 @@ description: >
 
 To join the Science Mesh, there are several formal and technical steps. For the sake of testing, you can start with Technical steps then once you are done with testing you can continue with the formal steps. If you encounter any problems during this process or have some general questions, feel free to [contact the ScienceMesh administration](../support/). 
 
+## General notes to site deployment
+1. You are advised to get familiar with the [overall architecture of the Science Mesh and how the components are implemented](../architecture/) in order to understand how the components interact and what parts of the systems you need to deploy.
+1. Following lists of technical and formal steps could be performed mostly in parallel, each individual list should nevertheless be performed in the order stated below.
+
 ## Technical steps
 1. In order to join the ScienceMesh, you as the operator of a site are expected to run one of supported EFSS (Enterprise File Sync and Share Systems). Firstly you need to deploy desired EFSS in your environment. Currently is Sciencemesh support implemented in the forks of several EFSSs, [Nextcloud](https://github.com/pondersource/server/tree/dynamic-shareproviders), [ownCloud](https://github.com/pondersource/core). 
 
