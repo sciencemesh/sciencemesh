@@ -7,10 +7,8 @@ description: >
   join the Science Mesh
 ---
 
-To join ScienceMesh you need to set up EFSS instance, as stated in the **[How to join ScienceMesh]({{< ref "How to join ScienceMesh" >}})**.
+This documentation describes how to deploy and configure individual
+components in order to deploy a Science Mesh site. To get an overview and
+checklist for the procedure, you MUST follow **[How to join ScienceMesh]({{< ref "How to join ScienceMesh" >}})**.
 
-Then you need to set up **[Reva IOP (interoperability platform)]({{< ref "docs/Technical-documentation/IOP" >}})** and [configure it]({{< ref "docs/Technical-documentation/IOP/configuration" >}}). 
-
-Then you can continue with the **[Central Database]({{< ref "docs/Technical-documentation/central-database" >}})** and **[Monitoring and Accounting]({{< ref "docs/Technical-documentation/monitoring" >}})** sections as follows.
-  
 
