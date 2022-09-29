@@ -1,6 +1,6 @@
 ---
-title: "Architecture"
-linkTitle: "Architecture"
+title: "General Architecture"
+linkTitle: "General Architecture"
 weight: 200
 description: >
   A short description of the architecture of the Science Mesh   
