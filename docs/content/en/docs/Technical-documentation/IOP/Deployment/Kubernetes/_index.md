@@ -3,7 +3,7 @@ title: "Kubernetes Deployment"
 linkTitle: "Kubernetes"
 weight: 16
 description: >
-  Deploy and configure the IOP on your cluster.
+  Deploy the IOP on your cluster.
 ---
 
 ## Prerequisites
@@ -42,6 +42,7 @@ wget -q https://raw.githubusercontent.com/cs3org/reva/master/examples/ocm-partne
 - To simplify things, we will rely on a pre-deployed [nginx-ingress](https://kubernetes.github.io/ingress-nginx/deploy/) controller. The `nginx.ingress.kubernetes.io/backend-protocol: "GRPC"` annotation can be supplied to expose GRPC services in a very easy way.
 
 ## Configuring an IOP deployment
+**FIXME: to be moved into configuration**
 
 To configure the two ingress resources that expose the IOP endpoints (GRPC and HTTP), we'll just need to pass a few values into a `custom-ingress.yaml` file. For instance, a configuration for a cluster running the [nginx-ingress controller](https://kubernetes.github.io/ingress-nginx/) would be similar to:
 
@@ -97,6 +98,8 @@ helm upgrade -i iop sciencemesh/iop \
 
 ## Testing the deployment
 
+**FIXME: to be moved into configuration**
+
 You can easily test your deployment is reachable outside the cluster by running the `reva` cli and `curl` against the exposed services:
 
 ```bash
@@ -120,6 +123,8 @@ curl https://<hostname>/iop/metrics
 ```
 
 ## Enabling and configuring persistency
+
+**FIXME: DA: I suppose this is kubernetes-specific and should stay here?**
 
 In case you need to keep the data stored on the `storage` service `root`, across version upgrades and restarts of an IOP deployment, you will need to enable data persistency through a [Kubernetes Persistent Volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes) (PV). This is done by using a Persistent Volume Claim (PVC). By default, persistency is disabled for convenience as it involves setting up a `StorageClass`, having an available [driver](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#types-of-persistent-volumes) for your storage infrastructure, etc.
 
@@ -169,6 +174,8 @@ pvc-fddca20b-69a4-43ec-ad12-6d4e2bd4a433   1Gi        RWO            Delete     
 
 If the PVC was auto-provisioned by a previous release, you'll need to pass its name (i.e. `<release-name>-gateway`) as `persistentVolume.existingClaim`, as part of the `helm upgrade` command.
 
-## Next Steps
+## Configuration
 
-Once you have your deployment up and running, consider one of these tutorials:
+After deployment, continue by [configuring Reva]({{<ref "docs/Technical-documentation/IOP/Configuration" >}}).
+
+

@@ -1,7 +1,7 @@
 ---
 title: "Science Mesh Governance and Operations"
 linkTitle: "Governance and Operations"
-weight: 300
+weight: 700
 description: >
   This section explains governance structure and principles of operation of
   the Science Mesh as an infrastructure.
@@ -58,4 +58,10 @@ place.
 Documents:
 - [Science Mesh Site Declaration](https://zenodo.org/record/5040087)
 - [Science Mesh Policy Framework Constitution](https://zenodo.org/record/5040152)
+
+
+## Procedures
+
+The Science Mesh defines [Procedures to various situations in Site's life
+cycle](procedures/).
 

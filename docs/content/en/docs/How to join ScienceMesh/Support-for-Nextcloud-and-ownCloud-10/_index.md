@@ -9,6 +9,8 @@ description: >
 
 ---
 
+> **_NOTE:_** The following steps describe tricky setup point for k8s deployment environments, there may be additional steps required for different deployments.
+
 Both Nextcloud and ownCloud 10 are covered by a procedure described in
 <https://sciencemesh-nextcloud.readthedocs.io/en/latest/installation.html>.
 

@@ -1,7 +1,7 @@
 ---
 title: "Support"
 linkTitle: "Support"
-weight: 500
+weight: 900
 description: >
   A short description of Science Mesh support
 ---

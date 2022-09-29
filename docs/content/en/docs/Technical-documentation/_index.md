@@ -7,6 +7,8 @@ description: >
   join the Science Mesh
 ---
 
-When joining the Science Mesh, you can follow the manuals in a linear
-order.
+This documentation describes how to deploy and configure individual
+components in order to deploy a Science Mesh site. To get an overview and
+checklist for the procedure, you MUST follow **[How to join ScienceMesh]({{< ref "How to join ScienceMesh" >}})**.
+
 

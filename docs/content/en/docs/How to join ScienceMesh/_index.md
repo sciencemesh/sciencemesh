@@ -6,39 +6,33 @@ description: >
     The steps to join the Science Mesh
 ---
 
-To join the Science Mesh, there are several formal and technical steps. If you encounter any problems during this process or have some general questions, feel free to [contact the Science Mesh administration](../support/). If you are joining with a Nextcloud site, you will need to set up a Reva server next to your Nextcloud server. Please see the [sciencemesh-nextcloud documentation](https://sciencemesh-nextcloud.readthedocs.io/en/latest/) on how to set this up.
+To join the Science Mesh, there are several formal and technical steps. For the sake of testing, you can start with Technical steps then once you are done with testing you can continue with the formal steps. If you encounter any problems during this process or have some general questions, feel free to [contact the ScienceMesh administration](../support/). 
 
-1. In order to join the Science Mesh, you as the operator of a site are expected to
-run one of supported EFSS (sync and share systems). FIXME link
+## General notes to site deployment
+1. You are advised to get familiar with the [overall architecture of the Science Mesh and how the components are implemented](../architecture/) in order to understand how the components interact and what parts of the systems you need to deploy.
+1. Following lists of technical and formal steps could be performed mostly in parallel, each individual list should nevertheless be performed in the order stated below.
 
-1. Get into contact with a Science Mesh representative by using this [form]({{< ref "docs/How to join ScienceMesh/OnlineForm" >}})
+## Technical steps
+1. In order to join the ScienceMesh, you as the operator of a site are expected to run one of supported EFSS (Enterprise File Sync and Share Systems). Firstly you need to deploy desired EFSS in your environment. Currently is Sciencemesh support implemented in the forks of several EFSSs, [Nextcloud](https://github.com/pondersource/server/tree/dynamic-shareproviders), [ownCloud](https://github.com/pondersource/core). 
 
-1. After that, a Science Mesh representative will get back to you, detailing the next steps to get your site into the mesh.
+	You should use official documentation of [Nextcloud](https://nextcloud.com/install/) or [ownCloud](https://doc.owncloud.com/docs/next/) respectively to deploy your testing instance with ScienceMesh patch/support.
 
-1. While the system may support all necessary protocols (CS3 APIs, OCM) by itself (or you can
-run any protocol-compatible implementation to your taste), it is quite
-probable that you will need to install the [Reva IOP (interoperability platform)]({{< ref "docs/Technical-documentation/IOP" >}}) acting
-as an Executive Module of your EFSS instance in the Science Mesh.
+1. Next step is to install and set up the [Reva IOP (interoperability platform)]({{< ref "docs/Technical-documentation/IOP" >}}) acting as an Executive Module of your EFSS instance in the ScienceMesh. Reva allows you to use all available API to share various resources within ScienceMesh (data, apps,...).
 
-1. Your site needs to be [registered in the Central
-Database]({{< ref "docs/Technical-documentation/Central-Database" >}}) where
-metadata about your site and applications running there are stored.
-A Science Mesh representative will create initial entries for your site,
-but from there on, it will be your responsibility to keep these entries up to date.
+1. Next step is to set up operational stuff. Your site needs to be [registered in the Central Database]({{< ref "docs/Technical-documentation/Central-Database" >}}) where metadata about your site and applications running there are stored. A Science Meshrepresentative will create initial entries for your site, but from there on, it will be your responsibility to keep these entries up to date. The Central Database will also serve you as the source of metadata about other meshed sites, e.g. Where Are You From (WAYF) service. 
 
-1. [Monitoring and accounting]({{< ref "docs/Technical-documentation/Monitoring" >}}) is not a replacement of your standard
-tools for operating your infrastructure but an addition; all information
-collected by Science Mesh monitoring and accounting is strictly related to
-Science Mesh operations, collecting just very high-level and aggregated
-information.
+1. [Monitoring and accounting]({{< ref "docs/Technical-documentation/Monitoring" >}}) is not a replacement of your standard tools for operating your infrastructure but an addition; all information collected by ScienceMesh monitoring and accounting is strictly related to ScienceMesh operations, collecting just very high-level and aggregated information.
 
-1. [Formal steps]({{< ref "docs/Science-mesh-governance-and-operations" >}}) include
-declaring compliance with policies, appointing a representative into the
-governance structure of the infrastructure etc. As of January 2022, the
-infrastructure is to be formally established, so this part of the
-procedure will be covered later. It is neverheless recommended to get
-familiar with the proposed structure, as this is the best time to comment
-on it.
+1. The last step is to enable the [Optional IOP/Reva Integrations]({{< ref "docs/Technical-documentation/IOP/IOP-Optional-Configs" >}}) such as CodiMD or collaborative tools.
+
+
+## Formal steps
+
+1. Get into contact with a ScienceMesh representative by using this [form]({{< ref "docs/How to join ScienceMesh/OnlineForm" >}}).
+
+1. After that, a ScienceMesh representative will get back to you, detailing the next steps to get your site into the mesh.
+
+1. [Formal steps]({{< ref "docs/Science-mesh-governance-and-operations" >}}) include declaring compliance with policies, appointing a representative into the governance structure of the infrastructure etc. As of January 2022, the infrastructure is to be formally established, so this part of the procedure will be covered later. It is neverheless recommended to get familiar with the proposed structure, as this is the best time to comment on it.
 
 <!--
 FIXME: I have asked Kuba and Pedro for an email addres helpdesk@sciencemesh.io
