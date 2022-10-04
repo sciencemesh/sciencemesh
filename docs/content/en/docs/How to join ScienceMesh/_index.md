@@ -6,29 +6,33 @@ description: >
     The steps to join the Science Mesh
 ---
 
+This documentation is intended for an administrator of a sync-and-share site.
+
 To join the Science Mesh, there are several formal and technical steps. For the sake of testing, you can start with Technical steps then once you are done with testing you can continue with the formal steps. If you encounter any problems during this process or have some general questions, feel free to [contact the ScienceMesh administration](../support/). 
 
-## General notes to site deployment
-1. You are advised to get familiar with the [overall architecture of the Science Mesh and how the components are implemented](../architecture/) in order to understand how the components interact and what parts of the systems you need to deploy.
+## General notes on site deployment
+1. If you prefer to understand the environment of the Science Mesh, how the components interact and what part of the systems you need to deploy, we suggest to get familiar with the [overall architecture of the Science Mesh and how the components are implemented](../architecture/).
 1. Following lists of technical and formal steps could be performed mostly in parallel, each individual list should nevertheless be performed in the order stated below.
 
+FIXME: recommended versions? According to Mirek, Reva 2.10 is OK.
+
 ## Technical steps
-1. In order to join the ScienceMesh, you as the operator of a site are expected to run one of supported EFSS (Enterprise File Sync and Share Systems). Firstly you need to deploy desired EFSS in your environment. Currently is Sciencemesh support implemented in the forks of several EFSSs, [Nextcloud](https://github.com/pondersource/server/tree/dynamic-shareproviders), [ownCloud](https://github.com/pondersource/core). 
+1. In order to join the ScienceMesh, you as the operator of a site are expected to run one of supported EFSS (Enterprise File Sync and Share Systems). Firstly you need to deploy desired EFSS in your environment. Currently is Sciencemesh support implemented in forks of several EFSSs, [Nextcloud](https://github.com/pondersource/server/tree/dynamic-shareproviders), [ownCloud](https://github.com/pondersource/core).
 
 	You should use official documentation of [Nextcloud](https://nextcloud.com/install/) or [ownCloud](https://doc.owncloud.com/docs/next/) respectively to deploy your testing instance with ScienceMesh patch/support.
 
 1. Next step is to install and set up the [Reva IOP (interoperability platform)]({{< ref "docs/Technical-documentation/IOP" >}}) acting as an Executive Module of your EFSS instance in the ScienceMesh. Reva allows you to use all available API to share various resources within ScienceMesh (data, apps,...).
 
-1. Next step is to set up operational stuff. Your site needs to be [registered in the Central Database]({{< ref "docs/Technical-documentation/Central-Database" >}}) where metadata about your site and applications running there are stored. A Science Meshrepresentative will create initial entries for your site, but from there on, it will be your responsibility to keep these entries up to date. The Central Database will also serve you as the source of metadata about other meshed sites, e.g. Where Are You From (WAYF) service. 
+1. Next step is to set up operational stuff. Your site needs to be [registered in the Central Database]({{< ref "docs/Technical-documentation/Central-Database" >}}) where metadata about your site and applications running there are stored. A Science Meshrepresentative will create initial entries for your site, but from there on, it will be your responsibility to keep these entries up to date. The Central Database will also serve you as the source of metadata about other meshed sites, e.g. for the Mesh Directory service (similar to “Where Are You From” or WAYF in identity federations). 
 
-1. [Monitoring and accounting]({{< ref "docs/Technical-documentation/Monitoring" >}}) is not a replacement of your standard tools for operating your infrastructure but an addition; all information collected by ScienceMesh monitoring and accounting is strictly related to ScienceMesh operations, collecting just very high-level and aggregated information.
+1. [Monitoring and accounting]({{< ref "docs/Technical-documentation/Monitoring" >}}) needs to be set up. Note this is not a replacement of your standard tools for operating your infrastructure but an addition; all information collected by ScienceMesh monitoring and accounting is strictly related to ScienceMesh operations, collecting just very high-level and aggregated information.
 
-1. The last step is to enable the [Optional IOP/Reva Integrations]({{< ref "docs/Technical-documentation/IOP/IOP-Optional-Configs" >}}) such as CodiMD or collaborative tools.
+1. The last (optional) step is to enable the [Optional IOP/Reva Integrations]({{< ref "docs/Technical-documentation/IOP/IOP-Optional-Configs" >}}) such as CodiMD or collaborative tools (such as text processors and spreadsheets). Services intended to be accessible through the Science Mesh should be configured here.
 
 
 ## Formal steps
 
-1. Get into contact with a ScienceMesh representative by using this [form]({{< ref "docs/How to join ScienceMesh/OnlineForm" >}}).
+1. Get into contact with a ScienceMesh representative [by email, ideally providing necessary information](firstcontactinfo/).
 
 1. After that, a ScienceMesh representative will get back to you, detailing the next steps to get your site into the mesh.
 
@@ -81,23 +85,6 @@ later on. We want sites to join the Science Mesh and not be deterred bij a mount
 
 -->
 
-<!--
-Here is a brief overview of the steps necessary to join the Science Mesh project:
-
-1. First you need to setup:
-    - the [Inter Operability Platform]({{< ref "docs/Technical-documentation/IOP" >}}) (IOP)
-    - the [health monitoring]({{< ref "docs/Technical-documentation/monitoring/Health-Monitoring" >}})
-    - the [accounting metrics]({{< ref "docs/Technical-documentation/monitoring/Accounting-Metrics" >}}) collection    
-
-   for your site. You may find information on how to setup these components by following the links above.
-
-1. Get into contact with a Science Mesh representative by using this [form]({{< ref "docs/How to join ScienceMesh/OnlineForm" >}})
-1. After that, a Science Mesh representative will get back to you, detailing the next steps to get your site up and running.
-1. Your site is then added to our central database, effectively integrating it into the Science Mesh.
-    - This includes appearing on all Science Mesh dashboards and being actively monitored for proper health.
-1. In order to maintain your site's information in the central database, you will need to create an administrative account for our central database and request proper accesss rights.
-    - More information will be provided by a Science Mesh representative after your site has joined the Science Mesh.
--->
 
 <!--
 1. Read the technical and legal documentation which can be found here (FIXME).
