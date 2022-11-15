@@ -23,7 +23,7 @@ queue called ScienceMesh-helpdesk.
 The helpdesk is implemented as a Request Tracker queue and operated by
 CESNET. Mail aliases are
 - helpdesk (at) sciencemesh.io, if you reply to a mail from the system, the
-  reply gets forwareded to ticket requestor; new mail to this address
+  reply gets forwarded to the ticket requestor; new mail to this address
   creates a new ticket,
 - helpdesk-c (at) sciencemesh.io and helpdesk-com (at) sciencemesh.io for comments,
   i.e. internal communication among helpdesk staff related to the ticket,
@@ -34,9 +34,9 @@ as a communication related to the ticket (don't mess with MessageId and
 X-RT headers).
 
 Web interface of the system: https://rt.cesnet.cz/. You *MUST* be
-registered (see below) to have access to the administrating interface of
-the queue. Logging in, you will be greeted by "Where are you from" page.
-When logging in, in general, choose eduGAIN (among last items in the
+registered (see below) to have access to the administration interface of
+the queue. Logging in, you will be greeted by a "Where are you from" page.
+When logging in, in general, choose eduGAIN (among the last items in the
 "Direct links" list) and search for the organisation you used for
 registration.
 
@@ -51,7 +51,8 @@ The administration interface of the queue is accessible to people in
 Virtual Organisation Science Mesh Administrators (VO_sciencemesh) in
 CESNET's Perun system (https://einfra.cesnet.cz/allfed/gui/).
 
-You need to apply to for membership in the organisation. Use
+
+You need to apply for membership in the organisation. Use
 https://einfra.cesnet.cz/allfed/registrar/?vo=VO_sciencemesh&locale=en.
 This is eduGAIN-enabled, so search for your home organisation identity
 provider. If you don't have access to a suitable eduGAIN identity, search
