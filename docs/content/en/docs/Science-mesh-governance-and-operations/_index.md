@@ -65,3 +65,12 @@ Documents:
 The Science Mesh defines [Procedures to various situations in Site's life
 cycle](procedures/).
 
+
+## Applying for Science Mesh Membership
+
+Contact us as described in [how to apply for
+membership](firstcontactinfo/). It is a part of the overall setup and
+application procedure, so refer to [the overall
+checklist](../how-to-join-sciencemesh/) for all the
+steps.
+

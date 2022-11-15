@@ -44,6 +44,6 @@ department is not allowed to join the infrastructure, but the overhead of
 doing so would not be reasonable. The infrastructure is open to everybody
 complying with the requirements.
 
-On the other hand, it is up to a particular site what type of operations
-will be accepted by the site and permitted to its users.
+Regardless of the fact the infrastructure is open, it is always up to a particular site what type of operations
+will be accepted by the site and permitted to site's users.
 
