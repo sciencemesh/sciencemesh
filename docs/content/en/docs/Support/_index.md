@@ -14,9 +14,8 @@ should be handled by the support of the site of the user having the issue.
 It is expected that service providers handle incoming issues and requests from 
 their own users in their own helpdesk systems. 
 
-Central Science Mesh helpdesk will be established for service provider
-admins only. There will be a formal support process including helpdesk with
-a proper ticketing system.
+Central Science Mesh helpdesk is available through email: helpdesk@sciencemesh.io. Expect an automated answer with a ticket number as the
+first reply.
 
 Currently, the central Science Mesh helpdesk is still work in progress but there is an informal support Gitter channel at [https://gitter.im/sciencemesh/community](https://gitter.im/sciencemesh/community).
 This Gitter channel allows admins to ask questions and discuss issues and possible solutions. 
