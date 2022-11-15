@@ -35,7 +35,7 @@ X-RT headers).
 
 Web interface of the system: https://rt.cesnet.cz/. You *MUST* be
 registered (see below) to have access to the administrating interface of
-the queue. Logging in, qou will be greeted by "Where are you from" page.
+the queue. Logging in, you will be greeted by "Where are you from" page.
 When logging in, in general, choose eduGAIN (among last items in the
 "Direct links" list) and search for the organisation you used for
 registration.
@@ -69,6 +69,10 @@ itself.
 
 This is only useful for virtual organisation administrators.
 
+Management of the virtual organisation is accessible through
+https://einfra.cesnet.cz/allfed/gui/. Note: use only functionality you're
+familiar with even if you are a Virtual Organisation admin.
+
 Applications for membership are most easily (dis)approved via links in
 email notifications about the applications. Application requests are sent
 to the RT queue. Kindly approve only people you expect and know; note that
@@ -79,7 +83,7 @@ identity into VO_sciencemesh. There are two relevant groups in the virtual
 organisation:
 - RT-ScienceMesh-helpdesk, those identities have access to RT web interface
   and can thus manage tickets. They *WILL NOT* receive all mail
-  communication from the RT queue, though.
+  communication from the RT queue, though (unless explicitly CC'd).
 - RT-ScienceMesh-helpdesk-watchers, those identities will receive mail from
   the queue.
 Under normal circumstances, the mesh operator should be put into both those
