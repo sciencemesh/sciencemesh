@@ -49,7 +49,7 @@ Note that mails to above mentioned addresses can be sent by anybody.
 
 The administration interface of the queue is accessible to people in
 Virtual Organisation Science Mesh Administrators (VO_sciencemesh) in
-CESNET's Perun system (https://einfra.cesnet.cz/allfed/gui/).
+CESNET's Perun system https://einfra.cesnet.cz/allfed/gui/.
 
 
 You need to apply for membership in the organisation. Use
