@@ -16,7 +16,7 @@ To join the Science Mesh, there are several formal and technical steps. For the 
 1. We indicate suitable versions of components in this document.
 
 ## Technical steps
-1. In order to join the ScienceMesh, you as the operator of a site are expected to run one of supported EFSS (Enterprise File Sync and Share Systems). Firstly you need to deploy desired EFSS in your environment. Currently is Sciencemesh support implemented in forks of several EFSSs, specifically [Nextcloud](https://github.com/pondersource/server/tree/sciencemesh) and/or [ownCloud](https://github.com/pondersource/core/tree/sciencemesh). Use versions (branches) linked here.
+1. In order to join the ScienceMesh, you as the operator of a site are expected to run one of supported EFSS (Enterprise File Sync and Share Systems). Firstly you need to deploy desired EFSS in your environment. Currently is Sciencemesh support implemented in forks of several EFSSs with added sharing applications, specifically [Nextcloud](https://github.com/pondersource/server/tree/sciencemesh) and/or [ownCloud](https://github.com/pondersource/core/tree/sciencemesh). Use versions (branches) linked here.
 
 	You should use official documentation of [Nextcloud](https://nextcloud.com/install/) or [ownCloud](https://doc.owncloud.com/docs/next/) respectively to deploy your testing instance with ScienceMesh patch/support.
 
@@ -24,7 +24,9 @@ To join the Science Mesh, there are several formal and technical steps. For the 
 
 1. Next step is to install and set up the [Reva IOP (interoperability platform)]({{< ref "docs/Technical-documentation/IOP" >}}) acting as an Executive Module of your EFSS instance in the ScienceMesh. Reva allows you to use all available API to share various resources within ScienceMesh (data, apps,...).
    
-   FIXME: Michiel declares that version >=1.19 is necessary. According to Mirek, Reva 2.10 is OK. To be clarified what is available in Helm charts.
+   Note: Reva version >=1.19 is necessary.
+
+1. Then install an [integration application](../technical-documentation/iop/iop-nextcloud-owncloud10-integrations) that provides an interface between your EFSS and Reva.
 
 1. Next step is to set up operational stuff. Your site needs to be [registered in the Central Database]({{< ref "docs/Technical-documentation/Central-Database" >}}) where metadata about your site and applications running there are stored. A Science Meshrepresentative will create initial entries for your site, but from there on, it will be your responsibility to keep these entries up to date. The Central Database will also serve you as the source of metadata about other meshed sites, e.g. for the Mesh Directory service (similar to “Where Are You From” or WAYF in identity federations). 
 
