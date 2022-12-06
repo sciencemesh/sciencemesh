@@ -24,7 +24,7 @@ To join the Science Mesh, there are several formal and technical steps. For the 
 
 1. Next step is to install and set up the [Reva IOP (interoperability platform)]({{< ref "docs/Technical-documentation/IOP" >}}) acting as an Executive Module of your EFSS instance in the ScienceMesh. Reva allows you to use all available API to share various resources within ScienceMesh (data, apps,...).
    
-   Note: Reva version >=1.19 is necessary.
+   Note: Reva version >=1.19 AND <2.0 is necessary. Avoid Reva 2.x as this is for OCIS only and will not work with ownCloud10 nor Nextcloud.
 
 1. Then install an [integration application](../technical-documentation/iop/iop-nextcloud-owncloud10-integrations) that provides an interface between your EFSS and Reva.
 
