@@ -15,7 +15,7 @@ you need to install the ScienceMesh app.
 In your Nextcloud apps folder, run:
 
 ```
-git clone https://github.com/pondersource/nc-sciencemesh sciencemesh
+git clone -b v0.1.0 https://github.com/pondersource/nc-sciencemesh sciencemesh
 cd sciencemesh
 Make
 ```
@@ -23,7 +23,7 @@ Make
 For ownCloud In your ownCloud apps folder, run:
 
 ```
-git clone https://github.com/pondersource/oc-sciencemesh sciencemesh
+git clone -b v0.1.0 https://github.com/pondersource/oc-sciencemesh sciencemesh
 cd sciencemesh
 Make
 ```
