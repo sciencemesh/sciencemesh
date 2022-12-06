@@ -12,7 +12,11 @@ description: >
 To enable the IOP to talk to your Nextcloud and/or ownCloud10 installation,
 you need to install the ScienceMesh app.
 
-In your Nextcloud apps folder, run:
+For Nextcloud, you can use Nextcloud Apps:
+https://apps.nextcloud.com/apps/sciencemesh.
+This is the preferred way.
+
+Or, if you prefer doing it by hand or need a specific version, go to your Nextcloud apps folder, and run (using appropriate version):
 
 ```
 git clone -b v0.1.0 https://github.com/pondersource/nc-sciencemesh sciencemesh
@@ -20,7 +24,11 @@ cd sciencemesh
 Make
 ```
 
-For ownCloud In your ownCloud apps folder, run:
+For ownCloud, you can use ownCloud Marketplace application:
+https://marketplace.owncloud.com/apps/sciencemesh. This is the preferred
+way.
+
+Or, if you prefer doing it by hand or you need a specific version, in your ownCloud apps folder, run (using appropriate version):
 
 ```
 git clone -b v0.1.0 https://github.com/pondersource/oc-sciencemesh sciencemesh
