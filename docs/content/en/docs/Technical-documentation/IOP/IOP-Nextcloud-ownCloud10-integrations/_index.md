@@ -120,3 +120,21 @@ Set the base address of running ownCloud instance in the following sections of r
    * `[http.services.dataprovider.drivers.nextcloud]`
 
 
+### Check the Database
+
+In the end, your OC10 or NC database should contain someting similar to this:
+
+```
+MariaDB [bitnami_owncloud]> SELECT * FROM oc_appconfig WHERE appid = 'sciencemesh';
++-------------+--------------------+------------------------------------+
+| appid       | configkey          | configvalue                        |
++-------------+--------------------+------------------------------------+
+| sciencemesh | enabled            | yes                                |
+| sciencemesh | installed_version  | 0.1.0                              |
+| sciencemesh | iopUrl             | https://sciencemesh.cesnet.cz/iop/ |
+| sciencemesh | revaLoopbackSecret | some-secret                        |
+| sciencemesh | revaSharedSecret   | another-secret                     |
+| sciencemesh | types              |                                    |
++-------------+--------------------+------------------------------------+
+```
+
