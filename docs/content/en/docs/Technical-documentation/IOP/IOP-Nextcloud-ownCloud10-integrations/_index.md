@@ -72,9 +72,11 @@ Set the base address of running Nextcloud instance in the following sections of 
 
 Note: this section is not relevant for OCIS.
 
-For ownCloud, you can use ownCloud Marketplace application:
+FIXME: [app in marketplace needs updating](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991)
+
+~~For ownCloud, you can use ownCloud Marketplace application:
 https://marketplace.owncloud.com/apps/sciencemesh. This is the preferred
-way.
+way.~~
 
 Or, if you prefer doing it by hand or you need a specific version, in your ownCloud apps folder, run (using appropriate version):
 
