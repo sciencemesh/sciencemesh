@@ -65,7 +65,7 @@ Set the base address of running Nextcloud instance in the following sections of 
     * `[http.services.dataprovider.drivers.nextcloud]`
 
 
-
+NB: Due to https://github.com/pondersource/sciencemesh-php/issues/122 make sure you set `verify_request_hostname` to false during testing.
 
 
 ### ownCloud10
@@ -120,6 +120,8 @@ Set the base address of running ownCloud instance in the following sections of r
    * `[grpc.services.authprovider.auth_managers.nextcloud]`
    * `[grpc.services.userprovider.drivers.nextcloud]`
    * `[http.services.dataprovider.drivers.nextcloud]`
+
+NB: Due to https://github.com/pondersource/sciencemesh-php/issues/122 make sure you set `verify_request_hostname` to false during testing.
 
 
 And edit the config so ScienceMesh is used for all OCM operations:
