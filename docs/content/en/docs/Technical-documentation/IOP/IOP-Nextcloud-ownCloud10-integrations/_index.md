@@ -22,7 +22,7 @@ Or, if you prefer doing it by hand or need a specific version, go to your Nextcl
 ```
 git clone -b v0.1.0 https://github.com/pondersource/nc-sciencemesh sciencemesh
 cd sciencemesh
-Make
+make
 ```
 
 FIXME: In both cases, you need to register the application to the Nextcloud
@@ -81,7 +81,7 @@ Or, if you prefer doing it by hand or you need a specific version, in your ownCl
 ```
 git clone -b v0.1.0 https://github.com/pondersource/oc-sciencemesh sciencemesh
 cd sciencemesh
-Make
+make
 ```
 
 Enable the app in the Nextcloud/ownCloud admin dashboard.
@@ -119,6 +119,12 @@ Set the base address of running ownCloud instance in the following sections of r
    * `[grpc.services.userprovider.drivers.nextcloud]`
    * `[http.services.dataprovider.drivers.nextcloud]`
 
+
+And edit the config so ScienceMesh is used for all OCM operations:
+```
+sed -i "3 i\  'sharing.managerFactory' => 'OCA\\\\ScienceMesh\\\\ScienceMeshProviderFactory'," /var/www/html/config/config.php
+sed -i "4 i\  'sharing.remoteShareesSearch' => 'OCA\\\\ScienceMesh\\\\Plugins\\\\ScienceMeshSearchPlugin'," /var/www/html/config/config.php
+```
 
 ### Check the Database
 
