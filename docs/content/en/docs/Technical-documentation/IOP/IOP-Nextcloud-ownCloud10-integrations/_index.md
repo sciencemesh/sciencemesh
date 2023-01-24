@@ -12,6 +12,7 @@ description: >
 * (for NC-25 and NC-26) [GUI unusable](https://github.com/pondersource/nc-sciencemesh/issues/233)
 * (for OC-10) [contacts not rendered properly](https://github.com/pondersource/oc-sciencemesh/issues/36)
 * (for OC-10) [install from source, not from marketplace](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991)
+* (for NC, maybe also OC?) [only first contact is displayed](https://github.com/pondersource/nc-sciencemesh/issues/235)
 
 
 ## Inter-Operability Platform/Reva Integrations with Nextcloud and ownCloud10
