@@ -6,6 +6,14 @@ description: >
   Inter-Operability Platform/Reva Integrations with Nextcloud and ownCloud10
 ---
 
+## List of known issues to be aware of
+(last updated 24 January 2023):
+* [Problems with `verify_request_hostname`](https://github.com/pondersource/sciencemesh-php/issues/122)
+* (for NC-25 and NC-26) [GUI unusable](https://github.com/pondersource/nc-sciencemesh/issues/233)
+* (for OC-10) [contacts not rendered properly](https://github.com/pondersource/oc-sciencemesh/issues/36)
+* (for OC-10) [install from source, not from marketplace](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991)
+
+
 ## Inter-Operability Platform/Reva Integrations with Nextcloud and ownCloud10
 
 To enable the IOP to talk to your Nextcloud and/or ownCloud10 installation,
