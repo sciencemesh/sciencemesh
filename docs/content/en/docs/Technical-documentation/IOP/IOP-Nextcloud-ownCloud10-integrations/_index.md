@@ -7,13 +7,11 @@ description: >
 ---
 
 ## List of known issues to be aware of
-(last updated 24 January 2023):
+(last updated 26 January 2023):
+* [use blessed version of reva](https://github.com/pondersource/sciencemesh-php/issues/133)
+* [use blessed version of OC-10 app](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991)
+* [use blessed version of NC app](https://github.com/pondersource/sciencemesh-php/issues/135)
 * [Problems with `verify_request_hostname`](https://github.com/pondersource/sciencemesh-php/issues/122)
-* (for NC-25 and NC-26) [GUI unusable](https://github.com/pondersource/nc-sciencemesh/issues/233)
-* (for OC-10) [contacts not rendered properly](https://github.com/pondersource/oc-sciencemesh/issues/36)
-* (for OC-10) [install from source, not from marketplace](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991)
-* (for NC, maybe also OC?) [only first contact is displayed](https://github.com/pondersource/nc-sciencemesh/issues/235)
-* (for Reva) [latest master not supported yet](https://github.com/pondersource/sciencemesh-php/issues/133)
 
 
 ## Inter-Operability Platform/Reva Integrations with Nextcloud and ownCloud10
@@ -23,11 +21,15 @@ you need to install the ScienceMesh app.
 
 ### Nextcloud
 
-For Nextcloud, you can use Nextcloud Apps:
-https://apps.nextcloud.com/apps/sciencemesh.
-This is the preferred way.
+Make sure you are using a version of Nextcloud that includes [this patch](https://patch-diff.githubusercontent.com/raw/nextcloud/server/pull/36228.patch),
+for instance, [the pondersource/sciencemesh branch](https://github.com/pondersource/server/tree/sciencemesh).
 
-Or, if you prefer doing it by hand or need a specific version, go to your Nextcloud apps folder, and run (using appropriate version):
+NB: Nextcloud app in marketplace [is not up to date](https://github.com/pondersource/sciencemesh-php/issues/135)
+~~For Nextcloud, you can use Nextcloud Apps:
+https://apps.nextcloud.com/apps/sciencemesh.
+This is the preferred way.~~
+
+~~Or, if you prefer doing it by hand or need a specific version,~~ go to your Nextcloud apps folder, and run (using appropriate version):
 
 ```
 git clone -b v0.1.0 https://github.com/pondersource/nc-sciencemesh sciencemesh
@@ -81,6 +83,10 @@ NB: Due to https://github.com/pondersource/sciencemesh-php/issues/122 make sure 
 ### ownCloud10
 
 Note: this section is not relevant for OCIS.
+
+Make sure you are using a version of OC-10 that includes [this patch](https://patch-diff.githubusercontent.com/raw/owncloud/core/pull/40577.patch),
+for instance, [the pondersource/sciencemesh branch](https://github.com/pondersource/core/tree/sciencemesh).
+
 
 FIXME: [app in marketplace needs updating](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991)
 
