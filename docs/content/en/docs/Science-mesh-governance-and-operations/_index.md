@@ -7,7 +7,7 @@ description: >
   the Science Mesh as an infrastructure.
 ---
 
-## Disclaimer (January 2022)
+## Disclaimer (January 2023)
 
 Kindly note that the documents presented here have not been formally
 confirmed by representatives of the Sites yet, those are just drafts
@@ -24,9 +24,6 @@ also requiring a membership fee. Central part of the infrastructure is
 nevertheless intentionally designed to be minimal, so that costs of its
 operations are kept as low as possible. And of course, if another financing
 source is found, membership fees could go even lower.
-
-The infrastructure is about to be formally established in the middle of
-2022.
 
 ## Governance Structure of the Science Mesh
 

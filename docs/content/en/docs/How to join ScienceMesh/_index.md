@@ -1,14 +1,14 @@
 ---
 title: "How to join Science Mesh"
 linkTitle: "How to join Science Mesh"
-weight: 100
+weight: 200
 description: >
     The steps to join the Science Mesh
 ---
 
-This documentation is intended for an administrator of a sync-and-share site.
+This documentation is intended for an administrator of a sync-and-share site wishing to join the Science Mesh. It serves as a checklist of all steps necessary to perform the task, referring to specific technical howtos. After configuring a specific topic, always return here to find out what you are expected to do next.
 
-To join the Science Mesh, there are several formal and technical steps. For the sake of testing, you can start with Technical steps then once you are done with testing you can continue with the formal steps. If you encounter any problems during this process or have some general questions, feel free to [contact the ScienceMesh administration](../support/). 
+To join the Science Mesh, there are several steps, technical as well as formal. For the sake of testing, you can start with Technical steps then once you are done with testing you can continue with the formal steps. If you encounter any problems during this process or have some general questions, feel free to [contact the ScienceMesh administration](../support/). 
 
 ## General notes on site deployment
 1. If you prefer to understand the environment of the Science Mesh, how the components interact and what part of the systems you need to deploy, we suggest to get familiar with the [overall architecture of the Science Mesh and how the components are implemented](../architecture/).

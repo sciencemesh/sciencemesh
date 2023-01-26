@@ -1,7 +1,7 @@
 ---
 title: "Architecture and Implementation"
 linkTitle: "Architecture and Implementation"
-weight: 200
+weight: 100
 description: >
   Overall architecture of the Science Mesh and how those components are implemented
 ---
