@@ -7,11 +7,11 @@ description: >
 ---
 
 ## List of known issues to be aware of
-(last updated 24 January 2023):
+(last updated 26 January 2023):
+* [use blessed version of reva](https://github.com/pondersource/sciencemesh-php/issues/133)
+* [use blessed version of OC-10 app](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991)
+* [use blessed version of NC app](https://github.com/pondersource/sciencemesh-php/issues/135)
 * [Problems with `verify_request_hostname`](https://github.com/pondersource/sciencemesh-php/issues/122)
-* (for NC and OC-10) [OC-10 app not up to date in marketplace](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991); [NC app not up to date in marketplace](https://github.com/pondersource/sciencemesh-php/issues/135)
-* (fixed for NC, maybe still happening OC-10?) [only first contact is displayed](https://github.com/pondersource/nc-sciencemesh/issues/235)
-* (for Reva) [latest master not supported yet](https://github.com/pondersource/sciencemesh-php/issues/133)
 
 
 ## Inter-Operability Platform/Reva Integrations with Nextcloud and ownCloud10
