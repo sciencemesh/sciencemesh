@@ -9,10 +9,8 @@ description: >
 ## List of known issues to be aware of
 (last updated 24 January 2023):
 * [Problems with `verify_request_hostname`](https://github.com/pondersource/sciencemesh-php/issues/122)
-* (for NC-25 and NC-26) [GUI unusable](https://github.com/pondersource/nc-sciencemesh/issues/233)
-* (for OC-10) [contacts not rendered properly](https://github.com/pondersource/oc-sciencemesh/issues/36)
 * (for NC and OC-10) [OC-10 app not up to date in marketplace](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991); [NC app not up to date in marketplace](https://github.com/pondersource/sciencemesh-php/issues/135)
-* (for NC, maybe also OC?) [only first contact is displayed](https://github.com/pondersource/nc-sciencemesh/issues/235)
+* (fixed for NC, maybe still happening OC-10?) [only first contact is displayed](https://github.com/pondersource/nc-sciencemesh/issues/235)
 * (for Reva) [latest master not supported yet](https://github.com/pondersource/sciencemesh-php/issues/133)
 
 
