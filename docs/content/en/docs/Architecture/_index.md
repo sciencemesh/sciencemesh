@@ -14,8 +14,9 @@ metadata of the Science Mesh together with monitoring and accounting. In
 addition to the conceptual architecture, we also describe how the [Central
 Component is implemented](central-component-implementation).
 
-**FIXME**
+The Central Component is a source of data for the [Mesh Directory
+Service](mesh-directory-service) that provides a user interface in the
+invitation workflow to let the user reveal which system should be used to
+establish sharing trust.
 
-To be added:
-- description of the Mesh Directory Service
 
