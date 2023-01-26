@@ -16,17 +16,12 @@ To join the Science Mesh, there are several steps, technical as well as formal. 
 1. We indicate suitable versions of components in this document.
 
 ## Technical steps
-1. In order to join the ScienceMesh, you as the operator of a site are expected to run one of supported EFSS (Enterprise File Sync and Share Systems). Firstly you need to deploy desired EFSS in your environment. Currently is Sciencemesh support implemented in forks of several EFSSs with added sharing applications, specifically [Nextcloud](https://github.com/pondersource/server/tree/sciencemesh) and/or [ownCloud](https://github.com/pondersource/core/tree/sciencemesh). Use versions (branches) linked here.
 
-	You should use official documentation of [Nextcloud](https://nextcloud.com/install/) or [ownCloud](https://doc.owncloud.com/docs/next/) respectively to deploy your testing instance with ScienceMesh patch/support.
+1. FIXME: patched OC10 or NC version will be here; preferred version will be K8S deployment (collect into a page what Mirek reported). It includes the integration application as well. Or you can install pure OC10 or NC and patch it and install the integration application manually. Or alternatively for developers, install everything manually (will be described separately at the bottom of the page).
 
-   (Note: distribution production versions will be supplied as patches against stable ownCloud and Nextcloud installations.)
-
-1. Next step is to install and set up the [Reva IOP (interoperability platform)]({{< ref "docs/Technical-documentation/IOP" >}}) acting as an Executive Module of your EFSS instance in the ScienceMesh. Reva allows you to use all available API to share various resources within ScienceMesh (data, apps,...).
+1. Install and set up the [Reva IOP (interoperability platform)]({{< ref "docs/Technical-documentation/IOP" >}}) acting as an Executive Module of your EFSS instance in the ScienceMesh. Reva allows you to use all available API to share various resources within ScienceMesh (data, apps,...).
    
    Note: Reva version >=1.19 AND <2.0 is necessary. Avoid Reva 2.x as this is for OCIS only and will not work with ownCloud10 nor Nextcloud.
-
-1. Then install an [integration application](../technical-documentation/iop/iop-nextcloud-owncloud10-integrations) that provides an interface between your EFSS and Reva.
 
 1. Next step is to set up operational stuff. Your site needs to be [registered in the Central Database]({{< ref "docs/Technical-documentation/Central-Database" >}}) where metadata about your site and applications running there are stored. A Science Meshrepresentative will create initial entries for your site, but from there on, it will be your responsibility to keep these entries up to date. The Central Database will also serve you as the source of metadata about other meshed sites, e.g. for the Mesh Directory service (similar to “Where Are You From” or WAYF in identity federations). 
 
@@ -42,6 +37,17 @@ To join the Science Mesh, there are several steps, technical as well as formal. 
 1. After that, a ScienceMesh representative will get back to you, detailing the next steps to get your site into the mesh.
 
 1. [Formal steps]({{< ref "docs/Science-mesh-governance-and-operations" >}}) include declaring compliance with policies, appointing a representative into the governance structure of the infrastructure etc. As of January 2022, the infrastructure is to be formally established, so this part of the procedure will be covered later. It is neverheless recommended to get familiar with the proposed structure, as this is the best time to comment on it.
+
+
+## Alternative Technical Steps
+
+Beware: those are alternative technical steps for developers, they are **not recommended** for production use and are not supported by the Science Mesh. FIXME Ignore this for now. You've been warned, this can bite you and kill your cat.
+
+1. In order to join the ScienceMesh, you as the operator of a site are expected to run one of supported EFSS (Enterprise File Sync and Share Systems). Firstly you need to deploy desired EFSS in your environment. Currently is Sciencemesh support implemented in forks of several EFSSs with added sharing applications, specifically [Nextcloud](https://github.com/pondersource/server/tree/sciencemesh) and/or [ownCloud](https://github.com/pondersource/core/tree/sciencemesh). Use versions (branches) linked here.
+
+	You should use official documentation of [Nextcloud](https://nextcloud.com/install/) or [ownCloud](https://doc.owncloud.com/docs/next/) respectively to deploy your testing instance with ScienceMesh patch/support.
+
+1. Then install an [integration application](../technical-documentation/iop/iop-nextcloud-owncloud10-integrations) that provides an interface between your EFSS and Reva.
 
 <!--
 FIXME: I have asked Kuba and Pedro for an email addres helpdesk@sciencemesh.io
