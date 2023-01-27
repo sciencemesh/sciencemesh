@@ -17,7 +17,9 @@ To join the Science Mesh, there are several steps, technical as well as formal. 
 
 ## Technical steps
 
-1. FIXME: patched OC10 or NC version will be here; preferred version will be K8S deployment (collect into a page what Mirek reported). It includes the integration application as well. Or you can install pure OC10 or NC and patch it and install the integration application manually. Or alternatively for developers, install everything manually (will be described separately at the bottom of the page).
+1. We have prepared a K8S deployment of OC10. It includes the integration application as well. Follow steps in the [official EFSS deployment page](../technical-documentation/efss-deployment). This is the recommended way to deploy the system.
+
+   Alternatively, you can install pure OC10 or NC and patch it and install the integration application manually as described in a [separate EFSS deployment page](../technical-documentation/efss-deployment/manual-efss-installation). That is also a way suitable for developers as it describes how to possibly track newest git versions of the code.
 
 1. Install and set up the [Reva IOP (interoperability platform)]({{< ref "docs/Technical-documentation/IOP" >}}) acting as an Executive Module of your EFSS instance in the ScienceMesh. Reva allows you to use all available API to share various resources within ScienceMesh (data, apps,...).
    
