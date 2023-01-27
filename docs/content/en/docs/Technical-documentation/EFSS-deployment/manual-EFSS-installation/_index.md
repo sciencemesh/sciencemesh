@@ -48,6 +48,10 @@ This procedure leads to the same result as the official Kubernetes deployment, i
 
 Beware: those are alternative technical steps for developers, they are **not recommended** for production use and are **not supported** by the Science Mesh. You've been warned, this can bite you and kill your cat.
 
+Repositories linked from this subsection already contain necessary patches,
+and those repositories mostly track ownCloud 10 and Nextcloud git masters.
+Have we mentioned it wasn't suitable for production?
+
 1. In order to join the ScienceMesh, you as the operator of a site are expected to run one of supported EFSS (Enterprise File Sync and Share Systems). Firstly you need to deploy desired EFSS in your environment. Currently is Sciencemesh support implemented in forks of several EFSSs with added sharing applications, specifically [Nextcloud](https://github.com/pondersource/server/tree/sciencemesh) and/or [ownCloud](https://github.com/pondersource/core/tree/sciencemesh). Use versions (branches) linked here.
 
 	You should use official documentation of [Nextcloud](https://nextcloud.com/install/) or [ownCloud](https://doc.owncloud.com/docs/next/) respectively to deploy your testing instance with ScienceMesh patch/support.
