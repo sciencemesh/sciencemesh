@@ -20,13 +20,13 @@ versions](../iop/iop-nextcloud-owncloud10-integrations/) when deploying the QA e
 
 1. Prepare the [Dockerfile](https://github.com/sciencemesh/efss-deployment-sample/blob/main/cesnet-owncloud-qa/Dockerfile) file for your Sciencemesh instance.
 
-2. Prepare the [Makefile.diff](https://github.com/sciencemesh/efss-deployment-sample/blob/main/cesnet-owncloud-qa/Makefile.diff) to install the Sciencemesh app within docker build.
+1. Prepare the [Makefile.diff](https://github.com/sciencemesh/efss-deployment-sample/blob/main/cesnet-owncloud-qa/Makefile.diff) to install the Sciencemesh app within docker build.
 
-3. Build the Sciencemesh image and push it to your registry.
+1. Build the Sciencemesh image and push it to your registry.
 
-4. Once you have built the image, you can deploy it in your Kubernetes infrastructure using [ownCloud Helm chart](https://github.com/owncloud-docker/helm-charts/blob/main/charts/owncloud/README.md). We have prepared the [values.yaml](https://github.com/sciencemesh/efss-deployment-sample/blob/main/cesnet-owncloud-qa/values.yaml) for the deployment of patched ownCloud using Helm.
+1. Once you have built the image, you can deploy it in your Kubernetes infrastructure using [ownCloud Helm chart](https://github.com/owncloud-docker/helm-charts/blob/main/charts/owncloud/README.md). We have prepared the [values.yaml](https://github.com/sciencemesh/efss-deployment-sample/blob/main/cesnet-owncloud-qa/values.yaml) for the deployment of patched ownCloud using Helm.
 
-5. Last step is to register the Sciencemesh app into ownCloud DB. So you need to login into DB itself and run following commands.
+1. Last step is to register the Sciencemesh app into ownCloud DB. So you need to login into DB itself and run following commands.
 
     First you need to update the `iopUrl` depending where your [IOP deployment]({{< ref "docs/Technical-documentation/IOP/Configuration" >}}) runs (or will run).
     ```
@@ -55,7 +55,7 @@ versions](../iop/iop-nextcloud-owncloud10-integrations/) when deploying the QA e
     UPDATE oc_appconfig SET configvalue = 'some-secret' WHERE configkey = 'revaLoopbackSecret;
     ```
 
-6. In the end, your OC10 database should contain someting similar to this:
+1. In the end, your OC10 database should contain someting similar to this:
 
     ```
     MariaDB [bitnami_owncloud]> SELECT * FROM oc_appconfig WHERE appid = 'sciencemesh';

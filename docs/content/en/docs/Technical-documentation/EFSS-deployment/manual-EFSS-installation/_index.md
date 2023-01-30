@@ -33,19 +33,88 @@ This procedure leads to the same result as the official Kubernetes deployment, i
    directory, and perform
    - ownCloud 10:
      ```
-     git clone -b v0.2.0 https://github.com/pondersource/oc-sciencemesh sciencemesh
+     git clone https://github.com/pondersource/oc-sciencemesh sciencemesh
      cd sciencemesh
      make
      ```
    - Nextcloud:
      ```
-     git clone -b v0.2.0 https://github.com/pondersource/nc-sciencemesh sciencemesh
+     git clone https://github.com/pondersource/nc-sciencemesh sciencemesh
      cd sciencemesh
      make
      ```
+1. The next step is to register the OC/NC application in to database.
+    * **ownCloud 10:**
+    
+    First you need to update the `iopUrl` depending where your [IOP deployment]({{< ref "docs/Technical-documentation/IOP/Configuration" >}}) runs (or will run).
+    ```
+    UPDATE oc_appconfig SET configvalue = 'https://sciencemesh.cesnet.cz/iop/' WHERE configkey = 'iopUrl';
+    ```
+    Similarly for the secret.
+    ```
+    UPDATE oc_appconfig SET configvalue = 'another-secret' WHERE configkey = 'revaSharedSecret';
+    ```
 
-1. FIXME register the application
+    The `shared_secret` **must be** the same in `reva.toml` file and ownCloud database. This secret is used by Reva to authenticate requests from ownCloud.
 
+    Make sure that `revaSharedSecret` matches the `shared_secret` entry in the following sections of your `revad.toml` file:
+
+   * `[grpc.services.storageprovider.drivers.nextcloud]`
+   * `[grpc.services.authprovider.auth_managers.nextcloud]`
+   * `[grpc.services.userprovider.drivers.nextcloud]`
+   * `[grpc.services.ocmcore.drivers.nextcloud]`
+   * `[grpc.services.ocmshareprovider.drivers.nextcloud]`
+
+    The `revaLoopbackSecret` is a key in ownCloud for authenticating Reva users by ownCloud. Reva sends this key in body instead of real user’s password. This loopback secret send from ownCloud to reva in request’s body.
+
+    If this key does not exists in ownCloud database, insert a random string for this key as value.
+
+    ```
+    UPDATE oc_appconfig SET configvalue = 'some-secret' WHERE configkey = 'revaLoopbackSecret;
+    ```
+
+    * **Nexcloud:**
+    iopUrl is url of your running reva instance. Configure “iopUrl” to point to your revad instance.
+
+    Go to the admin settings for Science Mesh and set the IOP URL to e.g. https://example.com/iop/
+
+    There is also a `shared_secret` that must be same in `reva.toml` file and Nextcloud database. This secret use to reva can authenticate the requests from Nextcloud.
+
+    Set a shared secret that matches the one you configured in the TOML file of your revad instance.
+
+    Make sure that `revaSharedSecret` in there matches the `shared_secret` entry in the following sections of your `revad.toml` file:
+
+    * `[grpc.services.storageprovider.drivers.nextcloud]`
+    * `[grpc.services.authprovider.auth_managers.nextcloud]`
+    * `[grpc.services.userprovider.drivers.nextcloud]`
+    * `[grpc.services.ocmcore.drivers.nextcloud]`
+    * `[grpc.services.ocmshareprovider.drivers.nextcloud]`
+
+    Set the base address of running Nextcloud instance in the following sections of `reva.toml` file:
+
+    * `[grpc.services.storageprovider.drivers.nextcloud]`
+    * `[grpc.services.authprovider.auth_managers.nextcloud]`
+    * `[grpc.services.userprovider.drivers.nextcloud]`
+    * `[http.services.dataprovider.drivers.nextcloud]`
+
+    NB: Due to https://github.com/pondersource/sciencemesh-php/issues/122 make sure you set `verify_request_hostname` to false during testing.
+
+1. Check the database
+    In the end, your OC10 or NC database should contain someting similar to this:
+
+    ```
+    MariaDB [bitnami_owncloud]> SELECT * FROM oc_appconfig WHERE appid = 'sciencemesh';
+    +-------------+--------------------+------------------------------------+
+    | appid       | configkey          | configvalue                        |
+    +-------------+--------------------+------------------------------------+
+    | sciencemesh | enabled            | yes                                |
+    | sciencemesh | installed_version  | 0.1.0                              |
+    | sciencemesh | iopUrl             | https://sciencemesh.cesnet.cz/iop/ |
+    | sciencemesh | revaLoopbackSecret | some-secret                        |
+    | sciencemesh | revaSharedSecret   | another-secret                     |
+    | sciencemesh | types              |                                    |
+    +-------------+--------------------+------------------------------------+
+    ```
 
 ## Manual installation of Science Mesh enabled EFSS for developers
 
@@ -62,5 +131,7 @@ Have we mentioned it wasn't suitable for production?
 1. Then install an [integration application](../technical-documentation/iop/iop-nextcloud-owncloud10-integrations) that provides an interface between your EFSS and Reva.
 
 
-1. FIXME register the application
+1. Now you can continue with the app registration as described in the step 4 **in the previous section**.
+
+1. Now please check the state of the database as described in the step 5 **in the previous section**.
 
