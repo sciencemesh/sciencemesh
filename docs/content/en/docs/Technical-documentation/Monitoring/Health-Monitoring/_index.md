@@ -59,4 +59,10 @@ All critical tests must be passed for a site to be considered `Healthy`. Failing
 ## Configuration
 All above tests are performed on endpoints provided through the [CS3 APIs](https://github.com/cs3org/cs3apis). This means that you will need to make your CS3 APIs interface (usually the [Reva IOP](../../iop)) externally accessible.
 
-For the time being, a user with username `test` and password `testpass` must be present for the tests to function properly. This is only temporary and will change in the future.
+A user with username `test` must be present in Reva. Credentials for the
+account are securely stored in the Central Database, they are configured
+per site in the accounts panel (under "Sites settings"). The site
+administrator needs to have access to site settings in the Central Database
+for this agenda to be visible. Configure the credentials of the test user
+both in the Central Database as well as your EFSS.
+
