@@ -35,3 +35,9 @@ To inform administrative users about issues that were detected through monitorin
 
 ### Grafana
 All information collected by Prometheus is presented to the user through various **[Grafana](https://grafana.sciencemesh.uni-muenster.de)** dashboards.
+
+---
+
+If unsure where to go next, learn about the [Mesh Directory
+Service](../mesh-directory-service).
+

@@ -19,4 +19,6 @@ Service](mesh-directory-service) that provides a user interface in the
 invitation workflow to let the user reveal which system should be used to
 establish sharing trust.
 
+---
 
+If unsure where to go next, read about the [General Architecture](central-component-architecture).

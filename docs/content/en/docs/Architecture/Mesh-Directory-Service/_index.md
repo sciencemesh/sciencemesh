@@ -17,3 +17,9 @@ You want to share data with your colleague and you have no idea what system
 the target user uses. You send an invitation that directs your colleague to
 the Mesh Directory Service to choose the target system.
 
+---
+
+If you followed the path recommended by these notes, congratulations, you
+now have basic understanding how the mesh federation works. And you should
+be ready to [configure your site to join](../../how-to-join-sciencemesh/).
+

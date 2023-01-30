@@ -31,3 +31,7 @@ Executive Modules also enforce sharing policies implemented at the sites, i.e. w
 
 The Science Mesh does not critically depend on the Central Component being available. The Science Mesh is therefore a “share-nothing” infrastructure where all sites can function independently of each other. They do not depend on the Central Component to provide basic functionality for the users. If the health monitoring or accounting metrics services go offline, the main service is not affected, and only health monitoring and accounting metrics collection operations will be stopped.
 If the Central Database goes offline, the EMs cannot be updated. While the information within the EMs may become stale, the EMs remain functional. Again, this is not critical as expected update intervals of the Science Mesh topology metadata are in days rather than minutes.
+
+---
+If unsure where to go next, read about [how the Central Component is
+implemented](../central-component-implementation).

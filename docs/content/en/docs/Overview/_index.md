@@ -47,3 +47,6 @@ complying with the requirements.
 Regardless of the fact the infrastructure is open, it is always up to a particular site what type of operations
 will be accepted by the site and permitted to site's users.
 
+---
+If unsure what to read next, continue with the
+[Architecture](../architecture).

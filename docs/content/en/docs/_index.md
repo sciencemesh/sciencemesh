@@ -15,7 +15,8 @@ how the infrastructure is organised.
 To get **basic ideas** about how the Science Mesh operates, we recommend you to start reading the [Overview]({{< ref "docs/Overview" >}}), and it may also help your understanding to at least skim through the [Architecture]({{< ref "docs/Architecture" >}}).
 
 If you are a **site adminstrator wishing to join the Science Mesh**
-infrastructure, follow the [How to join Science
+infrastructure, and you have basic understanding of the architecture of the
+federation, follow the [How to join Science
 Mesh](how-to-join-sciencemesh) guide--the main checklist of steps necessary
 to join the infrastructure that will guide you through the configuration
 and direct you to particular technical howtos.
@@ -26,4 +27,6 @@ assistance with using the Science Mesh as well.
 
 If you find an error or you want to contribute to the documentation go to [Contribution Guidelines]({{< ref "docs/Contribution Guidelines" >}}).
 
+---
+If unsure where to go next, read the [Overview](overview).
 
