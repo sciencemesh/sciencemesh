@@ -11,9 +11,9 @@ This documentation is intended for an administrator of a sync-and-share site wis
 To join the Science Mesh, there are several steps, technical as well as formal. For the sake of testing, you can start with Technical steps then once you are done with testing you can continue with the formal steps. If you encounter any problems during this process or have some general questions, feel free to [contact the ScienceMesh administration](../support/). 
 
 ## General notes on site deployment
-1. If you prefer to understand the environment of the Science Mesh, how the components interact and what part of the systems you need to deploy, we suggest to get familiar with the [overall architecture of the Science Mesh and how the components are implemented](../architecture/).
+1. If you prefer to understand the environment of the Science Mesh, how the components interact and what part of the systems you need to deploy, we suggest to get familiar with the [overall architecture of the Science Mesh and how the components are implemented](../architecture/). Follow suggested links at the bottom of each page, it will get you back here.
 1. Following lists of technical and formal steps could be performed mostly in parallel, each individual list should nevertheless be performed in the order stated below.
-1. We indicate suitable versions of components in this document.
+1. We indicate suitable versions of components in this document. Note that the recommended versions are the only supported, so if running older ones, you'd be advised to upgrade as the first step.
 
 ## Technical steps
 
