@@ -11,9 +11,12 @@ is to adapt files from the following example to your needs. If this doesn't
 fit your environment, we provide a guide [to install the components
 manually](manual-efss-installation) as an alternative.
 
-## Installation and deployment of ownCloud 10.10
+## Installation and deployment of ownCloud 10.10 (Docker+Kubernetes)
 
 This section describes the deployment using Docker and Kubernetes. It is based on CESNET's QA instance of Sciencemesh. In includes both changes to ownCloud as well as the integration application. **As your specific environment may vary, you need to edit particular files with respect to your own environment, deployment, endpoints etc.**
+
+**Check [current blessed
+versions](../iop/iop-nextcloud-owncloud10-integrations/) when deploying the QA environment.** Note that the example below generally installs master versions, which may not be what you want. You **must modify them** to install intended versions as stated in the above linked page! Always check you're installing intended versions.
 
 1. Prepare the [Dockerfile](https://github.com/sciencemesh/efss-deployment-sample/blob/main/cesnet-owncloud-qa/Dockerfile) file for your Sciencemesh instance.
 

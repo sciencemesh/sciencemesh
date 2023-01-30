@@ -11,12 +11,15 @@ We provide two ways of deploying EFSS:
   * installing manually using standard ownCloud 10 or Nextcloud installations, patching and installing the integration application,
   * or deploying directly from the github repository. This option is suitable for developers only and is not recommended for production use.
 
+**Check [current blessed
+versions](../../iop/iop-nextcloud-owncloud10-integrations/) when deploying the QA environment.** Note that the example below generally installs master versions, which may not be what you want. You **must modify them** to install intended versions as stated in the above linked page! Always check you're installing intended versions.
+
 ## Manual installation of Science Mash enabled EFSS using patches
 
 This procedure leads to the same result as the official Kubernetes deployment, it is just performed manually.
 
 1. Deploy ownCloud 10 and or Nextcloud to your infrastructure, following
-   the official documentation of [Nextcloud](https://nextcloud.com/install/) or [ownCloud](https://doc.owncloud.com/docs/next/) respectively.
+   the official documentation of [Nextcloud](https://nextcloud.com/install/) or [ownCloud](https://doc.owncloud.com/docs/next/), respectively.
 
 1. Patch the installation with:
    - ownCloud 10:
@@ -30,13 +33,13 @@ This procedure leads to the same result as the official Kubernetes deployment, i
    directory, and perform
    - ownCloud 10:
      ```
-     git clone -b v0.1.0 https://github.com/pondersource/oc-sciencemesh sciencemesh
+     git clone -b v0.2.0 https://github.com/pondersource/oc-sciencemesh sciencemesh
      cd sciencemesh
      make
      ```
    - Nextcloud:
      ```
-     git clone -b v0.1.0 https://github.com/pondersource/nc-sciencemesh sciencemesh
+     git clone -b v0.2.0 https://github.com/pondersource/nc-sciencemesh sciencemesh
      cd sciencemesh
      make
      ```
