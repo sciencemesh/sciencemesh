@@ -8,9 +8,9 @@ description: >
 
 ## List of known issues to be aware of
 (last updated 26 January 2023):
-* [use blessed version of reva](https://github.com/pondersource/sciencemesh-php/issues/133)
-* [use blessed version of OC-10 app](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991)
-* [use blessed version of NC app](https://github.com/pondersource/sciencemesh-php/issues/135)
+* Due to [this issue](https://github.com/pondersource/sciencemesh-php/issues/133) you should use [this blessed version of Reva](https://hub.docker.com/layers/michielbdejong/reva/mentix-fixes/images/sha256-1892d788892022606fc305338e72dba9cbe17ebda7c719f842a5c774b33193b4?context=explore)
+* Due to [this issue](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991) you should use [the main branch of https://github.com/pondersource/oc-sciencemesh)
+* Due to [this issue](https://github.com/pondersource/sciencemesh-php/issues/135) you should use [the main branch of https://github.com/pondersource/nc-sciencemesh)
 * [Problems with `verify_request_hostname`](https://github.com/pondersource/sciencemesh-php/issues/122)
 
 
