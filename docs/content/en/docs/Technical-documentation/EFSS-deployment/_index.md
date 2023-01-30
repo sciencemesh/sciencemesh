@@ -29,7 +29,7 @@ In the following guide we have documented the deployment which we did in CESNET 
     UPDATE oc_appconfig SET configvalue = 'another-secret' WHERE configkey = 'revaSharedSecret';
     ```
 
-    **Be aware**, that `shared_secret` must be same in `reva.toml` file and ownCloud database. This secret use to Reva can authenticate the requests from ownCloud.
+    **Be aware**, that `shared_secret` must be the same in `reva.toml` file and ownCloud database. This secret uses Reva to authenticate the requests from ownCloud.
 
     Make sure that `revaSharedSecret` in there matches the `shared_secret` entry in the following sections of your `revad.toml` file:
 
