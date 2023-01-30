@@ -6,9 +6,14 @@ description: >
     Description of docker installation of EFSS including integration applications.
 ---
 
+Recommended way of installing ownCloud 10 and/or Nextcloud into a container
+is to adapt files from the following example to your needs. If this doesn't
+fit your environment, we provide a guide [to install the components
+manually](manual-efss-installation) as an alternative.
+
 ## Installation and deployment of ownCloud 10.10
 
-In the following guide we have documented the deployment which we did in CESNET to build QA instance of Sciencemesh. We also prepared particular sample files which could help you to understand the process. **Be aware that you need to edit particular files with respect to your own environment, deployement, endpoints etc.**
+This section describes the deployment using Docker and Kubernetes. It is based on CESNET's QA instance of Sciencemesh. In includes both changes to ownCloud as well as the integration application. **As your specific environment may vary, you need to edit particular files with respect to your own environment, deployment, endpoints etc.**
 
 1. Prepare the [Dockerfile](https://github.com/sciencemesh/efss-deployment-sample/blob/main/cesnet-owncloud-qa/Dockerfile) file for your Sciencemesh instance.
 
@@ -20,7 +25,7 @@ In the following guide we have documented the deployment which we did in CESNET 
 
 5. Last step is to register the Sciencemesh app into ownCloud DB. So you need to login into DB itself and run following commands.
 
-    First you need to update the `iopUrl` according to your [IOP deployment]({{< ref "docs/Technical-documentation/IOP/Configuration" >}}).
+    First you need to update the `iopUrl` depending where your [IOP deployment]({{< ref "docs/Technical-documentation/IOP/Configuration" >}}) runs (or will run).
     ```
     UPDATE oc_appconfig SET configvalue = 'https://sciencemesh.cesnet.cz/iop/' WHERE configkey = 'iopUrl';
     ```
@@ -29,9 +34,9 @@ In the following guide we have documented the deployment which we did in CESNET 
     UPDATE oc_appconfig SET configvalue = 'another-secret' WHERE configkey = 'revaSharedSecret';
     ```
 
-    **Be aware**, that `shared_secret` must be the same in `reva.toml` file and ownCloud database. This secret uses Reva to authenticate the requests from ownCloud.
+    The `shared_secret` **must be** the same in `reva.toml` file and ownCloud database. This secret is used by Reva to authenticate requests from ownCloud.
 
-    Make sure that `revaSharedSecret` in there matches the `shared_secret` entry in the following sections of your `revad.toml` file:
+    Make sure that `revaSharedSecret` matches the `shared_secret` entry in the following sections of your `revad.toml` file:
 
    * `[grpc.services.storageprovider.drivers.nextcloud]`
    * `[grpc.services.authprovider.auth_managers.nextcloud]`
