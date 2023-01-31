@@ -52,7 +52,7 @@ versions](../iop/iop-nextcloud-owncloud10-integrations/) when deploying the QA e
     If this key does not exists in ownCloud database, insert a random string for this key as value.
 
     ```
-    UPDATE oc_appconfig SET configvalue = 'some-secret' WHERE configkey = 'revaLoopbackSecret;
+    INSERT oc_appconfig SET configvalue = 'some-secret' WHERE configkey = 'revaLoopbackSecret;
     ```
 
 1. In the end, your OC10 database should contain someting similar to this:
