@@ -18,7 +18,7 @@ This section describes the deployment using Docker and Kubernetes. It is based o
 **Check [current blessed
 versions](../iop/iop-nextcloud-owncloud10-integrations/) when deploying the QA environment.** Note that the example below generally installs master versions, which may not be what you want. You **must modify them** to install intended versions as stated in the above linked page! Always check you're installing intended versions.
 
-1. Prepare the [Dockerfile](https://github.com/sciencemesh/efss-deployment-sample/blob/main/cesnet-owncloud-qa/Dockerfile) fil to build patched ownCloud including Sciencemesh app.
+1. Prepare the [Dockerfile](https://github.com/sciencemesh/efss-deployment-sample/blob/main/cesnet-owncloud-qa/Dockerfile) fil to build patched ownCloud including Sciencemesh app. **Be aware** - the Dockerfile is prepared for testing and development purposes. If you want to deploy QA environment please used the option to install oc-sciencemesh-app via Marketplace, as described [here](https://github.com/sciencemesh/efss-deployment-sample/blob/main/cesnet-owncloud-qa/README.md).
 
 1. Prepare the [Makefile.diff](https://github.com/sciencemesh/efss-deployment-sample/blob/main/cesnet-owncloud-qa/Makefile.diff) to install the Sciencemesh app within docker build.
 
