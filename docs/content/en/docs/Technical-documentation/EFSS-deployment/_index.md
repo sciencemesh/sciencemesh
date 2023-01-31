@@ -18,11 +18,11 @@ This section describes the deployment using Docker and Kubernetes. It is based o
 **Check [current blessed
 versions](../iop/iop-nextcloud-owncloud10-integrations/) when deploying the QA environment.** Note that the example below generally installs master versions, which may not be what you want. You **must modify them** to install intended versions as stated in the above linked page! Always check you're installing intended versions.
 
-1. Prepare the [Dockerfile](https://github.com/sciencemesh/efss-deployment-sample/blob/main/cesnet-owncloud-qa/Dockerfile) file for your Sciencemesh instance.
+1. Prepare the [Dockerfile](https://github.com/sciencemesh/efss-deployment-sample/blob/main/cesnet-owncloud-qa/Dockerfile) fil to build patched ownCloud including Sciencemesh app.
 
 1. Prepare the [Makefile.diff](https://github.com/sciencemesh/efss-deployment-sample/blob/main/cesnet-owncloud-qa/Makefile.diff) to install the Sciencemesh app within docker build.
 
-1. Build the Sciencemesh image and push it to your registry.
+1. Build the Sciencemesh-enabled ownCloud image and push it to your registry.
 
 1. Once you have built the image, you can deploy it in your Kubernetes infrastructure using [ownCloud Helm chart](https://github.com/owncloud-docker/helm-charts/blob/main/charts/owncloud/README.md). We have prepared the [values.yaml](https://github.com/sciencemesh/efss-deployment-sample/blob/main/cesnet-owncloud-qa/values.yaml) for the deployment of patched ownCloud using Helm.
 
