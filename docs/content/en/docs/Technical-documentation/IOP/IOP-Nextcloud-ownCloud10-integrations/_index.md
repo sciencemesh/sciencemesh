@@ -19,6 +19,15 @@ for instance, [the pondersource/sciencemesh branch](https://github.com/pondersou
 * Recommended ownCloud10 installation: make sure you are using a version of OC-10 that includes [this patch](https://patch-diff.githubusercontent.com/raw/owncloud/core/pull/40577.patch),
 for instance, [the pondersource/sciencemesh branch](https://github.com/pondersource/core/tree/sciencemesh).
 
+## List of moving parts
+
+There are a number of moving parts involved, they all need to be exactly right for things to work:
+* your revad version
+* your reva config.toml file
+* your OC-10 or NC version (patched or from a git branch)
+* in the case of OC-10, your config.php
+* the sciencemesh app (oc-sciencemesh or nc-sciencemesh)
+* the settings for the sciencemesh app (as stored in the oc_appconfig database table)
 
 ## Inter-Operability Platform/Reva Integrations with Nextcloud and ownCloud10
 
