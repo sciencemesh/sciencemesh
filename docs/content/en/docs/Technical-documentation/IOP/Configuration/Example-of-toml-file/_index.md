@@ -116,7 +116,6 @@ driver = "json"
 driver = "nextcloud"
 
 [grpc.services.ocmcore.drivers.nextcloud]
-[grpc.services.ocmcore.drivers.nextcloud]
 webdav_host = "https://oc-mesh.du.cesnet.cz/"
 endpoint = "https://oc-mesh.du.cesnet.cz/index.php/apps/sciencemesh/"
 shared_secret = "some-top-secret"
