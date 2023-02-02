@@ -116,6 +116,7 @@ driver = "json"
 driver = "nextcloud"
 
 [grpc.services.ocmcore.drivers.nextcloud]
+webdav_host = "https://oc-mesh.du.cesnet.cz/"
 endpoint = "https://oc-mesh.du.cesnet.cz/index.php/apps/sciencemesh/"
 shared_secret = "some-top-secret"
 mock_http = false
@@ -124,6 +125,7 @@ mock_http = false
 driver = "nextcloud"
 
 [grpc.services.ocmshareprovider.drivers.nextcloud]
+webdav_host = "https://oc-mesh.du.cesnet.cz/"
 endpoint = "https://oc-mesh.du.cesnet.cz/index.php/apps/sciencemesh/"
 shared_secret = "some-top-secret"
 mock_http = false
