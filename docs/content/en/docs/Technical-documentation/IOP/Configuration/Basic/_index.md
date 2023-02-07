@@ -148,6 +148,9 @@ storage provider and a data provider service. Here we set up a simple [`localhom
 [grpc.services.storageprovider]
 driver = "localhome"
 data_server_url = "https://$yourdomain.iop$/data"
+mount_id = "123e4567-e89b-12d3-a456-426655440000"
+expose_data_server = true
+enable_home_creation = true
 
 [http.services.dataprovider]
 driver = "localhome"

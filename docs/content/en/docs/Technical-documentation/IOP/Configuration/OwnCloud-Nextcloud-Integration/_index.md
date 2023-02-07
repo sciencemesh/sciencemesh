@@ -22,6 +22,9 @@ To tell the IOP to store/access user data on NC/OC,
 switch the [storageprovider](/docs/technical-documentation/iop/configuration/basic/#storage-provider-docs-httpsrevalinkdocsconfiggrpcservicesstorageprovider) configuration to use the `nextcloud` driver and point `endpoint` to an URL of your OC/NC service.
 
 ```toml
+[http.services.dataprovider]
+driver = "nextcloud"
+
 [grpc.services.storageprovider]
 driver = "nextcloud"
 data_server_url = "https://$yourdomain.iop$/data"
@@ -29,7 +32,6 @@ data_server_url = "https://$yourdomain.iop$/data"
 [grpc.services.storageprovider.drivers.nextcloud]
 endpoint = "https://$yourdomain.cloud$/index.php/apps/sciencemesh/"
 shared_secret = "$some-random-secret-to-be-shared-with-your-oc-nc$"
-mock_http = false
 ```
 
 > NOTE: The `nextcloud` driver is compatible both with Nextcloud and ownCloud installations.
@@ -46,7 +48,6 @@ auth_manager = "nextcloud"
 [grpc.services.authprovider.auth_managers.nextcloud]
 endpoint = "https://$yourdomain.cloud$/index.php/apps/sciencemesh/"
 shared_secret = "$some-random-secret-to-be-shared-with-your-oc-nc$"
-mock_http = false
 ```
 
 ### Users
@@ -60,7 +61,6 @@ driver = "nextcloud"
 [grpc.services.userprovider.drivers.nextcloud]
 endpoint = "https://$yourdomain.cloud$/index.php/apps/sciencemesh/"
 shared_secret = "$some-random-secret-to-be-shared-with-your-oc-nc$"
-mock_http = false
 ```
 
 ### OCM
@@ -77,7 +77,6 @@ driver = "nextcloud"
 webdav_host = "https://$yourdomain.cloud$/"
 endpoint = "https://$yourdomain.cloud$/index.php/apps/sciencemesh/"
 shared_secret = "$some-random-secret-to-be-shared-with-your-oc-nc$"
-mock_http = false
 ```
 
 [OCM Share provider](/docs/technical-documentation/iop/configuration/basic/#ocm-share-provider-docs-httpsrevalinkdocsconfiggrpcservicesocmshareprovider)
@@ -90,5 +89,4 @@ driver = "nextcloud"
 webdav_host = "https://$yourdomain.cloud$/"
 endpoint = "https://$yourdomain.cloud$/index.php/apps/sciencemesh/"
 shared_secret = "$some-random-secret-to-be-shared-with-your-oc-nc$"
-mock_http = false
 ```
