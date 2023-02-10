@@ -74,6 +74,7 @@ In the same way, we want to override the following OCM services to point to your
 driver = "nextcloud"
 
 [grpc.services.ocmcore.drivers.nextcloud]
+webdav_host = "https://$yourdomain.cloud$/"
 endpoint = "https://$yourdomain.cloud$/index.php/apps/sciencemesh/"
 shared_secret = "$some-random-secret-to-be-shared-with-your-oc-nc$"
 mock_http = false
@@ -86,6 +87,7 @@ mock_http = false
 driver = "nextcloud"
 
 [grpc.services.ocmshareprovider.drivers.nextcloud]
+webdav_host = "https://$yourdomain.cloud$/"
 endpoint = "https://$yourdomain.cloud$/index.php/apps/sciencemesh/"
 shared_secret = "$some-random-secret-to-be-shared-with-your-oc-nc$"
 mock_http = false
