@@ -70,7 +70,7 @@ This procedure leads to the same result as the official Kubernetes deployment, i
     If this key does not exists in ownCloud database, insert a random string for this key as value.
 
     ```
-    UPDATE oc_appconfig SET configvalue = 'some-secret' WHERE configkey = 'revaLoopbackSecret;
+    INSERT oc_appconfig SET configvalue = 'some-secret' WHERE configkey = 'revaLoopbackSecret;
     ```
 
     * **Nexcloud:**
