@@ -11,10 +11,9 @@ WARNING: These instructions are deprecated, please use https://developer.science
 To get an understanding on how to create, use and manage Reva configuration,
 please refer to the [official Reva documentation](https://reva.link/docs/getting-started/beginners-guide/).
 
-> NOTE: This is example of toml file used for deploying CESNET QA instance. 
+> NOTE: This is example of toml file used for deploying CESNET QA instance.
 
 > **IMPORTANT**: To use the example file, you need to change the values inside of the example to those according to your instance and deployment.
-
 
 ```
 [grpc]
@@ -72,11 +71,9 @@ data_server_url = "https://sciencemesh.cesnet.cz/iop/data"
 enable_home_creation = true
 disable_tus = true
 
-
 [grpc.services.storageprovider.drivers.nextcloud]
 endpoint = "https://oc-mesh.du.cesnet.cz/index.php/apps/sciencemesh/"
 shared_secret = "some-top-secret"
-user_layout = "{{.Username}}"
 
 [http.services.dataprovider]
 driver = "nextcloud"
@@ -85,10 +82,6 @@ disable_tus = true
 [http.services.dataprovider.drivers.nextcloud]
 endpoint = "https://oc-mesh.du.cesnet.cz/index.php/apps/sciencemesh/"
 shared_secret = "some-top-secret"
-user_layout = "{{.Username}}"
-
-[http.services.dataprovider.drivers.localhome]
-user_layout = "{{.Username}}"
 
 [grpc.services.authregistry]
 driver = "static"
@@ -101,7 +94,6 @@ auth_manager = "nextcloud"
 [grpc.services.authprovider.auth_managers.nextcloud]
 endpoint = "https://oc-mesh.du.cesnet.cz/index.php/apps/sciencemesh/"
 shared_secret = "some-top-secret"
-mock_http = false
 
 [grpc.services.userprovider]
 driver = "nextcloud"
@@ -109,7 +101,6 @@ driver = "nextcloud"
 [grpc.services.userprovider.drivers.nextcloud]
 endpoint = "https://oc-mesh.du.cesnet.cz/index.php/apps/sciencemesh/"
 shared_secret = "some-top-secret"
-mock_http = false
 
 [grpc.services.groupprovider]
 driver = "json"
@@ -121,7 +112,6 @@ driver = "nextcloud"
 webdav_host = "https://oc-mesh.du.cesnet.cz/"
 endpoint = "https://oc-mesh.du.cesnet.cz/index.php/apps/sciencemesh/"
 shared_secret = "some-top-secret"
-mock_http = false
 
 [grpc.services.ocmshareprovider]
 driver = "nextcloud"
@@ -130,7 +120,6 @@ driver = "nextcloud"
 webdav_host = "https://oc-mesh.du.cesnet.cz/"
 endpoint = "https://oc-mesh.du.cesnet.cz/index.php/apps/sciencemesh/"
 shared_secret = "some-top-secret"
-mock_http = false
 
 [http.services.ocs]
 prefix = "ocs"
