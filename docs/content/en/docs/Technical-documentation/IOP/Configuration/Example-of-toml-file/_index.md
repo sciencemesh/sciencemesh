@@ -3,7 +3,7 @@ title: 'Example of toml file to set up REVA'
 linkTitle: 'Example of toml file to set up REVA'
 weight: 80
 description: >
-  Here you can find an example of toml file needed to set up all necessary services for your reva instance. It consists of the services described in the others [Configuration sections]({{< ref "docs/Technical-documentation/IOP/Configuration" >}}). This toml file is used for [REVA deployment]({{< ref "docs/Technical-documentation/IOP/Deployment/Kubernetes" >}}) and referenced there as `standalone.toml`.
+  Here you can find an example of toml file needed to set up all necessary services for your reva instance. It consists of the services described in the others [Configuration sections](../../configuration). This toml file is used for [REVA deployment](../../deployment) and referenced there as `standalone.toml`.
 ---
 
 WARNING: These instructions are deprecated, please use https://developer.sciencemesh.io/docs/technical-documentation/iop/configuration/ instead!
