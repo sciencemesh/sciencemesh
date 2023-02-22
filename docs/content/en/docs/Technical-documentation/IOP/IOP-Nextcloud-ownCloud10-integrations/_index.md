@@ -7,11 +7,11 @@ description: >
 ---
 
 ## List of known issues to be aware of including **blessed versions** of components
-(last updated 26 January 2023):
-* Due to [this issue](https://github.com/pondersource/sciencemesh-php/issues/133) you should use [this blessed version of Reva](https://hub.docker.com/layers/michielbdejong/reva/mentix-fixes/images/sha256-1892d788892022606fc305338e72dba9cbe17ebda7c719f842a5c774b33193b4?context=explore)
-* Due to [this issue](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991) you should use the main branch of https://github.com/pondersource/oc-sciencemesh
-* Due to [this issue](https://github.com/pondersource/sciencemesh-php/issues/135) you should use the main branch of https://github.com/pondersource/nc-sciencemesh
-* [Problems with `verify_request_hostname`](https://github.com/pondersource/sciencemesh-php/issues/122)
+(last updated 22 February 2023):
+* Due to [this issue](https://github.com/cs3org/reva/issues/3677) you should use [this blessed version of Reva](https://hub.docker.com/r/pondersource/dev-stock-revad)
+
+* Due to [this issue](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991) you should use the main branch of https://github.com/pondersource/oc-sciencemesh instead of the app from the marketplace
+* Due to [this issue](https://github.com/pondersource/sciencemesh-php/issues/135) you should use the main branch of https://github.com/pondersource/nc-sciencemesh instead of the app from the marketplace
 
 * Recommended Nextcloud isntallation: make sure you are using a version of Nextcloud that includes [this patch](https://patch-diff.githubusercontent.com/raw/nextcloud/server/pull/36228.patch),
 for instance, [the pondersource/sciencemesh branch](https://github.com/pondersource/server/tree/sciencemesh).
