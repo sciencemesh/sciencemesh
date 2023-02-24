@@ -7,7 +7,7 @@ description: >
 ---
 
 ## List of known issues to be aware of including **blessed versions** of components
-(last updated 23 February 2023):
+(last updated 24 February 2023):
 
 Due to breaking changes in the OCM invites protocol, we now have a network split. You need to decide whether you want your site to be part of "Network Alpha" or of "Network Beta".
 
@@ -17,8 +17,8 @@ Due to breaking changes in the OCM invites protocol, we now have a network split
 * Due to [this issue](https://github.com/pondersource/sciencemesh-php/issues/135) you should use the `main` branch of https://github.com/pondersource/nc-sciencemesh
 * [Problems with `verify_request_hostname`](https://github.com/pondersource/sciencemesh-php/issues/122)
 
-### For Network Beta
-* Due to [this issue](https://github.com/cs3org/reva/issues/3677) you should use [this blessed version of Reva](https://hub.docker.com/r/pondersource/dev-stock-revad)
+### For Network Beta (not recommended yet!
+* Due to [this issue](https://github.com/cs3org/reva/issues/3677) you should use [this blessed version of Reva](https://hub.docker.com/r/pondersource/dev-stock-revad-network-beta)
 
 * Due to [this issue](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991) you should use the `sciencemesh` branch of https://github.com/pondersource/oc-sciencemesh instead of the app from the marketplace
 * Due to [this issue](https://github.com/pondersource/sciencemesh-php/issues/135) you should use the `sciencemesh` branch of https://github.com/pondersource/nc-sciencemesh instead of the app from the marketplace
