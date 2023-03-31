@@ -36,7 +36,7 @@ for instance, [the pondersource/sciencemesh branch](https://github.com/pondersou
 There are a number of moving parts involved, they all need to be exactly right for things to work:
 * your revad version
 * your reva config.toml file
-* your OC-10 or NC version (patched or from a git branch)
+* your OC-10 or NC version (patched or from a git branch); OC10.12 already contains the patch, so skip patching if you're running 10.12. OC10.12 is the recommended version.
 * in the case of OC-10, your config.php
 * the sciencemesh app (oc-sciencemesh or nc-sciencemesh)
 * the settings for the sciencemesh app (as stored in the oc_appconfig database table)
