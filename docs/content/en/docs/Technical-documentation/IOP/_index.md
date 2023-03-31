@@ -21,7 +21,7 @@ interchangeably.
 
 ## How to deploy Reva?
 Deploying Reva is important step to setup ScienceMesh environment.
-1. [Deploy Reva]({{<ref "docs/Technical-documentation/IOP/Deployment" >}}) (it depends on you preferred way of deployment)
+1. [Deploy Reva](deployment/), supported way is to Kubernetes.
 1. [Configure Reva]({{<ref "docs/Technical-documentation/IOP/Configuration" >}})
    * to define what services are necessary for ScienceMesh environment
    * to talk to your Site's file sync'n'share service
