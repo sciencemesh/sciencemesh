@@ -17,7 +17,9 @@ To join the Science Mesh, there are several steps, technical as well as formal. 
 
 ## Technical steps
 
-1. We have prepared a K8S deployment of OC10. It includes the integration application as well. Follow steps in the [official EFSS deployment page](../technical-documentation/efss-deployment). This is the recommended way to deploy the system.
+1. If running OC10, deploy version 10.12 or higher. Version 10.12 already contains patches necessary for the Science Mesh.
+
+  Legacy installation instructions for slightly older OC10 version than 10.12, and/or for Nextcloud are as follows. We have prepared a K8S deployment of OC10. It includes the integration application as well. Follow steps in the [official EFSS deployment page](../technical-documentation/efss-deployment). This is the recommended way to deploy the system.
 
    Alternatively, you can install pure OC10 or NC and patch it and install the integration application manually as described in a [separate EFSS deployment page](../technical-documentation/efss-deployment/manual-efss-installation). The same document also describes how to possibly track newest git versions of the code, which is definitely an option only for developers.
 
