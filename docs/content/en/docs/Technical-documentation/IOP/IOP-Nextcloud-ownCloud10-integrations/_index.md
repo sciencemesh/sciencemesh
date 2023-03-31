@@ -20,8 +20,8 @@ Due to breaking changes in the OCM invites protocol, we now have a network split
 ### For Network Beta (not recommended yet!
 * Due to [this issue](https://github.com/cs3org/reva/issues/3677) you should use [this blessed version of Reva](https://hub.docker.com/r/pondersource/dev-stock-revad-network-beta)
 
-* Due to [this issue](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991) you should use the `sciencemesh` branch of https://github.com/pondersource/oc-sciencemesh instead of the app from the marketplace
-* Due to [this issue](https://github.com/pondersource/sciencemesh-php/issues/135) you should use the `sciencemesh` branch of https://github.com/pondersource/nc-sciencemesh instead of the app from the marketplace
+* Due to [this issue](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991) you should use the `oc-10` branch of https://github.com/pondersource/nc-sciencemesh instead of the app from the ownCloud marketplace
+* Due to [this issue](https://github.com/pondersource/sciencemesh-php/issues/135) you should use the `sciencemesh` branch of https://github.com/pondersource/nc-sciencemesh instead of the app from the Nextcloud marketplace
 
 
 ### In both cases
@@ -36,7 +36,7 @@ for instance, [the pondersource/sciencemesh branch](https://github.com/pondersou
 There are a number of moving parts involved, they all need to be exactly right for things to work:
 * your revad version
 * your reva config.toml file
-* your OC-10 or NC version (patched or from a git branch)
+* your OC-10 or NC version (patched or from a git branch); OC10.12 already contains the patch, so skip patching if you're running 10.12. OC10.12 is the recommended version.
 * in the case of OC-10, your config.php
 * the sciencemesh app (oc-sciencemesh or nc-sciencemesh)
 * the settings for the sciencemesh app (as stored in the oc_appconfig database table)
