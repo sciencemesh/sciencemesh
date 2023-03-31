@@ -50,6 +50,31 @@ By default, you will only be able to view the mesh metadata but won't be able to
     {{< /imgproc >}}
 1. After submitting, a Science Mesh administrator will review your request and grant you write access to your data
 
+## Setup of your ScienceMesh instance in GOCDB
+To set up your ScienceMesh instance in GOCDB you need to setup all elementary components as follows.
+
+First you need to define **Site** by click on the **Add Site** button in GOCDB interface. For each ScienceMesh instance (in GOCDB referred as **Site** object) you have to define two elementary **Service Types**. First is **REVAD** and second is **EFSS** Service Type. All objects described in this section are editable using edit icon in the right-top corner. Although you have to have appropriate permissions granted by **Operation Manager**. Setup of user permissions can be found in the lef menu **User Status** -> **Manage Roles**.
+
+### Site object
+The Site can be created by clicking on the **Add Site button** in the left menu. In the particular **Site** object detail, see below, you can find all elementary information you need to fill in. Especially in the right-up the pannel named **Project Data**. There you can define the value of **Infrastructure** attribute (Production | Test). This attribute is taken into account to distinguish the status of your infrastructure for other services, e.g. MeshDirectory service. Below in the **Site** object detail you have to add both services defined below (REVAD, EFSS) to the displayed **Site**, see below. While creating the **Service**s below you is necessary to choose **Hosting Site** value corresponding to your Site created in this step.
+
+{{< imgproc "sm-site.png" Fit "600x450" >}}
+{{< /imgproc >}}
+
+### REVAD service
+In the following screenshot you can see the exemplary setup of the REVAD service.
+
+Please pay extra attention to setup correctly all **Service Endpoints** which are being used for monitoring and other services. Of course **the URLs depend on your own ScienceMesh instance setup!**
+{{< imgproc "revad-service.png" Fit "600x450" >}}
+{{< /imgproc >}}
+
+### EFSS service
+In the following screenshot you can see the exemplary setup of the EFSS service.
+Please pay extra attention to setup correctly all **Service Endpoints**. Particularly **EFSS_WEBAPP** and **EFSS_STATUS**. Of course **the URLs depend on your own ScienceMesh instance setup!**
+{{< imgproc "efss-service.png" Fit "600x450" >}}
+{{< /imgproc >}}
+
+
 ## Keeping your data up-to-date
 It is your obligation as a site administrator to keep the information stored in the central database up to date. This mainly concerns the general sites' information that can be found under `Browse > Site`, as well as your sites' services that can be found under `Browse > Services`.
 
