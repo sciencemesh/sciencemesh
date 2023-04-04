@@ -20,7 +20,7 @@ Due to breaking changes in the OCM invites protocol, we now have a network split
 ### For Network Beta (not recommended yet!
 * Due to [this issue](https://github.com/cs3org/reva/issues/3677) you should use [this blessed version of Reva](https://hub.docker.com/r/pondersource/dev-stock-revad-network-beta)
 
-* Due to [this issue](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991) you should use the `oc-10` branch of https://github.com/pondersource/nc-sciencemesh instead of the app from the ownCloud marketplace
+* Due to [this issue](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991) you should use the `oc-10-take-2` branch of https://github.com/pondersource/nc-sciencemesh instead of the app from the ownCloud marketplace
 * Due to [this issue](https://github.com/pondersource/sciencemesh-php/issues/135) you should use the `sciencemesh` branch of https://github.com/pondersource/nc-sciencemesh instead of the app from the Nextcloud marketplace
 
 
