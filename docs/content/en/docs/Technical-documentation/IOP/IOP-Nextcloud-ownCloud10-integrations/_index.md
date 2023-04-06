@@ -9,7 +9,7 @@ description: >
 ## List of known issues to be aware of including **blessed versions** of components
 (last updated 24 February 2023):
 
-Due to breaking changes in the OCM invites protocol, we now have a network split. You need to decide whether you want your site to be part of "Network Alpha" or of "Network Beta".
+Due to breaking changes in the OCM invites protocol, we now have a network split. You need to decide whether you want your site to be part of "Network Alpha" or of "Network Beta". OCM in Network Alpha supports one-directional invitation workflow (as of 20230406, this is the usual pre-production environment), while Beta supports newer OCM version with bi-directional invitation workflow (as of 20230406 available only on OCIS). If unsure, use Alpha.
 
 ### For Network Alpha
 * Due to [this issue](https://github.com/pondersource/sciencemesh-php/issues/133) you should use [this blessed version of Reva](https://hub.docker.com/layers/michielbdejong/reva/mentix-fixes/images/sha256-1892d788892022606fc305338e72dba9cbe17ebda7c719f842a5c774b33193b4?context=explore)
@@ -17,7 +17,7 @@ Due to breaking changes in the OCM invites protocol, we now have a network split
 * Due to [this issue](https://github.com/pondersource/sciencemesh-php/issues/135) you should use the `main` branch of https://github.com/pondersource/nc-sciencemesh
 * [Problems with `verify_request_hostname`](https://github.com/pondersource/sciencemesh-php/issues/122)
 
-### For Network Beta (not recommended yet!
+### For Network Beta (not recommended yet!)
 * Due to [this issue](https://github.com/cs3org/reva/issues/3677) you should use [this blessed version of Reva](https://hub.docker.com/r/pondersource/dev-stock-revad-network-beta)
 
 * Due to [this issue](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991) you should use the `oc-10-take-2` branch of https://github.com/pondersource/nc-sciencemesh instead of the app from the ownCloud marketplace
