@@ -169,9 +169,9 @@ helm upgrade -i iop sciencemesh/iop \
   --reuse-values
 ```
 
-## Testing the integration with the `open-file-in-app-provider` sub-command
+## Testing the integration with the `open-in-app` sub-command
 
-Reva's `open-file-in-app-provider` subcomand allows an authenticated user to generate a URL pointing to the application provider that will open the file for viewing/editing (depending on the `-viewmode` flag).
+Reva's `open-in-app` subcomand allows an authenticated user to generate a URL pointing to the application provider that will open the file for viewing/editing (depending on the `-viewmode` flag).
 
 Behind the scenes, Reva will ask the WOPI server to generate a unique token and URI to access the file through the CS3 APIs. The WOPI Server will determine what is the right application to open such file (based on the available `wopiserver.config.appProviders` config) and abstract all the implementation details from the user (e.g. save operations, file locking, etc.).
 
@@ -187,12 +187,12 @@ Local XS: RESOURCE_CHECKSUM_TYPE_MD5:21751696b491472501ffa1ec6cc3021d
  10.91 KiB / 10.91 KiB [======================================================================================================================] 100.00% 0s
 File uploaded: 123e4567-e89b-12d3-a456-426655440000:fileid-<user>%2Fsciencemesh.odt 11176 /home/sciencemesh.odt
 
-reva open-file-in-app-provider -viewmode write /home/sciencemesh.odt
+reva open-in-app -viewmode write /home/sciencemesh.odt
 App provider url: https://<hostname.domain.tld>/loleaflet/ed4f732/loleaflet.html?permission=edit&WOPISrc=https%3A%2F%2F<hostname.domain.tld>%2Fwopi%2Ffiles%2F123e4567-e89b-12d3-a456-426655440000-3380161333240892090&access_token=<token>
 ```
 
 ### Collaborative editing workflows
 
-Effectively, a site running the WOPI Server configured and enabled together with the IOP as described above, can share files (via the [OCM Share](https://reva.link/docs/tutorials/share-tutorial/) mechanism) with a second user. Even if the recipient site does not have a WOPI Server deployed. This mechanism relies on Reva's capacity to forward the requests to `open-file-in-app-provider` from the receiving site to the original grantor's.
+Effectively, a site running the WOPI Server configured and enabled together with the IOP as described above, can share files (via the [OCM Share](https://reva.link/docs/tutorials/share-tutorial/) mechanism) with a second user. Even if the recipient site does not have a WOPI Server deployed. This mechanism relies on Reva's capacity to forward the requests to `open-in-app` from the receiving site to the original grantor's.
 
-If the originating site is also connected to a WOPI-compatible application, that supports the file's MIME type and **has also collaborative-editing capabilities** (like e.g. Collabora Code), the document can be opened by both users at the same time. In this session, users are able to see each other's contributions and changes and save their progress on the original document,  living on the original storage backend - no matter what it is.
+If the originating site is also connected to a WOPI-compatible application, that supports the file's MIME type and **has also collaborative-editing capabilities** (like e.g. Collabora Code), the document can be opened by both users at the same time. In this session, users are able to see each other's contributions and changes and save their progress on the original document, living on the original storage backend - no matter what it is.

@@ -6,7 +6,7 @@ description: >
     Real-time collaborative markdown editing with [CodiMD](https://github.com/hackmdio/codimd)
 ---
 
-CodiMD is not built upon the [WOPI Protocol](https://wopi.readthedocs.io/en/latest/) (as it happens with [Collabora Code](../../iop/deployment/wopiserver)), but the CS3 WOPI Server includes a "bridge" extension that needs to be configured to support CodiMD.
+CodiMD is not built upon the WOPI Protocol (as it happens with [Collabora Code](../../iop/deployment/wopiserver)), yet the CS3 WOPI Server includes a "bridge" extension that can be configured to support CodiMD.
 
 ## Configuring the WOPI Server for CodiMD
 
