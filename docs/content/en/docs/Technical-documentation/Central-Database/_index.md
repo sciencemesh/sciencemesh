@@ -58,9 +58,9 @@ First you need to define **Site** by click on the **Add Site** button in GOCDB i
 ### Site object
 The Site can be created by clicking on the **Add Site button** in the left menu. In the particular **Site** object detail, see below, you can find all elementary information you need to fill in. Especially in the right-up the pannel named **Project Data**. There you can define the value of **Infrastructure** attribute (Production | Test). This attribute is taken into account to distinguish the status of your infrastructure for other services, e.g. MeshDirectory service. Below in the **Site** object detail you have to add both services defined below (REVAD, EFSS) to the displayed **Site**, see below. While creating the **Service**s below you is necessary to choose **Hosting Site** value corresponding to your Site created in this step. Please double check the points listed below since they have very crucial importance for the overall functionality of corresponding services.
 
-* The "Domain" field is used to identify users, so it must be correct
-* Longitude and Latitude are **NOT** optional, so please make sure you filled this in
-* A Property called ORGANIZATION can be added to override that value for a site (otherwise, the NGI/ROC name is used, which might be improper) - we suggest you to name your NGI properly so you do not need to override the name by Property function
+* The `Domain` field is used to identify users, so it must be correct
+* `Longitude` and `Latitude` are **NOT** optional, so please make sure you filled this in
+* A `Property` called _ORGANIZATION_ can be added to override that value for a site (otherwise, the NGI/ROC name is used, which might be improper) - we suggest you to name your NGI properly so you do not need to override the name by Property function
 
 {{< imgproc "sm-site.png" Fit "697x934" >}}
 {{< /imgproc >}}
@@ -70,7 +70,7 @@ In the following screenshot you can see the exemplary setup of the REVAD service
 
 Please pay extra attention to setup correctly all **Service Endpoints** which are being used for monitoring and other services. Of course **the URLs depend on your own ScienceMesh instance setup!**
 
-**It is quite important to get the monitoring settings right (monitoring must be enabled for the REVAD service and for the METRICS and GATEWAY endpoints (and ONLY those)** 
+It is quite important to get the monitoring settings right - monitoring must be enabled for the REVAD service and for the `METRICS` and `GATEWAY` endpoints **(and ONLY those)** 
 
 {{< imgproc "revad-service.png" Fit "579x903" >}}
 {{< /imgproc >}}
