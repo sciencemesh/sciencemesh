@@ -7,29 +7,23 @@ description: >
 ---
 
 ## List of known issues to be aware of including **blessed versions** of components
-(last updated 24 February 2023):
+(last updated 27 April 2023):
 
-Due to breaking changes in the OCM invites protocol, we now have a network split. You need to decide whether you want your site to be part of "Network Alpha" or of "Network Beta". OCM in Network Alpha supports one-directional invitation workflow (as of 20230406, this is the usual pre-production environment), while Beta supports newer OCM version with bi-directional invitation workflow (as of 20230406 available only on OCIS). If unsure, use Alpha.
+Note that we recently switched to a new version of Reva that is compatible with the version we were using until April 2023.
 
-### For Network Alpha
-* Due to [this issue](https://github.com/pondersource/sciencemesh-php/issues/133) you should use [this blessed version of Reva](https://hub.docker.com/layers/michielbdejong/reva/mentix-fixes/images/sha256-1892d788892022606fc305338e72dba9cbe17ebda7c719f842a5c774b33193b4?context=explore)
-* Due to [this issue](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991) you should use the `main` branch of https://github.com/pondersource/oc-sciencemesh
-* Due to [this issue](https://github.com/pondersource/sciencemesh-php/issues/135) you should use the `main` branch of https://github.com/pondersource/nc-sciencemesh
-* [Problems with `verify_request_hostname`](https://github.com/pondersource/sciencemesh-php/issues/122)
+* Use [latest reva master](https://github.com/cs3org/reva). We will soon provide a Docker image of it; for now, you can build and run it from source.
 
-### For Network Beta (not recommended yet!)
-* Due to [this issue](https://github.com/cs3org/reva/issues/3677) you should use [this blessed version of Reva](https://hub.docker.com/r/pondersource/dev-stock-revad-network-beta)
-
-* Due to [this issue](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991) you should use the `oc-10-take-2` branch of https://github.com/pondersource/nc-sciencemesh instead of the app from the ownCloud marketplace
-* Due to [this issue](https://github.com/pondersource/sciencemesh-php/issues/135) you should use the `sciencemesh` branch of https://github.com/pondersource/nc-sciencemesh instead of the app from the Nextcloud marketplace
+* If your EFSS is based on OCIS, you can directly join the ScienceMesh and don't need to run a separate Reva instance.
+* If your EFSS is based on ownCloud 10, use the `oc-10-take-2` branch of https://github.com/pondersource/nc-sciencemesh. We will soon update the app in the ownCloud marketplace.
+* If your EFSS is based on Nextcloud, use the `sciencemesh` branch of https://github.com/pondersource/nc-sciencemesh. We will soon update the app in the Nextcloud marketplace.
 
 
 ### In both cases
 * Recommended Nextcloud installation: make sure you are using a version of Nextcloud that includes [this patch](https://patch-diff.githubusercontent.com/raw/nextcloud/server/pull/36228.patch),
-for instance, [the pondersource/sciencemesh branch](https://github.com/pondersource/server/tree/sciencemesh).
+for instance, [Nextcloud version 26](https://github.com/nextcloud/server/blob/v26.0.0/lib/public/Share/IShare.php#L123).
 
 * Recommended ownCloud10 installation: make sure you are using a version of OC-10 that includes [this patch](https://patch-diff.githubusercontent.com/raw/owncloud/core/pull/40577.patch),
-for instance, [the pondersource/sciencemesh branch](https://github.com/pondersource/core/tree/sciencemesh).
+for instance, [ownCloud version 10.12](https://github.com/owncloud/core/blob/release-10.12.0/apps/files_sharing/lib/Controller/ShareesController.php#L385).
 
 ## List of moving parts
 
@@ -38,7 +32,7 @@ There are a number of moving parts involved, they all need to be exactly right f
 * your reva config.toml file
 * your OC-10 or NC version (patched or from a git branch); OC10.12 already contains the patch, so skip patching if you're running 10.12. OC10.12 is the recommended version.
 * in the case of OC-10, your config.php
-* the sciencemesh app (oc-sciencemesh or nc-sciencemesh)
+* the sciencemesh app ("nc-sciencemesh")
 * the settings for the sciencemesh app (as stored in the oc_appconfig database table)
 
 ## Inter-Operability Platform/Reva Integrations with Nextcloud and ownCloud10
