@@ -11,7 +11,7 @@ description: >
 
 Note that we recently switched to a new version of Reva that is not compatible with the version we were using until April 2023.
 
-* Use [latest reva master](https://github.com/cs3org/reva). We will soon provide a Docker image of it; for now, you can build and run it from source.
+* Use [the sciencemesh-dev branch of reva](https://github.com/cs3org/reva/tree/sciencemesh-dev). We will soon provide a Docker image of it; for now, you can build and run it from source. We will also merge all relevant PRs into Reva master, and delete the sciencemesh-dev branch again once that is done.
 
 * If your EFSS is based on OCIS, you can directly join the ScienceMesh and don't need to run a separate Reva instance.
 * If your EFSS is based on ownCloud 10, use the `oc-10-take-2` branch of https://github.com/pondersource/nc-sciencemesh. We will soon update the app in the ownCloud marketplace.
