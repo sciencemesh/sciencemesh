@@ -9,7 +9,7 @@ description: >
 ## List of known issues to be aware of including **blessed versions** of components
 (last updated 27 April 2023):
 
-Note that we recently switched to a new version of Reva that is compatible with the version we were using until April 2023.
+Note that we recently switched to a new version of Reva that is not compatible with the version we were using until April 2023.
 
 * Use [latest reva master](https://github.com/cs3org/reva). We will soon provide a Docker image of it; for now, you can build and run it from source.
 
