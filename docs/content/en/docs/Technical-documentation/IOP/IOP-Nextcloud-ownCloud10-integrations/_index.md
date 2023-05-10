@@ -23,7 +23,7 @@ for instance, [ownCloud version 10.12](https://github.com/owncloud/core/blob/rel
 ## List of moving parts
 
 There are a number of moving parts involved, they all need to be exactly right for things to work:
-* your site's registration in gocdb. Make sure your site is registered as 'candidate' and with the right configuration
+* your site's registration in gocdb. Make sure your site is registered with 'infrastructure = test' and with the right configuration
 * your revad version
 * your reva config.toml file. THIS IS IMPORTANT!
 * your OC-10 or NC version (patched or from a git branch); OC10.12 already contains the patch, so skip patching if you're running 10.12. OC10.12 is the recommended version.
