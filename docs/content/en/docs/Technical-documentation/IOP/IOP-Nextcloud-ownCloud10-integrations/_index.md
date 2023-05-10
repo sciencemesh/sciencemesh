@@ -7,7 +7,7 @@ description: >
 ---
 
 ## List of known issues to be aware of including **blessed versions** of components
-(last updated 27 April 2023):
+(last updated 10 May 2023):
 
 Note that we recently switched to a new version of Reva that is not compatible with the version we were using until April 2023.
 
