@@ -8,8 +8,7 @@ description: >
 
 ## List of known issues to be aware of including **blessed versions** of components
 (last updated 10 May 2023):
-
-Note that we recently switched to a new version of Reva that is not compatible with the version we were using until April 2023.
+* if you get an invite with ...&providerDomain=https://example.com and see 'invite link is broken', try changing it to ...&providerDomain=example.com
 
 * Use [the sciencemesh-dev branch of reva](https://github.com/cs3org/reva/tree/sciencemesh-dev). A Docker image of it can be found [here](https://hub.docker.com/r/pondersource/reva-beta).
 
