@@ -11,14 +11,10 @@ description: >
 
 Note that we recently switched to a new version of Reva that is not compatible with the version we were using until April 2023.
 
-* Use [the sciencemesh-dev branch of reva](https://github.com/cs3org/reva/tree/sciencemesh-dev). We will soon provide a Docker image of it; for now, you can build and run it from source. We will also merge all relevant PRs into Reva master, and delete the sciencemesh-dev branch again once that is done.
+* Use [the sciencemesh-dev branch of reva](https://github.com/cs3org/reva/tree/sciencemesh-dev). A Docker image of it can be found [here](https://hub.docker.com/r/pondersource/reva-beta).
 
-* If your EFSS is based on OCIS, you can directly join the ScienceMesh and don't need to run a separate Reva instance.
-* If your EFSS is based on ownCloud 10, use the `oc-10-take-2` branch of https://github.com/pondersource/nc-sciencemesh. We will soon update the app in the ownCloud marketplace.
-* If your EFSS is based on Nextcloud, use the `sciencemesh` branch of https://github.com/pondersource/nc-sciencemesh. We will soon update the app in the Nextcloud marketplace.
-
-
-### In both cases
+* If your EFSS is based on OCIS, you cannot join the ScienceMesh yet until https://github.com/cs3org/reva/pull/3868 is merged.
+* If your EFSS is based on ownCloud 10 or Nextcloud, use the `sciencemesh` app from the app store / marketplace.
 * Recommended Nextcloud installation: make sure you are using a version of Nextcloud that includes [this patch](https://patch-diff.githubusercontent.com/raw/nextcloud/server/pull/36228.patch),
 for instance, [Nextcloud version 26](https://github.com/nextcloud/server/blob/v26.0.0/lib/public/Share/IShare.php#L123).
 
@@ -29,11 +25,11 @@ for instance, [ownCloud version 10.12](https://github.com/owncloud/core/blob/rel
 
 There are a number of moving parts involved, they all need to be exactly right for things to work:
 * your revad version
-* your reva config.toml file
+* your reva config.toml file. THIS IS IMPORTANT!
 * your OC-10 or NC version (patched or from a git branch); OC10.12 already contains the patch, so skip patching if you're running 10.12. OC10.12 is the recommended version.
 * in the case of OC-10, your config.php
-* the sciencemesh app ("nc-sciencemesh")
-* the settings for the sciencemesh app (as stored in the oc_appconfig database table)
+* the sciencemesh app
+* the settings for the sciencemesh app (in the admin settings dialog)
 
 ## Inter-Operability Platform/Reva Integrations with Nextcloud and ownCloud10
 
@@ -44,12 +40,11 @@ you need to install the ScienceMesh app.
 
 See above for the *recommended version*.
 
-NB: Nextcloud app in marketplace [is not up to date](https://github.com/pondersource/sciencemesh-php/issues/135)
-~~For Nextcloud, you can use Nextcloud Apps:
+For Nextcloud, you can use Nextcloud Apps:
 https://apps.nextcloud.com/apps/sciencemesh.
-This is the preferred way.~~
+This is the preferred way.
 
-~~Or, if you prefer doing it by hand or need a specific version,~~ go to your Nextcloud apps folder, and run (using appropriate version):
+Or, if you prefer doing it by hand or need a specific version, go to your Nextcloud apps folder, and run (using appropriate version):
 
 ```
 git clone -b v0.2.0 https://github.com/pondersource/nc-sciencemesh sciencemesh
@@ -94,11 +89,9 @@ Note: this section is not relevant for OCIS.
 
 See above for the *recommended version*.
 
-FIXME: [app in marketplace needs updating](https://github.com/pondersource/oc-sciencemesh/pull/39#issuecomment-1402051991)
-
-~~For ownCloud, you can use ownCloud Marketplace application:
+For ownCloud, you can use ownCloud Marketplace application:
 https://marketplace.owncloud.com/apps/sciencemesh. This is the preferred
-way.~~
+way.
 
 Or, if you prefer doing it by hand or you need a specific version, in your ownCloud apps folder, run (using appropriate version):
 
