@@ -12,7 +12,7 @@ description: >
 
 * Use [v1.24.0 of reva](https://github.com/cs3org/reva/releases/tag/v1.24.0). A Docker image of it can be obtained with `docker pull cs3org/revad:v1.24.0`.
 
-* If your EFSS is based on OCIS, you cannot join the ScienceMesh yet until https://github.com/cs3org/reva/pull/3868 is merged.
+* If your EFSS is based on OCIS, contact Giuseppe Lo Presti to get help with the configuration.
 * If your EFSS is based on ownCloud 10 or Nextcloud, use the `sciencemesh` app from the app store / marketplace.
 * Recommended Nextcloud installation: make sure you are using a version of Nextcloud that includes [this patch](https://patch-diff.githubusercontent.com/raw/nextcloud/server/pull/36228.patch),
 for instance, [Nextcloud version 26](https://github.com/nextcloud/server/blob/v26.0.0/lib/public/Share/IShare.php#L123).
