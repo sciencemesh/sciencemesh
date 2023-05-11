@@ -7,10 +7,10 @@ description: >
 ---
 
 ## List of known issues to be aware of including **blessed versions** of components
-(last updated 10 May 2023):
+(last updated 11 May 2023):
 * if you get an invite with ...&providerDomain=https://example.com and see 'invite link is broken', try changing it to ...&providerDomain=example.com
 
-* Use [the sciencemesh-dev branch of reva](https://github.com/cs3org/reva/tree/sciencemesh-dev). A Docker image of it can be found [here](https://hub.docker.com/r/pondersource/reva-beta).
+* Use [v1.24.0 of reva](https://github.com/cs3org/reva/releases/tag/v1.24.0). A Docker image of it can be obtained with `docker pull cs3org/revad:v1.24.0`.
 
 * If your EFSS is based on OCIS, you cannot join the ScienceMesh yet until https://github.com/cs3org/reva/pull/3868 is merged.
 * If your EFSS is based on ownCloud 10 or Nextcloud, use the `sciencemesh` app from the app store / marketplace.
