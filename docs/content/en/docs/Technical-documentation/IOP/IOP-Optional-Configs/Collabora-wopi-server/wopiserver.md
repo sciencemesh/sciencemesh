@@ -89,25 +89,37 @@ For the WOPI Server to be able to work together with Reva, two additional servic
 - [`appprovider`](https://reva.link/docs/config/grpc/services/appprovider/).
 - [`appregistry`](https://reva.link/docs/config/grpc/services/appregistry/).
 
-Here is an example on some parameters that need to be set in the reva daemon. They include the WOPI Server location inside the cluster as well as some static rules to match different MIME types to be opened with it:
+Here is an example of some parameters that need to be set in the reva daemon. They include the WOPI Server location inside the cluster as well as some static rules to match different MIME types to be opened with it:
 
 ```toml
+[http.services.appprovider]
+transfer_shared_secret = "<same_secret_as_http.services.datagateway>"
+timeout = 86400
+
 [grpc.services.gateway]
-appprovidersvc = "iop-gateway:19000"
-appregistry = "iop-gateway:19000"
+appregistrysvc = "iop-gateway:19000"
 
 [grpc.services.appprovider]
-driver = "demo"
-wopiurl = "https://<hostname>/"
+driver = "wopi"
+app_provider_url = "iop-gateway:19001"
+mime_types = ["application/vnd.oasis.opendocument.text", "application/vnd.oasis.opendocument.spreadsheet", "application/vnd.oasis.opendocument.presentation", "text/rtf"]
+
+[grpc.services.appprovider.drivers.wopi]
+iop_secret = "REVA_APPPROVIDER_IOPSECRET"
+wopi_url = "https://your_wopi_server:port"
+app_name = "Collabora"
+app_url = "https://your_collabora_server"
+insecure_connections = true
 
 [grpc.services.appregistry]
 driver = "static"
 
-[grpc.services.appregistry.static.rules]
-"text/plain" = "iop-gateway:19000"
-"application/vnd.oasis.opendocument.text" = "iop-gateway:19000"
-"application/vnd.oasis.opendocument.spreadsheet" = "iop-gateway:19000"
-"application/vnd.oasis.opendocument.presentation" = "iop-gateway:19000"
+[grpc.services.appregistry.drivers.static]
+mime_types = [
+        { mime_type = "application/vnd.oasis.opendocument.text", extension = "odt", name = "Open document", description = "OpenDocument text", default_app = "Collabora", allow_creation = true },
+        { mime_type = "application/vnd.oasis.opendocument.spreadsheet", extension = "ods", name = "Open spreadsheet", description = "OpenDocument spreadsheet", default_app = "Collabora", allow_creation = true },
+        { mime_type = "application/vnd.oasis.opendocument.presentation", extension = "odp", name = "Open slides", description = "OpenDocument presentation", default_app = "Collabora", allow_creation = true },
+]
 ```
 
 Lastly, a shared secret must also be provided in Reva with one of the available options:
