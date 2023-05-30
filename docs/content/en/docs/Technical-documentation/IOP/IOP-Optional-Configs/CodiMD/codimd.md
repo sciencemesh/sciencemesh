@@ -20,12 +20,10 @@ wopiserver:
       inturl: http://meshapps-codimd
 ```
 
-> **Note:** depending on the ingress controller path-matching policies, you might experience routing issues between requests addressed to the WOPI Server and the Bridge (as their `path`-s can collide). Review your controller's [path priority](https://kubernetes.github.io/ingress-nginx/user-guide/ingress-path-matching/#path-priority) policies and use an alternative path in case that could be an issue.
-
-Refer to the [chart's documentation](https://artifacthub.io/packages/helm/cs3org/wopiserver#wopi-bridge-configuration) for a complete reference of all the configuration options available. Once ready, the release can be patched with the following command:
+Refer to the [chart's documentation](https://artifacthub.io/packages/helm/cs3org/wopiserver) for a complete reference of all the configuration options available. Once ready, the release can be patched with the following command:
 
 ```bash
-helm upgrade -i iop sciencemesh/iop --reuse-values -f wopibridge.yaml
+helm upgrade -i iop sciencemesh/iop --reuse-values -f wopiserver.yaml
 ```
 
 ## Deploying CodiMD through the `sciencemesh/meshapps` chart
