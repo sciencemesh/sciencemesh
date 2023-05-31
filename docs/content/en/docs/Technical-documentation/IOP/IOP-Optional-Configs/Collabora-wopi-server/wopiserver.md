@@ -93,8 +93,7 @@ Here is an example of some parameters that need to be set in the reva daemon. Th
 
 ```toml
 [http.services.appprovider]
-transfer_shared_secret = "<same_secret_as_http.services.datagateway>"
-timeout = 86400
+insecure = true    # if you need to disable SSL verification
 
 [grpc.services.gateway]
 appregistrysvc = "iop-gateway:19000"
@@ -109,7 +108,7 @@ iop_secret = "REVA_APPPROVIDER_IOPSECRET"
 wopi_url = "https://your_wopi_server:port"
 app_name = "Collabora"
 app_url = "https://your_collabora_server"
-insecure_connections = true
+insecure_connections = true    # if you need to disable SSL verification
 
 [grpc.services.appregistry]
 driver = "static"
