@@ -104,7 +104,7 @@ app_provider_url = "iop-gateway:19001"
 mime_types = ["application/vnd.oasis.opendocument.text", "application/vnd.oasis.opendocument.spreadsheet", "application/vnd.oasis.opendocument.presentation", "text/rtf"]
 
 [grpc.services.appprovider.drivers.wopi]
-iop_secret = "REVA_APPPROVIDER_IOPSECRET"
+iop_secret = "REVA_IOPSECRET"    # must match the `/etc/wopi/iopsecret` deployed in the wopiserver image
 wopi_url = "https://your_wopi_server:port"
 app_name = "Collabora"
 app_url = "https://your_collabora_server"
