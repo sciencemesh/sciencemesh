@@ -80,9 +80,6 @@ Set the base address of running Nextcloud instance in the following sections of 
     * `[grpc.services.userprovider.drivers.nextcloud]`
     * `[http.services.dataprovider.drivers.nextcloud]`
 
-NB: Due to https://github.com/pondersource/sciencemesh-php/issues/122 make sure you set `verify_request_hostname` to false during testing.
-
-
 ### ownCloud10
 
 Note: this section is not relevant for OCIS.
