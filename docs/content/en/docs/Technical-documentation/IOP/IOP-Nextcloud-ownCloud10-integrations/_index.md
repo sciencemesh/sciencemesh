@@ -22,7 +22,7 @@ for instance, [ownCloud version 10.12](https://github.com/owncloud/core/blob/rel
 There are a number of moving parts involved, they all need to be exactly right for things to work:
 * your site's registration in gocdb. Make sure your site is registered with 'infrastructure = production' and with the right configuration
 * your revad version
-* your two reva config.toml files. THIS IS IMPORTANT!
+* your various reva config.toml files, one for each revad process. THIS IS IMPORTANT!
 * your OC-10 or NC version (patched or from a git branch); OC10.12 already contains the patch, so skip patching if you're running 10.12. OC10.12 is the recommended version.
 * in the case of OC-10, your config.php
 * the sciencemesh app
