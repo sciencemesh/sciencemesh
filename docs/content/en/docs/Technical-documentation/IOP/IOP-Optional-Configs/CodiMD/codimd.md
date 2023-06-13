@@ -74,17 +74,28 @@ helm upgrade -i meshapps sciencemesh/meshapps --reuse-values -f codimd.yaml
 
 There are three extra steps left for the IOP to integrate with this application. These will require modifying the Revad configuration to identify the files that will be opened by CodiMD:
 
-1. Append a new set of rules in the `appregistry` service running on the gateway to identify these files:
-
 ```toml
-[grpc.services.appregistry.static.rules]
-"text/markdown" = "iop-gateway:19000"
-"application/compressed-markdown" = "iop-gateway:19000"
+[grpc.services.appprovider]
+driver = "wopi"
+app_provider_url = "iop-gateway:19001"
+mime_types = ["text/markdown", "application/compressed-markdown", "text/plain", "text/html"]
+
+[grpc.services.appprovider.drivers.wopi]
+iop_secret = "REVA_IOPSECRET"    # must match the `/etc/wopi/iopsecret` deployed in the wopiserver image
+wopi_url = "https://your_wopi_server:port"
+app_name = "CodiMD"
+app_url = "https://your_codimd_server"
+insecure_connections = true    # if you need to disable SSL verification
+
+[grpc.services.appregistry]
+driver = "static"
+
+[grpc.services.appregistry.drivers.static]
+mime_types = [
+        { mime_type = "text/markdown", extension = "md", name = "Markdown file", description = "Markdown text", default_app = "CodiMD", allow_creation = true }
+        { mime_type = "application/compressed-markdown", extension = "zmd", name = "CodiMD file", description = "Compressed Markdown with images", default_app = "CodiMD", allow_creation = true }
+        ...
+]
 ```
 
-2. Add a mapping between the custom `.zmd` file extension, used to package markdown files together with uploaded images, and the `application/compressed-markdown` MIME-type used to identify these files. This needs to be done on all the running `storageprovider` services: whether using a [standalone](../../iop/deployment/kubernetes) deployment or one based on [multiple, decoupled storage providers](../../iop/deployment/kubernetes/providers).
-
-```toml
-[grpc.services.storageprovider.mimetypes]
-".zmd" = "application/compressed-markdown"
-```
+Note that CodiMD supports a custom MIME type named `application/compressed-markdown`, but currently the support of custom MIME types is not functioning in Reva. Once fixed, it will be supported as well.
