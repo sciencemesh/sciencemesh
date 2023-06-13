@@ -7,8 +7,8 @@ description: >
 ---
 
 ## List of known issues to be aware of including **blessed versions** of components
-(last updated 6 June 2023):
-* Use [v1.24.0 of reva](https://github.com/cs3org/reva/releases/tag/v1.24.0). A Docker image of it can be obtained with `docker pull cs3org/revad:v1.24.0`.
+(last updated 13 June 2023):
+* Use the [`sciencemesh-testing` branch of reva](https://github.com/cs3org/reva/tree/sciencemesh-testing). A Docker image of it will be available soon.
 
 * If your EFSS is based on OCIS, contact Giuseppe Lo Presti to get help with the configuration.
 * If your EFSS is based on ownCloud 10 or Nextcloud, use the `sciencemesh` app from the app store / marketplace.
