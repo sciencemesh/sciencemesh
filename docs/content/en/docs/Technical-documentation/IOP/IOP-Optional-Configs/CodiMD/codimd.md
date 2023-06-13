@@ -92,8 +92,8 @@ driver = "static"
 
 [grpc.services.appregistry.drivers.static]
 mime_types = [
-        { mime_type = "text/markdown", extension = "md", name = "Markdown file", description = "Markdown text", default_app = "CodiMD", allow_creation = true }
-        { mime_type = "application/compressed-markdown", extension = "zmd", name = "CodiMD file", description = "Compressed Markdown with images", default_app = "CodiMD", allow_creation = true }
+        { mime_type = "text/markdown", extension = "md", name = "Markdown file", description = "Markdown text", default_app = "CodiMD", allow_creation = true },
+        { mime_type = "application/compressed-markdown", extension = "zmd", name = "CodiMD file", description = "Compressed Markdown with images", default_app = "CodiMD", allow_creation = true },
         ...
 ]
 ```
