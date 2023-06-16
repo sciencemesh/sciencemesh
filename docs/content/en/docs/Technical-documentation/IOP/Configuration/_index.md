@@ -17,6 +17,7 @@ If you are joining the ScienceMesh with an ownCloud "OCIS" system, then follow t
 If you are joining with an ownCloud 10 or Nextcloud system then you can also use the [sciencemesh1.toml](https://github.com/cs3org/ocm-test-suite/blob/main/servers/revad/sciencemesh1.toml), [sciencemesh2.toml](https://github.com/cs3org/ocm-test-suite/blob/main/servers/revad/sciencemesh2.toml), and [sciencemesh3.toml](https://github.com/cs3org/ocm-test-suite/blob/main/servers/revad/sciencemesh3.toml) for your three required revad processes. Make sure to replace all 'your.revad.com' and 'your.efss.com' strings in each of them with your actual revad and efss host names!
 * replace all occurrences of `your.revad.com` with your revad internet-facing hostname
 * replace all occurrences of `your.effs.com` with your Nextcloud/ownCloud internet-facing hostname
+* replace all occurrences of `your EFSS name` with a human-readable name for Nextcloud/ownCloud instance
 * replace '/etc/revad/tls/revanc1.crt' and '/etc/revad/tls/revanc1.key' strings to point to a valid TLS certificate (or remove these lines if you use an http offloading proxy in front of your revad http port)
 * if necessary, change all occurrences of /index.php/apps/sciencemesh/ to the correct path if it's different (e.g. remove the "index.php/")
 * IMPORTANT FOR SECURITY: change the 'shared-secret-1' and 'machine-api-key' strings to random ones!
