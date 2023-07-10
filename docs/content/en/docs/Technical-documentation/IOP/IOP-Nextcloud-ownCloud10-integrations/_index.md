@@ -7,7 +7,7 @@ description: >
 ---
 
 ## List of known issues to be aware of including **blessed versions** of components
-(last updated 13 June 2023):
+(last updated 10 July 2023):
 * Use the [`sciencemesh-testing` branch of reva](https://github.com/cs3org/reva/tree/sciencemesh-testing). A Docker image of it will be available soon.
 
 * If your EFSS is based on OCIS, contact Giuseppe Lo Presti to get help with the configuration.
@@ -44,7 +44,7 @@ This is the preferred way.
 Or, if you prefer doing it by hand or need a specific version, go to your Nextcloud apps folder, and run (using appropriate version):
 
 ```
-git clone -b v0.2.0 https://github.com/pondersource/nc-sciencemesh sciencemesh
+git clone -b nextcloud https://github.com/sciencemesh/nc-sciencemesh sciencemesh
 cd sciencemesh
 make
 ```
@@ -90,7 +90,7 @@ way.
 Or, if you prefer doing it by hand or you need a specific version, in your ownCloud apps folder, run (using appropriate version):
 
 ```
-git clone -b v0.2.0 https://github.com/pondersource/oc-sciencemesh sciencemesh
+git clone -b owncloud https://github.com/sciencemesh/nc-sciencemesh sciencemesh
 cd sciencemesh
 make
 ```
