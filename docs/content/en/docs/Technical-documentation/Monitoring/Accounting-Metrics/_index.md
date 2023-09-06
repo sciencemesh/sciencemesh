@@ -64,6 +64,11 @@ This file is read periodically (```metrics_record_interval``` [configuration](#c
 
 <u>It is the site's responsibility to update this file periodically with the latest figures.</u>
 
+Considering Kubernetes deployment, the way to inject a file into the container is something like
+```
+helm upgrade .... iop sciencemesh/iop -f values.yaml --set gateway.image.tag=sciencemesh-testing --set-file gateway.configFiles.metrics\\.json=metrics.json
+```
+
 ### Formats and Exporting
 The metrics package uses [OpenCensus](https://opencensus.io/) for implementation of the statistical data types and exporting of the metrics in [Prometheus](https://prometheus.io/) exposition format. 
 
