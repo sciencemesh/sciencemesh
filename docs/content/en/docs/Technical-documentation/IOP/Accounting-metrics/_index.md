@@ -6,9 +6,9 @@ description: >
   Exposing of Accounting Metrics
 ---
 
-**FIXME: duplicated with
-/docs/technical-documentation/monitoring/accounting-metrics/,
-which one is correct?!??**
+**FIXME: this document is obsolete and unmaintained, check
+../../Monitoring/Accounting-metrics/
+instead**
 
 ## Accounting Metrics
 Accounting requires that statistics concerning site usage, performance, etc. can be collected. For this the IOP exposes certain metrics which, via an http metrics service, can be gathered periodically by external monitoring services.

@@ -68,6 +68,28 @@ Considering Kubernetes deployment, the way to inject a file into the container i
 ```
 helm upgrade .... iop sciencemesh/iop -f values.yaml --set gateway.image.tag=sciencemesh-testing --set-file gateway.configFiles.metrics\\.json=metrics.json
 ```
+In more detail, let's have metrics.json containing
+```
+root@app12.du ~/k8s/deployments/cs3/iop # cat metrics.json
+{
+    "cs3_org_sciencemesh_site_total_num_users": 20742,
+    "cs3_org_sciencemesh_site_total_num_groups": 165,
+    "cs3_org_sciencemesh_site_total_amount_storage": 386887921664
+}
+```
+When deploying the IOP using Helm, add
+```
+--set-file gateway.configFiles.metrics\\.json=metrics.json
+```
+Helm will then write it to the config map of the IOP
+```
+kubectl -n cs3 get configmaps iop-gateway-config -o json | jq '.data."metrics.json"' | jq -r
+```
+and you can edit the file using
+```
+kubectl -n cs3 edit configmaps iop-gateway-config 
+```
+or alternatively, just run helm upgrade with new contents.
 
 ### Formats and Exporting
 The metrics package uses [OpenCensus](https://opencensus.io/) for implementation of the statistical data types and exporting of the metrics in [Prometheus](https://prometheus.io/) exposition format. 
