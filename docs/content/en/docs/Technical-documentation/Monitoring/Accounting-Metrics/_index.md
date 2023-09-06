@@ -70,7 +70,7 @@ helm upgrade .... iop sciencemesh/iop -f values.yaml --set gateway.image.tag=sci
 ```
 In more detail, let's have metrics.json containing
 ```
-root@app12.du ~/k8s/deployments/cs3/iop # cat metrics.json
+# cat metrics.json
 {
     "cs3_org_sciencemesh_site_total_num_users": 20742,
     "cs3_org_sciencemesh_site_total_num_groups": 165,
@@ -83,11 +83,11 @@ When deploying the IOP using Helm, add
 ```
 Helm will then write it to the config map of the IOP
 ```
-kubectl -n cs3 get configmaps iop-gateway-config -o json | jq '.data."metrics.json"' | jq -r
+kubectl get configmaps iop-gateway-config -o json | jq '.data."metrics.json"' | jq -r
 ```
 and you can edit the file using
 ```
-kubectl -n cs3 edit configmaps iop-gateway-config 
+kubectl edit configmaps iop-gateway-config 
 ```
 or alternatively, just run helm upgrade with new contents.
 
