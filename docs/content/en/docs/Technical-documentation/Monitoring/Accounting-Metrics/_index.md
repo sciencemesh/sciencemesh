@@ -66,7 +66,7 @@ This file is read periodically (```metrics_record_interval``` [configuration](#c
 
 Considering Kubernetes deployment, the way to inject a file into the container is something like
 ```
-helm upgrade .... iop sciencemesh/iop -f values.yaml --set gateway.image.tag=sciencemesh-testing --set-file gateway.configFiles.metrics\\.json=metrics.json
+helm upgrade .... iop sciencemesh/iop -f values.yaml --set-file gateway.configFiles.metrics\\.json=metrics.json
 ```
 In more detail, let's have metrics.json containing
 ```
