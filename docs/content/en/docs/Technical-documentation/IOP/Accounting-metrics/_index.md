@@ -7,7 +7,7 @@ description: >
 ---
 
 **FIXME: this document is obsolete and unmaintained, check
-../../Monitoring/Accounting-metrics/
+(../../monitoring/accounting-metrics/)
 instead**
 
 ## Accounting Metrics
