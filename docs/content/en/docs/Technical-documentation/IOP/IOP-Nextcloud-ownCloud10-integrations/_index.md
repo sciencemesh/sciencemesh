@@ -58,7 +58,7 @@ Go to the admin settings for Science Mesh and set the IOP URL to e.g. https://ex
 
 There is also a `shared_secret` that must be same in `reva.toml` file and Nextcloud database. This secret use to reva can authenticate the requests from Nextcloud.
 
-Set a shared secret that matches the one you configured in the TOML file of your main revad instance. A reference TOML file is available [here](/docs/technical-documentation/iop/example-of-toml-file/).
+Set a shared secret that matches the one you configured in the TOML file of your main revad instance. A reference TOML file is available [here](/docs/technical-documentation/iop/configuration/example-of-toml-file/).
 
 Make sure that `revaSharedSecret` in there matches the `shared_secret` entry in the following sections of your `revad.toml` file:
 
@@ -103,7 +103,7 @@ Enable the app in the Nextcloud/ownCloud admin dashboard.
 insert into oc_appconfig (appid, configkey, configvalue) values ('sciencemesh', 'iopUrl', 'https://revanc1.docker/');
 ```
 
-There is also a `shared_secret` that must be same in `reva.toml` file and ownCloud database. This secret use to Reva can authenticate the requests from ownCloud.
+There is also a `shared_secret` that must be same in `reva.toml` file and ownCloud database. This secret use to Reva can authenticate the requests from ownCloud. A reference TOML file is available [here](/docs/technical-documentation/iop/configuration/example-of-toml-file/).
 
 Make sure that `revaSharedSecret` in there matches the `shared_secret` entry in the following sections of your `revad.toml` file:
 
