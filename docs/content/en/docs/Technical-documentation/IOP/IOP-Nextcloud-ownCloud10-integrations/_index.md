@@ -7,15 +7,13 @@ description: >
 ---
 
 ## List of known issues to be aware of including **blessed versions** of components
-(last updated 10 July 2023):
-* Use the [`sciencemesh-testing` branch of reva](https://github.com/cs3org/reva/tree/sciencemesh-testing). A Docker image of it will be available soon.
-
-* If your EFSS is based on OCIS, contact Giuseppe Lo Presti to get help with the configuration.
+(last updated 8 September 2023):
+* Use Reva version 1.26 or later.
 * If your EFSS is based on ownCloud 10 or Nextcloud, use the `sciencemesh` app from the app store / marketplace.
-* Recommended Nextcloud installation: make sure you are using a version of Nextcloud that includes [this patch](https://patch-diff.githubusercontent.com/raw/nextcloud/server/pull/36228.patch),
-for instance, [Nextcloud version 26](https://github.com/nextcloud/server/blob/v26.0.0/lib/public/Share/IShare.php#L123).
-* Recommended ownCloud10 installation: make sure you are using a version of OC-10 that includes [this patch](https://patch-diff.githubusercontent.com/raw/owncloud/core/pull/40577.patch),
-for instance, [ownCloud version 10.12](https://github.com/owncloud/core/blob/release-10.12.0/apps/files_sharing/lib/Controller/ShareesController.php#L385).
+  * Recommended Nextcloud installation: make sure you are using at least Nextcloud version 26 to be able to share to other sites of the mesh. In order to access remote shares, you'll need a version of Nextcloud that includes [this patch](https://github.com/nextcloud/server/pull/39574).
+  * Recommended ownCloud10 installation: make sure you are using at least ownCloud version 10.12.
+* If your EFSS is based on OCIS, contact Giuseppe Lo Presti to get help with the configuration.
+* Permissions management and unsharing are currently broken. The full list of known issues is [here](https://github.com/sciencemesh/nc-sciencemesh/issues).
 
 ## List of moving parts
 
@@ -60,7 +58,7 @@ Go to the admin settings for Science Mesh and set the IOP URL to e.g. https://ex
 
 There is also a `shared_secret` that must be same in `reva.toml` file and Nextcloud database. This secret use to reva can authenticate the requests from Nextcloud.
 
-Set a shared secret that matches the one you configured in the TOML file of your main revad instance.
+Set a shared secret that matches the one you configured in the TOML file of your main revad instance. A reference TOML file is available [here](/docs/technical-documentation/iop/example-of-toml-file/).
 
 Make sure that `revaSharedSecret` in there matches the `shared_secret` entry in the following sections of your `revad.toml` file:
 
@@ -151,4 +149,3 @@ MariaDB [bitnami_owncloud]> SELECT * FROM oc_appconfig WHERE appid = 'sciencemes
 | sciencemesh | types              |                                    |
 +-------------+--------------------+------------------------------------+
 ```
-

@@ -7,7 +7,7 @@ description: >
 
 ---
 
-Example of toml file for reva deployment could be found [here](https://github.com/cs3org/ocm-test-suite/blob/main/servers/revad/sciencemesh.toml).
+Example of toml file for reva deployment could be found [here](https://github.com/cs3org/reva/blob/master/examples/sciencemesh/sciencemesh.toml).
 
 To get an understanding on how to create, use and manage Reva configuration,
 please refer to the [official Reva documentation](https://reva.link/docs/getting-started/beginners-guide/).

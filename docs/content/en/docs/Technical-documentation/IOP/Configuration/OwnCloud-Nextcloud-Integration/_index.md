@@ -6,11 +6,11 @@ description: >
   **ADDON:** How to integrate your IOP deployment with the Nextcloud or OwnCloud EFSS solutions.
 ---
 
-Both Nextcloud (NC) and OwnCloud (OC) implements the OCM APIs, manages users, storage and files synchronization via WebDAV, so it makes perfect sense to delegate some of the things we configured at [Basic services](/docs/technical-documentation/iop/configuration/basic/) to be handled by these EFSS solutions, if you happen to run one.
+Both Nextcloud (NC) and OwnCloud (OC) implement the OCM APIs, manage users, storage and files synchronization via WebDAV, so you may want to delegate some of the things we configured at [Basic services](/docs/technical-documentation/iop/configuration/basic/) to be handled by these EFSS solutions. The preferred configuration though is to use [Reva as the IOP for the OCM-based federation layer](/docs/technical-documentation/iop/iop-nextcloud-owncloud10-integrations/), and this documentation is left for reference.
 
 ## Prerequisites
 
-You will need to run a patched installation of NC/OC, having installed & enabled the `sciencemesh` integration app. Please refer to the [Deployment docs](/docs/technical-documentation/support-for-nextcloud-and-owncloud-10/) for a guide.
+You will need to run a recent installation of NC/OC, having installed & enabled the `sciencemesh` integration app. Please refer to the [Deployment docs](/docs/technical-documentation/support-for-nextcloud-and-owncloud-10/) for a guide.
 
 ## Installation
 

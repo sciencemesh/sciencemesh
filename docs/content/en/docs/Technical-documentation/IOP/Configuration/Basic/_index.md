@@ -316,8 +316,6 @@ refresh = 900
 
 ### OCMD ([docs 📖](https://reva.link/docs/config/grpc/services/ocmd/))
 
-> **FIXME:** verify & clarify the responsibilities of this services?
-
 OCM HTTP API service. Here we configure IOP API prefix for OCM APIs, and some
 more settings used for share e-mail notifications or generation and sending of share invitations.
 
