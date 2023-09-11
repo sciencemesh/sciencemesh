@@ -9,7 +9,7 @@ description: >
 ## List of known issues to be aware of including **blessed versions** of components
 (last updated 8 September 2023):
 * Use Reva version 1.26 or later.
-* If your EFSS is based on ownCloud 10 or Nextcloud, use the `sciencemesh` app from the app store / marketplace.
+* If your EFSS is based on ownCloud 10 or Nextcloud, use the `sciencemesh` app version **0.5.0** or later from the app store / marketplace.
   * Recommended Nextcloud installation: make sure you are using at least Nextcloud version 26 to be able to share to other sites of the mesh. In order to access remote shares, you'll need a version of Nextcloud that includes [this patch](https://github.com/nextcloud/server/pull/39574).
   * Recommended ownCloud10 installation: make sure you are using at least ownCloud version 10.12.
 * If your EFSS is based on OCIS, contact Giuseppe Lo Presti to get help with the configuration.
