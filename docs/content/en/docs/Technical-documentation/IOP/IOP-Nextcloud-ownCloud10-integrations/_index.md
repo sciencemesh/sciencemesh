@@ -8,7 +8,7 @@ description: >
 
 ## List of known issues to be aware of including **blessed versions** of components
 (last updated 8 September 2023):
-* Use Reva version 1.26 or later.
+* Use Reva version **1.26** or later.
 * If your EFSS is based on ownCloud 10 or Nextcloud, use the `sciencemesh` app version **0.5.0** or later from the app store / marketplace.
   * Recommended Nextcloud installation: make sure you are using at least Nextcloud version 26 to be able to share to other sites of the mesh. In order to access remote shares, you'll need a version of Nextcloud that includes [this patch](https://github.com/nextcloud/server/pull/39574).
   * Recommended ownCloud10 installation: make sure you are using at least ownCloud version 10.12.
@@ -20,8 +20,8 @@ description: >
 There are a number of moving parts involved, they all need to be exactly right for things to work:
 * your site's registration in gocdb. Make sure your site is registered with 'infrastructure = production' and with the right configuration
 * your revad version
-* your various reva config.toml files, one for each revad process. THIS IS IMPORTANT!
-* your OC-10 or NC version (patched or from a git branch); OC10.12 already contains the patch, so skip patching if you're running 10.12. OC10.12 is the recommended version.
+* your reva config file. THIS IS IMPORTANT! A reference config file is available [here](/docs/technical-documentation/iop/configuration/example-of-toml-file/).
+* your OC-10 or NC version.
 * in the case of OC-10, your config.php
 * the sciencemesh app
 * the settings for the sciencemesh app (in the admin settings dialog)
@@ -58,7 +58,7 @@ Go to the admin settings for Science Mesh and set the IOP URL to e.g. https://ex
 
 There is also a `shared_secret` that must be same in `reva.toml` file and Nextcloud database. This secret use to reva can authenticate the requests from Nextcloud.
 
-Set a shared secret that matches the one you configured in the TOML file of your main revad instance. A reference TOML file is available [here](/docs/technical-documentation/iop/configuration/example-of-toml-file/).
+Set a shared secret that matches the one you configured in the TOML file of your main revad instance.
 
 Make sure that `revaSharedSecret` in there matches the `shared_secret` entry in the following sections of your `revad.toml` file:
 
@@ -103,7 +103,7 @@ Enable the app in the Nextcloud/ownCloud admin dashboard.
 insert into oc_appconfig (appid, configkey, configvalue) values ('sciencemesh', 'iopUrl', 'https://revanc1.docker/');
 ```
 
-There is also a `shared_secret` that must be same in `reva.toml` file and ownCloud database. This secret use to Reva can authenticate the requests from ownCloud. A reference TOML file is available [here](/docs/technical-documentation/iop/configuration/example-of-toml-file/).
+There is also a `shared_secret` that must be same in `reva.toml` file and ownCloud database. This secret use to Reva can authenticate the requests from ownCloud.
 
 Make sure that `revaSharedSecret` in there matches the `shared_secret` entry in the following sections of your `revad.toml` file:
 
