@@ -27,7 +27,7 @@ The dummy driver solely exists for demo purposes. It makes the metrics service s
 Which one of the drivers is used by the site is [configurable](#configurations). 
 
 ### Configuration
-Below is a metrics configuration file example that explains the possible options. The configuration concerns the 'http.services.metrics' block:
+Below is a metrics configuration file example that explains the possible options.
 
 ```
 [shared]
@@ -39,12 +39,20 @@ metrics_data_driver_type = "dummy"
 metrics_data_location = ""
 # metrics recording interval in milliseconds
 metrics_record_interval = 5000
+address = ":443"
 
 [http.services.prometheus]
+address = ":443"
 
 [http]
-address = "0.0.0.0:5550"
+address = ":443"
 ```
+
+Change addresses and ports so that are consistent with your
+modification of the
+https://developer.sciencemesh.io/docs/technical-documentation/monitoring/accounting-metrics/#configuration
+file. All three sections will have the same address.
+
 To choose what driver to use specify the ```metrics_data_driver_type``` value using the driver type name. If the json driver is used the driver expects to find the a metrics figures file in [json format](#metrics-figures-file-format-for-json-driver) at location of your choice, by specifying the ```metrics_data_location``` value. If not specified the default location (/var/tmp/reva/metrics/metricsdata.json) is used.
 
 The metrics recording interval can be set using the ```metrics_record_interval``` flag and has a default recording interval of 5 seconds.
