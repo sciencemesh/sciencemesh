@@ -7,7 +7,10 @@ description: >
 
 ---
 
-Example of toml file for reva deployment could be found [here](https://github.com/cs3org/reva/blob/master/examples/sciencemesh/sciencemesh.toml).
+The reference toml file for reva deployment is available [here](https://github.com/cs3org/reva/blob/master/examples/sciencemesh/sciencemesh.toml).
+
+An additional toml file is available [here](https://github.com/cs3org/reva/blob/master/examples/sciencemesh/sciencemesh-apps.toml) to run apps, but it is not yet integrated, therefore please do not use it yet.
+
 
 To get an understanding on how to create, use and manage Reva configuration,
 please refer to the [official Reva documentation](https://reva.link/docs/getting-started/beginners-guide/).
