@@ -38,16 +38,6 @@ If you want to terminate the SSL connection to reva at your reverse proxy system
 1. Replace the https port `443` with a port number of your choice everywhere you find it
 1. Make sure all `https`-served endpoints (including `datagateway`) are adapted accordingly
 
-All the mesh providers and some dummy users per-provider have been specified in the [ocm-partners example](https://github.com/cs3org/reva/tree/master/examples/ocm-partners). We can fetch these files to later pass them to helm by running:
-
-```bash
-wget -q https://raw.githubusercontent.com/cs3org/reva/master/examples/ocm-partners/providers.demo.json
-# Get the CERN users, for instance:
-wget -q https://raw.githubusercontent.com/cs3org/reva/master/examples/ocm-partners/users-cern.json
-```
-
-- To simplify things, we will rely on a pre-deployed [nginx-ingress](https://kubernetes.github.io/ingress-nginx/deploy/) controller. The `nginx.ingress.kubernetes.io/backend-protocol: "GRPC"` annotation can be supplied to expose GRPC services in a very easy way.
-
 ## Configure and deploy IOP
 To deploy IOP via `helm` we need to configure couple more things.
 
