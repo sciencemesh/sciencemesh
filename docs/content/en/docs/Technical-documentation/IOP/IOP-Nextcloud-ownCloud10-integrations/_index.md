@@ -132,7 +132,7 @@ sed -i "3 i\  'sharing.managerFactory' => 'OCA\\\\ScienceMesh\\\\ScienceMeshProv
 sed -i "4 i\  'sharing.remoteShareesSearch' => 'OCA\\\\ScienceMesh\\\\Plugins\\\\ScienceMeshSearchPlugin'," /var/www/html/config/config.php
 ```
 
-### Check the Database
+### Check the Database (optional)
 
 In the end, your OC10 or NC database should contain someting similar to this:
 
