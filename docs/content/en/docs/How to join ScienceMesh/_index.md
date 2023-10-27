@@ -19,10 +19,6 @@ To join the Science Mesh, there are several steps, technical as well as formal. 
 
 1. If running OC10, deploy version 10.12 or higher. Version 10.12 already contains patches necessary for the Science Mesh.
 
-   Legacy installation instructions for slightly older OC10 version than 10.12, and/or for Nextcloud are as follows. We have prepared a K8S deployment of OC10. It includes the integration application as well. Follow steps in the [official EFSS deployment page](../technical-documentation/efss-deployment). This is the recommended way to deploy the system.
-
-   Alternatively, you can install pure OC10 or NC and patch it and install the integration application manually as described in a [separate EFSS deployment page](../technical-documentation/efss-deployment/manual-efss-installation). The same document also describes how to possibly track newest git versions of the code, which is definitely an option only for developers.
-
 1. Install and set up the [Reva IOP (interoperability platform)]({{< ref "docs/Technical-documentation/IOP" >}}) acting as an Executive Module of your EFSS instance in the ScienceMesh. Reva allows you to use all available API to share various resources within ScienceMesh (data, apps,...).
    
    Note: Reva version >=1.19 AND <2.0 is necessary. Avoid Reva 2.x as this is for OCIS only and will not work with ownCloud10 nor Nextcloud.
