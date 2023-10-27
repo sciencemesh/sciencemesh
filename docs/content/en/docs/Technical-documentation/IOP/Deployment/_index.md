@@ -25,13 +25,13 @@ helm repo add sciencemesh https://sciencemesh.github.io/charts/
 wget -q https://github.com/cs3org/reva/blob/master/examples/sciencemesh/sciencemesh.toml
 
 ```
-1. In the example config you need to edit the denoted as **[vars]**. Replace `your.revad.org` with your actual domain. 
-1. If you have a Kubernetes deployment with an ingress and a route:
+1. In the example config you need to edit the section denoted as **[vars]**. Replace `your.revad.org` with your actual domain. 
+2. If you have a Kubernetes deployment with an ingress and a route:
   - Set the `external_reva_endpoint` var to your actual externally-visible route to reva.
-  - In the [http.services.ocmprovider] section, set a `webdav_root` to include your route, e.g. `/iop/remote.php/dav/ocm/`
-1. Replace `your.efss.org` with the actual endpoint of your EFSS system.
-1. Define appropriate secrets in the [vars] section: the `efss_shared_secret` must match the `oc_appconfig.configvalue` in your EFSS DB for `oc_appconfig.app_id` = `sciencemesh`
-1. Provide appropriate SSL full chain certificate and key files in the [http] section
+  - In the `[http.services.ocmprovider]` section, set a `webdav_root` to include your route, e.g. `/iop/remote.php/dav/ocm/`
+3. Replace `your.efss.org` with the actual endpoint of your EFSS system.
+4. Define appropriate secrets in the [vars] section: the `efss_shared_secret` must match the `oc_appconfig.configvalue` in your EFSS DB for `oc_appconfig.app_id` = `sciencemesh`
+5. Provide appropriate SSL full chain certificate and key files in the [http] section
 
 If you want to terminate the SSL connection to reva at your reverse proxy system (e.g. at your Kubernetes ingress), then you can configure reva to use http instead. For that, you need to follow these steps:
 1. Remove the `certfile` and `keyfile` entries from the [http] section.
@@ -52,6 +52,7 @@ wget -q https://raw.githubusercontent.com/cs3org/reva/master/examples/ocm-partne
 To deploy IOP via `helm` we need to configure couple more things.
 
 1. Metrics
+
 We have to prepare the file named `metrics.json`. Here we demonstrate a statically prepared file containing elementary metrics needed for Sciencemesh monitoring.
 ```
 {
@@ -60,8 +61,9 @@ We have to prepare the file named `metrics.json`. Here we demonstrate a statical
     "cs3_org_sciencemesh_site_total_amount_storage": 386887921664
 }
 ```
-1. Persitency of the operational data (accepted invites etc.)
-We have to setup PVC into `values.yaml` as follows. Details to setup PVC are described in the following section.
+2. Persitency of the operational data (accepted invites etc.).
+
+We have to setup PVC into `values.yaml` as follows. Details to setup PVC are described in the [following section](#Enabling_and_configuring_persistency).
 ```
 ---
 gateway:
@@ -75,7 +77,7 @@ helm -n <your-namespace> install --set-file gateway.configFiles.revad\\.toml=sci
 ```
 If you perform any changes then you can upgrade your deployment using `helm upgrade` command.
 ```
-helm -n cs3 <your-namespace> --set-file gateway.configFiles.revad\\.toml=sciencemesh.toml iop sciencemesh/iop --set gateway.image.repository=cs3org/revad --set gateway.image.tag=v1.26.0 -f values.yaml --set-file gateway.configFiles.metrics\\.json=metrics.json
+helm -n cs3 <your-namespace> upgrade --set-file gateway.configFiles.revad\\.toml=sciencemesh.toml iop sciencemesh/iop --set gateway.image.repository=cs3org/revad --set gateway.image.tag=v1.26.0 -f values.yaml --set-file gateway.configFiles.metrics\\.json=metrics.json
 ```
 
 
