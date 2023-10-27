@@ -56,7 +56,7 @@ iopUrl is url of your main revad instance. Configure “iopUrl” to point to yo
 
 Go to the admin settings for Science Mesh and set the IOP URL to e.g. https://example.com/iop/
 
-There is also a `shared_secret` that must be same in `reva.toml` file and Nextcloud database. This secret use to reva can authenticate the requests from Nextcloud.
+There is also a `shared_secret` that must be same in `sciencemesh.toml` file and Nextcloud database. This secret use to reva can authenticate the requests from Nextcloud.
 
 Set a shared secret that matches the one you configured in the TOML file of your main revad instance.
 
@@ -68,7 +68,7 @@ Make sure that `revaSharedSecret` in there matches the `shared_secret` entry in 
     * `[grpc.services.ocmcore.drivers.nextcloud]`
     * `[grpc.services.ocmshareprovider.drivers.nextcloud]`
 
-Set the base address of running Nextcloud instance in the following sections of `reva.toml` file:
+Set the base address of running Nextcloud instance in the following sections of `sciencemesh.toml` file:
 
     * `[grpc.services.storageprovider.drivers.nextcloud]`
     * `[grpc.services.authprovider.auth_managers.nextcloud]`
@@ -103,7 +103,7 @@ Enable the app in the Nextcloud/ownCloud admin dashboard.
 insert into oc_appconfig (appid, configkey, configvalue) values ('sciencemesh', 'iopUrl', 'https://revanc1.docker/');
 ```
 
-There is also a `shared_secret` that must be same in `reva.toml` file and ownCloud database. This secret use to Reva can authenticate the requests from ownCloud.
+There is also a `shared_secret` that must be same in `sciencemesh.toml` file and ownCloud database. This secret use to Reva can authenticate the requests from ownCloud.
 
 Make sure that `revaSharedSecret` in there matches the `shared_secret` entry in the following sections of your `revad.toml` file:
 
@@ -119,7 +119,7 @@ There must also exist a row in ownCloud database for `revaLoopbackSecret`.
 
 If this key does not exists in ownCloud database, insert a random string for this key as value.
 
-Set the base address of running ownCloud instance in the following sections of reva.toml file:
+Set the base address of running ownCloud instance in the following sections of sciencemesh.toml file:
 
    * `[grpc.services.storageprovider.drivers.nextcloud]`
    * `[grpc.services.authprovider.auth_managers.nextcloud]`

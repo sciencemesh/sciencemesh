@@ -51,7 +51,7 @@ wget -q https://raw.githubusercontent.com/cs3org/reva/master/examples/ocm-partne
 ## Configure and deploy IOP
 To deploy IOP via `helm` we need to configure couple more things.
 
-1. Metrics
+1. Metrics, for further detail please visit [Metrics page](https://developer.sciencemesh.io/docs/technical-documentation/monitoring/accounting-metrics/#metrics-figures-file-format-for-json-driver)
 
 We have to prepare the file named `metrics.json`. Here we demonstrate a statically prepared file containing elementary metrics needed for Sciencemesh monitoring.
 ```
@@ -63,7 +63,7 @@ We have to prepare the file named `metrics.json`. Here we demonstrate a statical
 ```
 2. Persitency of the operational data (accepted invites etc.).
 
-We have to setup PVC into `values.yaml` as follows. Details to setup PVC are described in the [following section](#Enabling_and_configuring_persistency).
+We have to setup PVC into `values.yaml` as follows. Details to setup PVC are described in the [following section](#enabling-and-configuring-persistency).
 ```
 ---
 gateway:
@@ -121,7 +121,7 @@ data-iop-prod             Unbound  pvc-fddca20b-69a4-43ec-ad12-6d4e2bd4a433   1G
 
 helm upgrade -i iop sciencemeshcharts/iop \
   --set gateway.persistentVolume.enabled=true \
-  --set gateway.persistentVolume.existingClaim=iop-data
+  --set gateway.persistentVolume.existingClaim=data-iop-prod
 
 # Get the PV provisioned by the claim
 kubectl get pv
