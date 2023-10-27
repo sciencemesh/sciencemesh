@@ -178,32 +178,9 @@ helm upgrade -i iop sciencemesh/iop \
 
 ## Testing the deployment
 
-**FIXME: to be moved into configuration**
+You can easily test your deployment. You can try to generate Sciencemesh invite and send it to some of Sciencemesh partners. Then you can try to establish shares. In case of proper configuration, you should be also able to see your site in the [Sciencemesh Grafafana Dashboard](https://grafana.sciencemesh.uni-muenster.de/d/HD3NmHMMk/general-statistics).
 
-You can easily test your deployment is reachable outside the cluster by running the `reva` cli and `curl` against the exposed services:
-
-```bash
-# Configure the REVA cli client to connect to your GRPC service:
-reva configure
-host: <hostname>:443
-config saved in /.reva.config
-
-# Log-in using any of the users provided in gateway.configFiles.users.json
-reva login -list
-Available login methods:
-- basic
-
-reva login basic
-username: ishank
-password: ishankpass
-OK
-
-# HTTP: Query the Prometheus metrics endpoint:
+## HTTP: Query the Prometheus metrics endpoint:
+```
 curl https://<hostname>/iop/metrics
 ```
-
-## Configuration
-
-After deployment, continue by [configuring Reva]({{<ref "docs/Technical-documentation/IOP/Configuration" >}}).
-
-
