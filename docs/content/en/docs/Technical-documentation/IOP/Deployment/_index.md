@@ -19,22 +19,26 @@ The official way of deploying the IOP platform are its [Helm charts](https://sci
 helm repo add sciencemesh https://sciencemesh.github.io/charts/
 ```
 
-- We'll be deploying a reva daemon using the [standalone example config](https://github.com/cs3org/reva/blob/master/examples/standalone/standalone.toml). We just need to tweak a couple of keys in this config for reva to use the right values:
+- We'll be deploying a reva daemon using the [example config](https://github.com/cs3org/reva/blob/master/examples/sciencemesh/sciencemesh.toml). **We need to tweak a few values to appropriate ones according to your deployment**.
 
 ```bash
-wget -q https://raw.githubusercontent.com/cs3org/reva/master/examples/standalone/standalone.toml
+wget -q https://github.com/cs3org/reva/blob/master/examples/sciencemesh/sciencemesh.toml
 
-# Example edits for the CERN deployment:
-sed -i '/^\[grpc.services.gateway\]/a datagateway = "https://sciencemesh.cernbox.cern.ch/iop/datagateway"' standalone.toml
-sed -i '/^\[grpc.services.storageprovider\]/a data_server_url = "https://sciencemesh.cernbox.cern.ch/iop/data"' standalone.toml
 ```
+1. In the example config you need to edit the denoted as **[vars]**. Replace `your.revad.org` with your actual domain. 
+1. If you have a Kubernetes deployment with an ingress and a route:
+  - Set the `external_reva_endpoint` var to your actual externally-visible route to reva.
+  - In the [http.services.ocmprovider] section, set a `webdav_root` to include your route, e.g. `/iop/remote.php/dav/ocm/`
+1. Replace `your.efss.org` with the actual endpoint of your EFSS system.
+1. Define appropriate secrets in the [vars] section: the `efss_shared_secret` must match the `oc_appconfig.configvalue` in your EFSS DB for `oc_appconfig.app_id` = `sciencemesh`
+1. Provide appropriate SSL full chain certificate and key files in the [http] section
 
-| key                                                                                                                             | value                                                          |
-|---------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|
-| [`grpc.services.gateway.datagateway`](https://reva.link/docs/config/grpc/services/gateway/#datagateway)                         | Set to our externally-accessible Data Gateway (`/datagateway`) |
-| [`grpc.services.storageprovider.data_server_url`](https://reva.link/docs/config/grpc/services/storageprovider/#data_server_url) | Points to the external endpoint for the Data Server (`/data`)  |
+If you want to terminate the SSL connection to reva at your reverse proxy system (e.g. at your Kubernetes ingress), then you can configure reva to use http instead. For that, you need to follow these steps:
+1. Remove the `certfile` and `keyfile` entries from the [http] section.
+1. Replace the https port `443` with a port number of your choice everywhere you find it
+1. Make sure all `https`-served endpoints (including `datagateway`) are adapted accordingly
 
-- All the mesh providers and some dummy users per-provider have been specified in the [ocm-partners example](https://github.com/cs3org/reva/tree/master/examples/ocm-partners). We can fetch these files to later pass them to helm by running:
+All the mesh providers and some dummy users per-provider have been specified in the [ocm-partners example](https://github.com/cs3org/reva/tree/master/examples/ocm-partners). We can fetch these files to later pass them to helm by running:
 
 ```bash
 wget -q https://raw.githubusercontent.com/cs3org/reva/master/examples/ocm-partners/providers.demo.json
@@ -44,8 +48,89 @@ wget -q https://raw.githubusercontent.com/cs3org/reva/master/examples/ocm-partne
 
 - To simplify things, we will rely on a pre-deployed [nginx-ingress](https://kubernetes.github.io/ingress-nginx/deploy/) controller. The `nginx.ingress.kubernetes.io/backend-protocol: "GRPC"` annotation can be supplied to expose GRPC services in a very easy way.
 
-## Configuring an IOP deployment
-**FIXME: to be moved into configuration**
+## Configure and deploy IOP
+To deploy IOP via `helm` we need to configure couple more things.
+
+1. Metrics
+We have to prepare the file named `metrics.json`. Here we demonstrate a statically prepared file containing elementary metrics needed for Sciencemesh monitoring.
+```
+{
+    "cs3_org_sciencemesh_site_total_num_users": 15222,
+    "cs3_org_sciencemesh_site_total_num_groups": 100,
+    "cs3_org_sciencemesh_site_total_amount_storage": 386887921664
+}
+```
+1. Persitency of the operational data (accepted invites etc.)
+We have to setup PVC into `values.yaml` as follows. Details to setup PVC are described in the following section.
+```
+---
+gateway:
+    persistentVolume:
+           enabled: true
+           existingClaim: 'data-iop-prod'
+```
+Then we can simply run the following command to deploy our IOP.
+```
+helm -n <your-namespace> install --set-file gateway.configFiles.revad\\.toml=sciencemesh.toml iop sciencemesh/iop --set gateway.image.repository=cs3org/revad --set gateway.image.tag=v1.26.0 -f values.yaml --set-file gateway.configFiles.metrics\\.json=metrics.json
+```
+If you perform any changes then you can upgrade your deployment using `helm upgrade` command.
+```
+helm -n cs3 <your-namespace> --set-file gateway.configFiles.revad\\.toml=sciencemesh.toml iop sciencemesh/iop --set gateway.image.repository=cs3org/revad --set gateway.image.tag=v1.26.0 -f values.yaml --set-file gateway.configFiles.metrics\\.json=metrics.json
+```
+
+
+## Enabling and configuring persistency
+
+In case you need to keep the data stored on the `storage` service `root`, across version upgrades and restarts of an IOP deployment, you will need to enable data persistency through a [Kubernetes Persistent Volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes) (PV). This is done by using a Persistent Volume Claim (PVC). By default, persistency is disabled for convenience as it involves setting up a `StorageClass`, having an available [driver](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#types-of-persistent-volumes) for your storage infrastructure, etc.
+
+The [`cs3org/revad` chart](https://github.com/cs3org/charts/tree/master/revad) provides two methods to attach a volume to an IOP deployment:
+
+### Persistent Volume Claim auto-provision
+
+When `persistentVolume.enabled=true` alone is passed, helm generates and installs PVC manifest by relying on some cluster and chart preset defaults. This option is especially useful to quickly deploy the IOP for the first time, without spending too much effort in the storage configurations.
+
+For a full reference on the different `persistentVolume` configurations available, refer to the [chart parameters list](https://github.com/cs3org/charts/tree/master/revad#configuration).
+
+### Reusing a pre-existing Persistent Volume Claim
+
+This option is key when rolling an upgrade in the cluster while keeping all the data from a previous version. Here's a really simple PVC manifest and the workflow to create and consume it from the charts.
+
+```bash
+cat << EOF > pvc.yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: data-iop-prod
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1G
+  storageClassName: standard
+EOF
+
+kubectl apply -f pvc.yaml
+
+# Note the 'Unbound' status for the PVC as there's still no deployment exercising the claim
+kubectl get pvc
+NAME                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+data-iop-prod             Unbound  pvc-fddca20b-69a4-43ec-ad12-6d4e2bd4a433   1Gi        RWO            standard       1d20h
+
+helm upgrade -i iop sciencemeshcharts/iop \
+  --set gateway.persistentVolume.enabled=true \
+  --set gateway.persistentVolume.existingClaim=iop-data
+
+# Get the PV provisioned by the claim
+kubectl get pv
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                        STORAGECLASS   REASON   AGE
+pvc-fddca20b-69a4-43ec-ad12-6d4e2bd4a433   1Gi        RWO            Delete           Bound    default/iop-data             standard                1d20h
+```
+
+If the PVC was auto-provisioned by a previous release, you'll need to pass its name (i.e. `<release-name>-gateway`) as `persistentVolume.existingClaim`, as part of the `helm upgrade` command.
+
+
+## Configuring IOP ingress
 
 To configure the two ingress resources that expose the IOP endpoints (GRPC and HTTP), we'll just need to pass a few values into a `custom-ingress.yaml` file. For instance, a configuration for a cluster running the [nginx-ingress controller](https://kubernetes.github.io/ingress-nginx/) would be similar to:
 
@@ -124,58 +209,6 @@ OK
 # HTTP: Query the Prometheus metrics endpoint:
 curl https://<hostname>/iop/metrics
 ```
-
-## Enabling and configuring persistency
-
-**FIXME: DA: I suppose this is kubernetes-specific and should stay here?**
-
-In case you need to keep the data stored on the `storage` service `root`, across version upgrades and restarts of an IOP deployment, you will need to enable data persistency through a [Kubernetes Persistent Volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes) (PV). This is done by using a Persistent Volume Claim (PVC). By default, persistency is disabled for convenience as it involves setting up a `StorageClass`, having an available [driver](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#types-of-persistent-volumes) for your storage infrastructure, etc.
-
-The [`cs3org/revad` chart](https://github.com/cs3org/charts/tree/master/revad) provides two methods to attach a volume to an IOP deployment:
-
-### Persistent Volume Claim auto-provision
-
-When `persistentVolume.enabled=true` alone is passed, helm generates and installs PVC manifest by relying on some cluster and chart preset defaults. This option is especially useful to quickly deploy the IOP for the first time, without spending too much effort in the storage configurations.
-
-For a full reference on the different `persistentVolume` configurations available, refer to the [chart parameters list](https://github.com/cs3org/charts/tree/master/revad#configuration).
-
-### Reusing a pre-existing Persistent Volume Claim
-
-This option is key when rolling an upgrade in the cluster while keeping all the data from a previous version. Here's a really simple PVC manifest and the workflow to create and consume it from the charts.
-
-```bash
-cat << EOF > pvc.yaml
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: iop-data
-spec:
-  accessModes:
-    - ReadWriteMany
-  resources:
-    requests:
-      storage: 1G
-  storageClassName: standard
-EOF
-
-kubectl apply -f pvc.yaml
-
-# Note the 'Unbound' status for the PVC as there's still no deployment exercising the claim
-kubectl get pvc
-NAME                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
-iop-data             Unbound  pvc-fddca20b-69a4-43ec-ad12-6d4e2bd4a433   1Gi        RWO            standard       1d20h
-
-helm upgrade -i iop sciencemeshcharts/iop \
-  --set gateway.persistentVolume.enabled=true \
-  --set gateway.persistentVolume.existingClaim=iop-data
-
-# Get the PV provisioned by the claim
-kubectl get pv
-NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                        STORAGECLASS   REASON   AGE
-pvc-fddca20b-69a4-43ec-ad12-6d4e2bd4a433   1Gi        RWO            Delete           Bound    default/iop-data             standard                1d20h
-```
-
-If the PVC was auto-provisioned by a previous release, you'll need to pass its name (i.e. `<release-name>-gateway`) as `persistentVolume.existingClaim`, as part of the `helm upgrade` command.
 
 ## Configuration
 
