@@ -180,7 +180,7 @@ helm upgrade -i iop sciencemesh/iop \
 
 You can easily test your deployment. You can try to generate Sciencemesh invite and send it to some of Sciencemesh partners. Then you can try to establish shares. In case of proper configuration, you should be also able to see your site in the [Sciencemesh Grafafana Dashboard](https://grafana.sciencemesh.uni-muenster.de/d/HD3NmHMMk/general-statistics).
 
-## HTTP: Query the Prometheus metrics endpoint:
+HTTP: Query the Prometheus metrics endpoint
 ```
 curl https://<hostname>/iop/metrics
 ```
